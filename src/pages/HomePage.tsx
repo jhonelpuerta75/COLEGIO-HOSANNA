@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 
 export default function HomePage() {
   return (
-    <Box sx={{ bgcolor: 'background.default' }}>
+    <Box sx={{ bgcolor: 'background.default', overflowX: 'hidden' }}>
       <Navbar />
       <Hero />
       <About />

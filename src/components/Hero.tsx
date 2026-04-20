@@ -46,7 +46,7 @@ export default function Hero() {
       <Box
         sx={{
           position: 'absolute',
-          right: { xs: -80, lg: 0 },
+          right: 0,
           top: 0,
           bottom: 0,
           width: { xs: '100%', lg: '55%' },

@@ -114,33 +114,38 @@ export default function Navbar() {
             <Box
               component={RouterLink}
               to="/"
-              sx={{ display: 'flex', alignItems: 'center', gap: 1.5, flexGrow: 1, textDecoration: 'none' }}
+              sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 }, flexGrow: 1, textDecoration: 'none', minWidth: 0 }}
             >
               <Box
                 component="img"
                 src="/logo-hosanna.png"
                 sx={{
                   width: 'auto',
-                  height: 48,
+                  height: { xs: 36, sm: 48 },
                   flexShrink: 0,
                   filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))'
                 }}
               />
-              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              <Box sx={{ display: 'block' }}>
                 <Typography
                   variant="h6"
                   sx={{
                     color: 'white',
                     fontWeight: 700,
                     lineHeight: 1.1,
-                    fontSize: '1.1rem',
+                    fontSize: { xs: '0.9rem', sm: '1.1rem' },
                   }}
                 >
                   Colegio Hosanna
                 </Typography>
                 <Typography
                   variant="caption"
-                  sx={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.7rem', letterSpacing: '0.08em' }}
+                  sx={{ 
+                    color: 'rgba(255,255,255,0.6)', 
+                    fontSize: { xs: '0.6rem', sm: '0.7rem' }, 
+                    letterSpacing: '0.08em',
+                    display: 'block'
+                  }}
                 >
                   PUCALLPA, PERÚ
                 </Typography>
