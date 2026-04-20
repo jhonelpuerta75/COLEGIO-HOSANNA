@@ -1,0 +1,182 @@
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Chip from '@mui/material/Chip';
+import SchoolIcon from '@mui/icons-material/School';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import VerifiedIcon from '@mui/icons-material/Verified';
+
+export default function Hero() {
+  return (
+    <Box
+      id="inicio"
+      sx={{
+        position: 'relative',
+        minHeight: { xs: '90vh', md: '88vh' },
+        display: 'flex',
+        alignItems: 'center',
+        overflow: 'hidden',
+        bgcolor: 'secondary.dark',
+      }}
+    >
+      <Box
+        component="img"
+        src="/hero-school.webp"
+        alt="Colegio Hosanna campus"
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          opacity: 0.25,
+        }}
+      />
+
+      <Box
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(135deg, rgba(10,31,68,0.97) 0%, rgba(4,107,210,0.6) 100%)',
+        }}
+      />
+
+      <Box
+        sx={{
+          position: 'absolute',
+          right: { xs: -80, lg: 0 },
+          top: 0,
+          bottom: 0,
+          width: { xs: '100%', lg: '55%' },
+          background: 'linear-gradient(to left, rgba(4,107,210,0.15), transparent)',
+          pointerEvents: 'none',
+        }}
+      />
+
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, py: { xs: 8, md: 10 } }}>
+        <Box
+          data-aos="fade-right"
+          sx={{ maxWidth: { xs: '100%', md: '62%' } }}>
+          <Chip
+            icon={<VerifiedIcon sx={{ fontSize: '1rem !important' }} />}
+            label="Institución Educativa Privada · Desde 1993"
+            size="small"
+            sx={{
+              mb: 3,
+              bgcolor: 'rgba(4,107,210,0.2)',
+              color: 'rgba(255,255,255,0.9)',
+              border: '1px solid rgba(4,107,210,0.4)',
+              backdropFilter: 'blur(8px)',
+              fontWeight: 500,
+              fontSize: '0.78rem',
+              '& .MuiChip-icon': { color: 'primary.light' },
+            }}
+          />
+
+          <Typography
+            variant="h1"
+            sx={{
+              color: 'white',
+              fontSize: { xs: '2.4rem', sm: '3rem', md: '3.6rem' },
+              lineHeight: 1.12,
+              mb: 2.5,
+              fontWeight: 900,
+            }}
+          >
+            Porque somos hechura de Dios,
+            <Box
+              component="span"
+              sx={{
+                display: 'block',
+                background: 'linear-gradient(90deg, #3d8fe0, #98E4F4)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                mt: 1
+              }}
+            >
+              creados en Cristo Jesús para buenas obras
+            </Box>
+          </Typography>
+
+          <Typography
+            variant="h6"
+            sx={{
+              color: 'rgba(255,255,255,0.75)',
+              fontWeight: 400,
+              lineHeight: 1.65,
+              mb: 4.5,
+              maxWidth: 520,
+            }}
+          >
+            Formamos líderes íntegros desde el nivel Inicial hasta Secundaria, combinando excelencia académica
+            y una sólida cosmovisión cristiana.
+          </Typography>
+
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+            <Button
+              variant="contained"
+              size="large"
+              href="#admision"
+              endIcon={<ArrowForwardIcon />}
+              sx={{
+                bgcolor: 'primary.main',
+                color: 'white',
+                px: 4,
+                py: 1.5,
+                fontSize: '1rem',
+                '&:hover': { bgcolor: 'primary.dark' },
+              }}
+            >
+              Solicitar Admisión 2026
+            </Button>
+            <Button
+              variant="outlined"
+              size="large"
+              href="#nosotros"
+              startIcon={<SchoolIcon />}
+              sx={{
+                borderColor: 'rgba(255,255,255,0.4)',
+                color: 'rgba(255,255,255,0.9)',
+                px: 4,
+                py: 1.5,
+                fontSize: '1rem',
+                '&:hover': {
+                  borderColor: 'white',
+                  bgcolor: 'rgba(255,255,255,0.06)',
+                },
+              }}
+            >
+              Conocer el colegio
+            </Button>
+          </Stack>
+
+          <Stack
+            direction="row"
+            spacing={{ xs: 3, sm: 5 }}
+            sx={{ mt: 6, pt: 4, borderTop: '1px solid rgba(255,255,255,0.1)' }}
+          >
+            {[
+              { value: '30+', label: 'Años de experiencia' },
+              { value: '3', label: 'Niveles educativos' },
+              { value: '100%', label: 'Reconocida por MINEDU' },
+            ].map((stat) => (
+              <Box key={stat.label}>
+                <Typography
+                  variant="h4"
+                  sx={{ color: 'primary.light', fontWeight: 700, lineHeight: 1 }}
+                >
+                  {stat.value}
+                </Typography>
+                <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.78rem' }}>
+                  {stat.label}
+                </Typography>
+              </Box>
+            ))}
+          </Stack>
+        </Box>
+      </Container>
+    </Box>
+  );
+}
