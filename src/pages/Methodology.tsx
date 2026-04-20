@@ -7,11 +7,6 @@ import CardContent from '@mui/material/CardContent';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import SchoolIcon from '@mui/icons-material/School';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import HubIcon from '@mui/icons-material/Hub';
@@ -110,11 +105,6 @@ export default function MethodologyPage() {
     }
   ];
 
-  const blendedMethods = [
-    'Havruta Learning', 'Flipped Classroom', 'Aprendizaje Basado en Proyectos', 
-    'Aprendizaje Cooperativo', 'Gamificación', 'Aprendizaje Basado en Problemas', 
-    'Design Thinking', 'Thinking-Based Learning', 'Aprendizaje Basado en Competencias'
-  ];
 
   const cdlCategories = [
     {

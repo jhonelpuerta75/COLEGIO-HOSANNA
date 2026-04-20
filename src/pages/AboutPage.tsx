@@ -4,7 +4,6 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -12,7 +11,6 @@ import FlagIcon from '@mui/icons-material/Flag';
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 import GroupsIcon from '@mui/icons-material/Groups';
 import SchoolIcon from '@mui/icons-material/School';
-import verifiedIcon from '@mui/icons-material/Verified';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 

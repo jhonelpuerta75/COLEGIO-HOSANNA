@@ -5,11 +5,8 @@ import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import EventIcon from '@mui/icons-material/Event';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -51,14 +48,6 @@ const steps = [
   },
 ];
 
-const requirements = [
-  'Partida de nacimiento original',
-  'DNI del menor y padres/tutores',
-  'Libreta de notas del año anterior',
-  'Certificado de estudios',
-  'Foto carnet reciente',
-  'Constancia de vacunas',
-];
 
 export default function Admissions() {
   return (

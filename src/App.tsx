@@ -1,14 +1,6 @@
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
 import theme from './theme';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Programs from './components/Programs';
-import Values from './components/Values';
-import Admissions from './components/Admissions';
-import Footer from './components/Footer';
 
 import { Routes, Route } from 'react-router-dom';
 import AOS from 'aos';

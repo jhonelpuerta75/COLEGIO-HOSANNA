@@ -4,15 +4,10 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
-import Chip from '@mui/material/Chip';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import DescriptionIcon from '@mui/icons-material/Description';
 import PaymentsIcon from '@mui/icons-material/Payments';
-import DownloadIcon from '@mui/icons-material/Download';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
@@ -24,13 +19,6 @@ import Footer from '../components/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const documentLinks = [
-  { title: 'Requisitos de Admisión 2026', url: 'https://hosanna.edu.pe/wp-content/uploads/2025/10/REQUISITOS-DE-ADMISION-2026.pdf', date: 'Actualizado Oct 2025' },
-  { title: 'Condiciones Económicas 2026', url: 'https://hosanna.edu.pe/wp-content/uploads/2025/10/PAGOS-Y-PENSIONES-2026.pdf', date: 'Actualizado Oct 2025' },
-  { title: 'Horario de Clases 2026', url: 'https://hosanna.edu.pe/wp-content/uploads/2025/10/HORARIO-DE-CLASES-2026.pdf', date: 'Referencial' },
-  { title: 'Beneficios y Servicios', url: 'https://hosanna.edu.pe/wp-content/uploads/2025/10/BENEFICIOS-Y-SERVICIOS-COMPLEMENTARIOS.pdf', date: '2026' },
-  { title: 'Reglamento Interno', url: 'https://hosanna.edu.pe/wp-content/uploads/2020/11/REGLAMENTO-INTERNO-2024-ACTUALIZADO.pdf', date: 'Vigente' }
-];
 
 const steps = [
   { number: '01', title: 'Registro en Sianet', desc: 'Inscripción virtual del postulante a través de nuestra plataforma oficial.' },
