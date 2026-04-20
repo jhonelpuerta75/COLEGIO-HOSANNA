@@ -33,7 +33,7 @@ const AdmissionsPage: React.FC = () => {
   }, []);
 
   return (
-    <Box sx={{ bgcolor: '#f8fafc', minHeight: '100vh' }}>
+    <Box sx={{ bgcolor: '#f8fafc', minHeight: '100vh', overflowX: 'hidden' }}>
       <Navbar />
 
       <main>

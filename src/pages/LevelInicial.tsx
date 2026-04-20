@@ -14,7 +14,7 @@ const LevelInicial: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-background font-body text-on-surface">
+    <div className="bg-background font-body text-on-surface overflow-x-hidden">
       <Navbar />
 
       <main>

@@ -138,7 +138,7 @@ export default function MethodologyPage() {
   ];
 
   return (
-    <Box sx={{ bgcolor: 'background.default' }}>
+    <Box sx={{ bgcolor: 'background.default', overflowX: 'hidden' }}>
       <Navbar />
       
       {/* Hero Section */}

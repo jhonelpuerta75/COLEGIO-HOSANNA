@@ -16,7 +16,7 @@ import Footer from '../components/Footer';
 
 export default function AboutPage() {
   return (
-    <Box sx={{ bgcolor: 'background.default' }}>
+    <Box sx={{ bgcolor: 'background.default', overflowX: 'hidden' }}>
       <Navbar />
 
       {/* Hero Section */}
@@ -69,7 +69,7 @@ export default function AboutPage() {
                 sx={{
                   position: 'absolute',
                   bottom: -20,
-                  right: -20,
+                  right: { xs: 0, sm: -20 },
                   bgcolor: 'primary.main',
                   color: 'white',
                   p: 3,

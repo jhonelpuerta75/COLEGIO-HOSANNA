@@ -107,10 +107,11 @@ export default function Navbar() {
           backdropFilter: 'blur(12px)',
           borderBottom: trigger ? 'none' : '1px solid rgba(255,255,255,0.08)',
           transition: 'all 0.3s ease',
+          zIndex: 1201,
         }}
       >
         <Container maxWidth="lg">
-          <Toolbar sx={{ py: 1, px: { xs: 0 } }}>
+          <Toolbar sx={{ py: 1, px: { xs: 0 }, overflow: 'hidden' }}>
             <Box
               component={RouterLink}
               to="/"
