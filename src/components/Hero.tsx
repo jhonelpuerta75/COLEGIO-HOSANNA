@@ -20,7 +20,7 @@ export default function Hero() {
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
-        bgcolor: 'secondary.dark',
+        bgcolor: 'background.default',
       }}
     >
       <Box
@@ -33,7 +33,7 @@ export default function Hero() {
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          opacity: 0.25,
+          opacity: 0.08,
         }}
       />
 
@@ -41,19 +41,7 @@ export default function Hero() {
         sx={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(135deg, rgba(10,31,68,0.97) 0%, rgba(4,107,210,0.6) 100%)',
-        }}
-      />
-
-      <Box
-        sx={{
-          position: 'absolute',
-          right: 0,
-          top: 0,
-          bottom: 0,
-          width: { xs: '100%', lg: '55%' },
-          background: 'linear-gradient(to left, rgba(4,107,210,0.15), transparent)',
-          pointerEvents: 'none',
+          background: 'linear-gradient(135deg, #ffffff 20%, #e6f1fc 100%)',
         }}
       />
 
@@ -66,20 +54,20 @@ export default function Hero() {
               size="small"
               sx={{
                 mb: 3,
-                bgcolor: 'rgba(4,107,210,0.2)',
-                color: 'rgba(255,255,255,0.9)',
-                border: '1px solid rgba(4,107,210,0.4)',
+                bgcolor: 'rgba(4,107,210,0.1)',
+                color: 'primary.main',
+                border: '1px solid rgba(4,107,210,0.2)',
                 backdropFilter: 'blur(8px)',
                 fontWeight: 500,
                 fontSize: '0.78rem',
-                '& .MuiChip-icon': { color: 'primary.light' },
+                '& .MuiChip-icon': { color: 'primary.main' },
               }}
             />
 
             <Typography
               variant="h1"
               sx={{
-                color: 'white',
+                color: 'secondary.main',
                 fontSize: { xs: '2.4rem', sm: '3rem', md: '3.6rem' },
                 lineHeight: 1.12,
                 fontWeight: 900,
@@ -91,7 +79,7 @@ export default function Hero() {
                 component="span"
                 sx={{
                   display: 'block',
-                  background: 'linear-gradient(90deg, #3d8fe0, #98E4F4)',
+                  background: 'linear-gradient(90deg, #046bd2, #3d8fe0)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   mt: 1
@@ -104,7 +92,7 @@ export default function Hero() {
             <Typography
               variant="h6"
               sx={{
-                color: 'rgba(255,255,255,0.75)',
+                color: 'text.secondary',
                 fontWeight: 400,
                 lineHeight: 1.65,
                 mb: 4.5,
@@ -138,14 +126,14 @@ export default function Hero() {
                 href="#nosotros"
                 startIcon={<SchoolIcon />}
                 sx={{
-                  borderColor: 'rgba(255,255,255,0.4)',
-                  color: 'rgba(255,255,255,0.9)',
+                  borderColor: 'primary.main',
+                  color: 'primary.main',
                   px: 4,
                   py: 1.5,
                   fontSize: '1rem',
                   '&:hover': {
-                    borderColor: 'white',
-                    bgcolor: 'rgba(255,255,255,0.06)',
+                    borderColor: 'primary.dark',
+                    bgcolor: 'rgba(4,107,210,0.06)',
                   },
                 }}
               >
@@ -156,7 +144,7 @@ export default function Hero() {
             <Stack
               direction="row"
               spacing={{ xs: 3, sm: 5 }}
-              sx={{ mt: 6, pt: 4, borderTop: '1px solid rgba(255,255,255,0.1)' }}
+              sx={{ mt: 6, pt: 4, borderTop: '1px solid', borderColor: 'divider' }}
             >
               {[
                 { value: '34+', label: 'Años de experiencia' },
@@ -166,11 +154,11 @@ export default function Hero() {
                 <Box key={stat.label}>
                   <Typography
                     variant="h4"
-                    sx={{ color: 'primary.light', fontWeight: 700, lineHeight: 1 }}
+                    sx={{ color: 'primary.main', fontWeight: 700, lineHeight: 1 }}
                   >
                     {stat.value}
                   </Typography>
-                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.78rem' }}>
+                  <Typography variant="caption" sx={{ color: 'text.secondary', fontSize: '0.78rem' }}>
                     {stat.label}
                   </Typography>
                 </Box>
