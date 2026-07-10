@@ -14,7 +14,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 const stats = [
-  { icon: <EmojiEventsIcon sx={{ fontSize: 32 }} />, value: '+30', label: 'Años formando líderes' },
+  { icon: <EmojiEventsIcon sx={{ fontSize: 32 }} />, value: '+34', label: 'Años formando líderes' },
   { icon: <FamilyRestroomIcon sx={{ fontSize: 32 }} />, value: '3', label: 'Niveles educativos' },
   { icon: <MenuBookIcon sx={{ fontSize: 32 }} />, value: '3', label: 'Resoluciones Directorales' },
   { icon: <HelpOutlineIcon sx={{ fontSize: 32 }} />, value: '100%', label: 'Comprometidos con la fe' },
@@ -40,7 +40,7 @@ export default function About() {
             variant="body1"
             sx={{ color: 'text.secondary', maxWidth: 600, mx: 'auto', lineHeight: 1.8 }}
           >
-            Una institución educativa privada con más de 30 años formando generaciones con excelencia académica
+            Una institución educativa privada con más de 34 años formando generaciones con excelencia académica
             y sólidos valores cristianos.
           </Typography>
         </Box>

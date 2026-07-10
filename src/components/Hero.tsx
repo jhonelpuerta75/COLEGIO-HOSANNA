@@ -7,6 +7,8 @@ import Chip from '@mui/material/Chip';
 import SchoolIcon from '@mui/icons-material/School';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import VerifiedIcon from '@mui/icons-material/Verified';
+import Grid from '@mui/material/Grid';
+import { admissionConfig } from '../config/admissionConfig';
 
 export default function Hero() {
   return (
@@ -56,126 +58,146 @@ export default function Hero() {
       />
 
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, py: { xs: 8, md: 10 } }}>
-        <Box
-          data-aos="fade-right"
-          sx={{ maxWidth: { xs: '100%', md: '62%' } }}>
-          <Chip
-            icon={<VerifiedIcon sx={{ fontSize: '1rem !important' }} />}
-            label="Institución Educativa Privada · Desde 1993"
-            size="small"
-            sx={{
-              mb: 3,
-              bgcolor: 'rgba(4,107,210,0.2)',
-              color: 'rgba(255,255,255,0.9)',
-              border: '1px solid rgba(4,107,210,0.4)',
-              backdropFilter: 'blur(8px)',
-              fontWeight: 500,
-              fontSize: '0.78rem',
-              '& .MuiChip-icon': { color: 'primary.light' },
-            }}
-          />
-
-          <Typography
-            variant="h1"
-            sx={{
-              color: 'white',
-              fontSize: { xs: '2.4rem', sm: '3rem', md: '3.6rem' },
-              lineHeight: 1.12,
-              mb: 2.5,
-              fontWeight: 900,
-            }}
-          >
-            Porque somos hechura de Dios,
-            <Box
-              component="span"
+        <Grid container spacing={{ xs: 6, md: 4 }} alignItems="center">
+          <Grid size={{ xs: 12, md: 7.5 }} data-aos="fade-right">
+            <Chip
+              icon={<VerifiedIcon sx={{ fontSize: '1rem !important' }} />}
+              label="Institución Educativa Privada · Desde 1993"
+              size="small"
               sx={{
-                display: 'block',
-                background: 'linear-gradient(90deg, #3d8fe0, #98E4F4)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                mt: 1
-              }}
-            >
-              creados en Cristo Jesús para buenas obras
-            </Box>
-          </Typography>
-
-          <Typography
-            variant="h6"
-            sx={{
-              color: 'rgba(255,255,255,0.75)',
-              fontWeight: 400,
-              lineHeight: 1.65,
-              mb: 4.5,
-              maxWidth: 520,
-            }}
-          >
-            Formamos líderes íntegros desde el nivel Inicial hasta Secundaria, combinando excelencia académica
-            y una sólida cosmovisión cristiana.
-          </Typography>
-
-          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-            <Button
-              variant="contained"
-              size="large"
-              href="#admision"
-              endIcon={<ArrowForwardIcon />}
-              sx={{
-                bgcolor: 'primary.main',
-                color: 'white',
-                px: 4,
-                py: 1.5,
-                fontSize: '1rem',
-                '&:hover': { bgcolor: 'primary.dark' },
-              }}
-            >
-              Solicitar Admisión 2026
-            </Button>
-            <Button
-              variant="outlined"
-              size="large"
-              href="#nosotros"
-              startIcon={<SchoolIcon />}
-              sx={{
-                borderColor: 'rgba(255,255,255,0.4)',
+                mb: 3,
+                bgcolor: 'rgba(4,107,210,0.2)',
                 color: 'rgba(255,255,255,0.9)',
-                px: 4,
-                py: 1.5,
-                fontSize: '1rem',
-                '&:hover': {
-                  borderColor: 'white',
-                  bgcolor: 'rgba(255,255,255,0.06)',
-                },
+                border: '1px solid rgba(4,107,210,0.4)',
+                backdropFilter: 'blur(8px)',
+                fontWeight: 500,
+                fontSize: '0.78rem',
+                '& .MuiChip-icon': { color: 'primary.light' },
+              }}
+            />
+
+            <Typography
+              variant="h1"
+              sx={{
+                color: 'white',
+                fontSize: { xs: '2.4rem', sm: '3rem', md: '3.6rem' },
+                lineHeight: 1.12,
+                fontWeight: 900,
+                mb: 3,
               }}
             >
-              Conocer el colegio
-            </Button>
-          </Stack>
-
-          <Stack
-            direction="row"
-            spacing={{ xs: 3, sm: 5 }}
-            sx={{ mt: 6, pt: 4, borderTop: '1px solid rgba(255,255,255,0.1)' }}
-          >
-            {[
-              { value: '30+', label: 'Años de experiencia' },
-              { value: '3', label: 'Niveles educativos' },
-              { value: '100%', label: 'Reconocida por MINEDU' },
-            ].map((stat) => (
-              <Box key={stat.label}>
-                <Typography
-                  variant="h4"
-                  sx={{ color: 'primary.light', fontWeight: 700, lineHeight: 1 }}
-                >
-                  {stat.value}
-                </Typography>
-                <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.78rem' }}>
-                  {stat.label}
-                </Typography>
+              Porque somos hechura de Dios, creados en Cristo
+              <Box
+                component="span"
+                sx={{
+                  display: 'block',
+                  background: 'linear-gradient(90deg, #3d8fe0, #98E4F4)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  mt: 1
+                }}
+              >
+                Jesús para buenas obras
               </Box>
-            ))}
-          </Stack>
-        </Box>
+            </Typography>
+
+            <Typography
+              variant="h6"
+              sx={{
+                color: 'rgba(255,255,255,0.75)',
+                fontWeight: 400,
+                lineHeight: 1.65,
+                mb: 4.5,
+                maxWidth: 520,
+              }}
+            >
+              Formamos líderes íntegros desde el nivel Inicial hasta Secundaria, combinando excelencia académica
+              y una sólida cosmovisión cristiana.
+            </Typography>
+
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+              <Button
+                variant="contained"
+                size="large"
+                href="#admision"
+                endIcon={<ArrowForwardIcon />}
+                sx={{
+                  bgcolor: 'primary.main',
+                  color: 'white',
+                  px: 4,
+                  py: 1.5,
+                  fontSize: '1rem',
+                  '&:hover': { bgcolor: 'primary.dark' },
+                }}
+              >
+                Solicitar Admisión {admissionConfig.admissionYear}
+              </Button>
+              <Button
+                variant="outlined"
+                size="large"
+                href="#nosotros"
+                startIcon={<SchoolIcon />}
+                sx={{
+                  borderColor: 'rgba(255,255,255,0.4)',
+                  color: 'rgba(255,255,255,0.9)',
+                  px: 4,
+                  py: 1.5,
+                  fontSize: '1rem',
+                  '&:hover': {
+                    borderColor: 'white',
+                    bgcolor: 'rgba(255,255,255,0.06)',
+                  },
+                }}
+              >
+                Conocer el colegio
+              </Button>
+            </Stack>
+
+            <Stack
+              direction="row"
+              spacing={{ xs: 3, sm: 5 }}
+              sx={{ mt: 6, pt: 4, borderTop: '1px solid rgba(255,255,255,0.1)' }}
+            >
+              {[
+                { value: '34+', label: 'Años de experiencia' },
+                { value: '3', label: 'Niveles educativos' },
+                { value: '100%', label: 'Reconocida por MINEDU' },
+              ].map((stat) => (
+                <Box key={stat.label}>
+                  <Typography
+                    variant="h4"
+                    sx={{ color: 'primary.light', fontWeight: 700, lineHeight: 1 }}
+                  >
+                    {stat.value}
+                  </Typography>
+                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.78rem' }}>
+                    {stat.label}
+                  </Typography>
+                </Box>
+              ))}
+            </Stack>
+          </Grid>
+
+          <Grid size={{ xs: 12, md: 4.5 }} data-aos="fade-left" sx={{ display: 'flex', justifyContent: 'center', mt: { xs: 4, md: 0 } }}>
+            <Box
+              component="img"
+              src="/34aniv.png"
+              alt="34 Aniversario"
+              sx={{
+                width: { xs: '200px', sm: '280px', md: '100%' },
+                maxWidth: '430px',
+                height: 'auto',
+                flexShrink: 0,
+
+                animation: 'float 6s ease-in-out infinite',
+                '@keyframes float': {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-15px)' },
+                }
+              }}
+            />
+          </Grid>
+        </Grid>
       </Container>
     </Box>
   );

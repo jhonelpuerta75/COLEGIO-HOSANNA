@@ -13,6 +13,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import Link from '@mui/material/Link';
 import { Link as RouterLink } from 'react-router-dom';
+import { admissionConfig } from '../config/admissionConfig';
 
 const steps = [
   {
@@ -75,13 +76,13 @@ export default function Admissions() {
             Proceso de Admisión
           </Typography>
           <Typography variant="h2" sx={{ mt: 1, mb: 2 }}>
-            Admisión 2026
+            Admisión {admissionConfig.admissionYear}
           </Typography>
           <Typography
             variant="body1"
             sx={{ color: 'text.secondary', maxWidth: 560, mx: 'auto', lineHeight: 1.8 }}
           >
-            El período de inscripciones está abierto del 17 de octubre de 2025 al 20 de enero de 2026,
+            El período de inscripciones está abierto del {admissionConfig.registrationStartDate} al {admissionConfig.registrationEndDate},
             sujeto a disponibilidad de vacantes.
           </Typography>
         </Box>
@@ -160,7 +161,7 @@ export default function Admissions() {
             Ver requisitos y pensiones completas
           </Button>
           <Typography variant="body2" sx={{ mt: 3, color: 'text.secondary', opacity: 0.8 }}>
-            Pensiones 2026 desde S/. 650.00 (Nivel Inicial). Proceso abierto hasta el 20 de Enero.
+            Pensiones {admissionConfig.admissionYear} desde S/. {admissionConfig.costs.inicial.tuition} (Nivel Inicial). Proceso abierto hasta el {admissionConfig.registrationEndDateShort}.
           </Typography>
         </Box>
       </Container>

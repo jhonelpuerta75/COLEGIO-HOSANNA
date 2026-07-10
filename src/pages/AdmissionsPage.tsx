@@ -18,6 +18,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { admissionConfig } from '../config/admissionConfig';
 
 
 const steps = [
@@ -52,7 +53,7 @@ const AdmissionsPage: React.FC = () => {
         >
           <Container maxWidth="md" data-aos="fade-up">
             <Typography variant="overline" sx={{ letterSpacing: 4, fontWeight: 700, color: 'primary.light' }}>
-              PROCESO 2026
+              PROCESO {admissionConfig.admissionYear}
             </Typography>
             <Typography variant="h1" sx={{ mt: 2, mb: 3, fontWeight: 900, fontSize: { xs: '2.5rem', md: '4rem' } }}>
               Admisión y Matrícula
@@ -87,7 +88,7 @@ const AdmissionsPage: React.FC = () => {
             {/* Costs & Levels Section */}
             <Grid size={{ xs: 12, lg: 6 }}>
               <Typography variant="h4" sx={{ fontWeight: 800, mb: 4, display: 'flex', alignItems: 'center', gap: 2 }}>
-                <PaymentsIcon color="primary" /> Inversión por Nivel 2026
+                <PaymentsIcon color="primary" /> Inversión por Nivel {admissionConfig.admissionYear}
               </Typography>
               <Card sx={{ borderRadius: 6, overflow: 'hidden', border: '1px solid', borderColor: 'divider', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
                 <Box sx={{ p: 0 }}>
@@ -97,9 +98,9 @@ const AdmissionsPage: React.FC = () => {
                     <Grid size={{ xs: 4 }}><Typography variant="subtitle2" sx={{ fontWeight: 700 }}>PENSIÓN (x10)</Typography></Grid>
                   </Grid>
                   {[
-                    { level: 'Inicial', mat: '650.00', pen: '650.00', color: 'rgba(4,107,210,0.05)' },
-                    { level: 'Primaria', mat: '710.00', pen: '710.00', color: 'white' },
-                    { level: 'Secundaria', mat: '740.00', pen: '740.00', color: 'rgba(4,107,210,0.05)' }
+                    { level: 'Inicial', mat: admissionConfig.costs.inicial.enrollment, pen: admissionConfig.costs.inicial.tuition, color: 'rgba(4,107,210,0.05)' },
+                    { level: 'Primaria', mat: admissionConfig.costs.primaria.enrollment, pen: admissionConfig.costs.primaria.tuition, color: 'white' },
+                    { level: 'Secundaria', mat: admissionConfig.costs.secundaria.enrollment, pen: admissionConfig.costs.secundaria.tuition, color: 'rgba(4,107,210,0.05)' }
                   ].map((row, i) => (
                     <Grid container key={i} sx={{ p: 3, textAlign: 'center', bgcolor: row.color, alignItems: 'center', borderBottom: i < 2 ? '1px solid' : 'none', borderColor: 'divider' }}>
                       <Grid size={{ xs: 4 }}><Typography variant="subtitle1" sx={{ fontWeight: 800 }}>{row.level}</Typography></Grid>
@@ -111,7 +112,7 @@ const AdmissionsPage: React.FC = () => {
                 <Box sx={{ p: 3, bgcolor: '#fffbed', borderTop: '1px solid', borderColor: 'divider' }}>
                   <Typography variant="body2" sx={{ color: '#856404', display: 'flex', gap: 1.5, alignItems: 'flex-start' }}>
                     <Box sx={{ bgcolor: '#ffc107', borderRadius: '50%', p: 0.5, display: 'flex' }}><OpenInNewIcon sx={{ fontSize: 12, color: 'white' }} /></Box>
-                    <strong>Beneficio por Pago Puntual:</strong> Descuento de S/. 30.00 si cancela antes del último día del mes.
+                    <strong>Beneficio por Pago Puntual:</strong> Descuento de S/. {admissionConfig.costs.discountOnTime} si cancela antes del último día del mes.
                   </Typography>
                 </Box>
               </Card>
@@ -127,7 +128,7 @@ const AdmissionsPage: React.FC = () => {
                   variant="contained" 
                   fullWidth
                   sx={{ bgcolor: 'white', color: 'primary.main', fontWeight: 900, py: 1.5, borderRadius: 3, '&:hover': { bgcolor: 'rgba(255,255,255,0.9)' } }}
-                  href="https://www.sianet.pe/HosannaPucallpa/Admision/InformacionProcesoAdmision/Index?IA=tmp5ZeD5sJs000"
+                  href={admissionConfig.sianetFormUrl}
                   target="_blank"
                 >
                   IR AL FORMULARIO DE ADMISIÓN
@@ -199,9 +200,9 @@ const AdmissionsPage: React.FC = () => {
             <Typography variant="h4" sx={{ textAlign: 'center', fontWeight: 800, mb: 6 }}>Preguntas Frecuentes</Typography>
             <Stack spacing={3}>
               {[
-                { q: '¿Cuál es la edad mínima para Inicial?', a: 'Según MINEDU, el niño debe tener 3 años cumplidos al 31 de marzo del 2026.' },
+                { q: '¿Cuál es la edad mínima para Inicial?', a: `Según MINEDU, el niño debe tener 3 años cumplidos al ${admissionConfig.ageCutoffDate}.` },
                 { q: '¿Tienen prioridad los hermanos?', a: 'Sí, las familias que ya tienen hijos en la institución cuentan con prioridad en la asignación de vacantes.' },
-                { q: '¿Cuándo cierran las inscripciones?', a: 'Hasta el 20 de enero del 2026 o hasta agotar vacantes.' }
+                { q: '¿Cuándo cierran las inscripciones?', a: `Hasta el ${admissionConfig.registrationEndDate} o hasta agotar vacantes.` }
               ].map((faq, i) => (
                 <Box key={i} sx={{ p: 4, bgcolor: 'white', borderRadius: 4, border: '1px solid', borderColor: 'divider' }}>
                   <Typography variant="subtitle1" sx={{ fontWeight: 800, mb: 1, color: 'primary.main' }}>{faq.q}</Typography>

@@ -17,6 +17,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { admissionConfig } from '../config/admissionConfig';
 
 const LevelSecundaria: React.FC = () => {
   useEffect(() => {
@@ -75,7 +76,7 @@ const LevelSecundaria: React.FC = () => {
                   href="/admision"
                   sx={{ bgcolor: 'white', color: 'secondary.main', px: 5, py: 2, fontWeight: 800, '&:hover': { bgcolor: 'primary.light', color: 'white' } }}
                 >
-                  Proceso Admisión 2026
+                  Proceso Admisión {admissionConfig.admissionYear}
                 </Button>
                 <Button 
                   variant="outlined" 

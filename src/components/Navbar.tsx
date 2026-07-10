@@ -24,6 +24,7 @@ import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { useState, useEffect } from 'react';
+import { admissionConfig } from '../config/admissionConfig';
 
 const navLinks = [
   { label: 'Inicio', href: '/' },
@@ -103,15 +104,17 @@ export default function Navbar() {
       <AppBar
         position="fixed"
         sx={{
-          bgcolor: trigger ? 'secondary.main' : 'rgba(10, 31, 68, 0.95)',
+          bgcolor: 'white',
           backdropFilter: 'blur(12px)',
-          borderBottom: trigger ? 'none' : '1px solid rgba(255,255,255,0.08)',
+          borderBottom: '1px solid',
+          borderColor: 'divider',
+          boxShadow: trigger ? '0 4px 20px rgba(0,0,0,0.05)' : 'none',
           transition: 'all 0.3s ease',
           zIndex: 1201,
         }}
       >
         <Container maxWidth="lg">
-          <Toolbar sx={{ py: 1, px: { xs: 0 }, overflow: 'hidden' }}>
+          <Toolbar sx={{ py: { xs: 1.5, sm: 2.2 }, px: { xs: 0 }, overflow: 'hidden' }}>
             <Box
               component={RouterLink}
               to="/"
@@ -122,7 +125,7 @@ export default function Navbar() {
                 src="/logo-hosanna.png"
                 sx={{
                   width: 'auto',
-                  height: { xs: 36, sm: 48 },
+                  height: { xs: 42, sm: 58 },
                   flexShrink: 0,
                   filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))'
                 }}
@@ -131,10 +134,10 @@ export default function Navbar() {
                 <Typography
                   variant="h6"
                   sx={{
-                    color: 'white',
+                    color: 'text.primary',
                     fontWeight: 700,
                     lineHeight: 1.1,
-                    fontSize: { xs: '0.9rem', sm: '1.1rem' },
+                    fontSize: { xs: '1rem', sm: '1.3rem' },
                   }}
                 >
                   Colegio Hosanna
@@ -142,8 +145,8 @@ export default function Navbar() {
                 <Typography
                   variant="caption"
                   sx={{ 
-                    color: 'rgba(255,255,255,0.6)', 
-                    fontSize: { xs: '0.6rem', sm: '0.7rem' }, 
+                    color: 'text.secondary', 
+                    fontSize: { xs: '0.68rem', sm: '0.78rem' }, 
                     letterSpacing: '0.08em',
                     display: 'block'
                   }}
@@ -167,10 +170,10 @@ export default function Navbar() {
                         transform: nivelesAnchorEl ? 'rotate(180deg)' : 'none'
                       }} />}
                       sx={{
-                        color: 'rgba(255,255,255,0.85)',
-                        fontSize: '0.875rem',
-                        px: 1.5,
-                        '&:hover': { color: 'white', bgcolor: 'rgba(255,255,255,0.08)' },
+                        color: 'text.primary',
+                        fontSize: '0.96rem',
+                        px: 1.8,
+                        '&:hover': { color: 'primary.main', bgcolor: 'rgba(4,107,210,0.08)' },
                       }}
                     >
                       {link.label}
@@ -194,10 +197,11 @@ export default function Navbar() {
                         pointerEvents: 'none',
                         '& .MuiPaper-root': {
                           pointerEvents: 'auto',
-                          bgcolor: 'secondary.main',
-                          color: 'white',
-                          border: '1px solid rgba(255,255,255,0.08)',
-                          boxShadow: '0 10px 40px rgba(0,0,0,0.5)',
+                          bgcolor: 'background.paper',
+                          color: 'text.primary',
+                          border: '1px solid',
+                          borderColor: 'divider',
+                          boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
                           minWidth: 180,
                         }
                       }}
@@ -214,10 +218,11 @@ export default function Navbar() {
                           component={RouterLink}
                           to={child.href}
                           sx={{
-                            fontSize: '0.875rem',
-                            py: 1,
-                            px: 2,
-                            '&:hover': { bgcolor: 'rgba(255,255,255,0.08)' }
+                            color: 'text.primary',
+                            fontSize: '0.96rem',
+                            py: 1.2,
+                            px: 2.2,
+                            '&:hover': { bgcolor: 'rgba(4,107,210,0.08)', color: 'primary.main' }
                           }}
                         >
                           {child.label}
@@ -232,11 +237,11 @@ export default function Navbar() {
                     to={link.href}
                     onClick={() => handleLinkClick(link.href)}
                     sx={{
-                      color: location.pathname === link.href ? 'white' : 'rgba(255,255,255,0.85)',
-                      fontSize: '0.875rem',
-                      px: 1.5,
-                      '&:hover': { color: 'white', bgcolor: 'rgba(255,255,255,0.08)' },
-                      bgcolor: location.pathname === link.href ? 'rgba(255,255,255,0.1)' : 'transparent',
+                      color: location.pathname === link.href ? 'primary.main' : 'text.primary',
+                      fontSize: '0.96rem',
+                      px: 1.8,
+                      '&:hover': { color: 'primary.main', bgcolor: 'rgba(4,107,210,0.08)' },
+                      bgcolor: location.pathname === link.href ? 'rgba(4,107,210,0.08)' : 'transparent',
                     }}
                   >
                     {link.label}
@@ -248,20 +253,22 @@ export default function Navbar() {
                 component={RouterLink}
                 to="/admision"
                 sx={{ 
-                  ml: 1.5, 
+                  ml: 2, 
                   bgcolor: 'primary.main', 
                   fontWeight: 800,
-                  px: 3,
+                  px: 3.5,
+                  py: 1.2,
+                  fontSize: '0.96rem',
                   '&:hover': { bgcolor: 'primary.dark' } 
                 }}
                 startIcon={<AssignmentIcon />}
               >
-                Admisión 2026
+                Admisión {admissionConfig.admissionYear}
               </Button>
             </Box>
 
             <IconButton
-              sx={{ display: { xs: 'flex', md: 'none' }, color: 'white' }}
+              sx={{ display: { xs: 'flex', md: 'none' }, color: 'text.primary' }}
               onClick={() => setMobileOpen(true)}
             >
               <MenuIcon />
@@ -348,7 +355,7 @@ export default function Navbar() {
         </Box>
       </Drawer>
 
-      <Toolbar sx={{ py: 1 }} />
+      <Toolbar sx={{ py: { xs: 1.5, sm: 2.2 } }} />
     </>
   );
 }
