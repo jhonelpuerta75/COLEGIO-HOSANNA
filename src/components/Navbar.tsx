@@ -254,12 +254,13 @@ export default function Navbar() {
                 to="/admision"
                 sx={{ 
                   ml: 2, 
-                  bgcolor: 'primary.main', 
+                  bgcolor: '#e7ebda', 
+                  color: '#0a1f44',
                   fontWeight: 800,
                   px: 3.5,
                   py: 1.2,
                   fontSize: '0.96rem',
-                  '&:hover': { bgcolor: 'primary.dark' } 
+                  '&:hover': { bgcolor: '#d8dcc8' } 
                 }}
                 startIcon={<AssignmentIcon />}
               >

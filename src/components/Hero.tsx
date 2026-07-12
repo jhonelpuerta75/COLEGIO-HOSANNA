@@ -41,7 +41,10 @@ export default function Hero() {
         sx={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(135deg, #ffffff 20%, #e6f1fc 100%)',
+          background: {
+            xs: 'linear-gradient(to bottom, #0a1f44 0%, #1e88e5 40%, #90caf9 65%, #ffffff 90%)',
+            md: 'linear-gradient(to right, #0a1f44 0%, #1e88e5 20%, #90caf9 50%, #ffffff 90%)'
+          }
         }}
       />
 
@@ -54,20 +57,20 @@ export default function Hero() {
               size="small"
               sx={{
                 mb: 3,
-                bgcolor: 'rgba(4,107,210,0.1)',
-                color: 'primary.main',
-                border: '1px solid rgba(4,107,210,0.2)',
+                bgcolor: 'rgba(255,255,255,0.15)',
+                color: 'white',
+                border: '1px solid rgba(255,255,255,0.3)',
                 backdropFilter: 'blur(8px)',
                 fontWeight: 500,
                 fontSize: '0.78rem',
-                '& .MuiChip-icon': { color: 'primary.main' },
+                '& .MuiChip-icon': { color: '#98E4F4' },
               }}
             />
 
             <Typography
               variant="h1"
               sx={{
-                color: 'secondary.main',
+                color: 'white',
                 fontSize: { xs: '2.4rem', sm: '3rem', md: '3.6rem' },
                 lineHeight: 1.12,
                 fontWeight: 900,
@@ -79,7 +82,7 @@ export default function Hero() {
                 component="span"
                 sx={{
                   display: 'block',
-                  background: 'linear-gradient(90deg, #046bd2, #3d8fe0)',
+                  background: 'linear-gradient(90deg, #98E4F4, #ffffff)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   mt: 1
@@ -92,7 +95,7 @@ export default function Hero() {
             <Typography
               variant="h6"
               sx={{
-                color: 'text.secondary',
+                color: 'rgba(255,255,255,0.8)',
                 fontWeight: 400,
                 lineHeight: 1.65,
                 mb: 4.5,
@@ -110,12 +113,12 @@ export default function Hero() {
                 href="#admision"
                 endIcon={<ArrowForwardIcon />}
                 sx={{
-                  bgcolor: 'primary.main',
-                  color: 'white',
+                  bgcolor: '#e7ebda',
+                  color: '#0a1f44',
                   px: 4,
                   py: 1.5,
                   fontSize: '1rem',
-                  '&:hover': { bgcolor: 'primary.dark' },
+                  '&:hover': { bgcolor: '#d8dcc8' },
                 }}
               >
                 Solicitar Admisión {admissionConfig.admissionYear}
@@ -126,14 +129,14 @@ export default function Hero() {
                 href="#nosotros"
                 startIcon={<SchoolIcon />}
                 sx={{
-                  borderColor: 'primary.main',
-                  color: 'primary.main',
+                  borderColor: 'rgba(255,255,255,0.4)',
+                  color: 'rgba(255,255,255,0.9)',
                   px: 4,
                   py: 1.5,
                   fontSize: '1rem',
                   '&:hover': {
-                    borderColor: 'primary.dark',
-                    bgcolor: 'rgba(4,107,210,0.06)',
+                    borderColor: 'white',
+                    bgcolor: 'rgba(255,255,255,0.06)',
                   },
                 }}
               >
@@ -144,7 +147,7 @@ export default function Hero() {
             <Stack
               direction="row"
               spacing={{ xs: 3, sm: 5 }}
-              sx={{ mt: 6, pt: 4, borderTop: '1px solid', borderColor: 'divider' }}
+              sx={{ mt: 6, pt: 4, borderTop: '1px solid rgba(255,255,255,0.15)' }}
             >
               {[
                 { value: '34+', label: 'Años de experiencia' },
@@ -154,11 +157,11 @@ export default function Hero() {
                 <Box key={stat.label}>
                   <Typography
                     variant="h4"
-                    sx={{ color: 'primary.main', fontWeight: 700, lineHeight: 1 }}
+                    sx={{ color: '#98E4F4', fontWeight: 700, lineHeight: 1 }}
                   >
                     {stat.value}
                   </Typography>
-                  <Typography variant="caption" sx={{ color: 'text.secondary', fontSize: '0.78rem' }}>
+                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.78rem' }}>
                     {stat.label}
                   </Typography>
                 </Box>
