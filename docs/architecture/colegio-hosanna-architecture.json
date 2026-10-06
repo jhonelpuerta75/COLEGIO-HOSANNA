@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Colegio Hosanna - Arquitectura Frontend y Capas del Sistema",
+    "output": "C:/Users/joisv/OneDrive/Documentos/clonaciones/COLEGIO-HOSANNA/docs/architecture/colegio-hosanna-architecture.html",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "full-stack",
+        "label": "Vista General Completa",
+        "focus": ["user", "cdn", "vite_build", "app_shell", "router", "page_layer", "component_layer", "theme_styles", "config_data", "sianet"],
+        "note": "Arquitectura completa desde la infraestructura de compilación y despliegue hasta la capa de componentes y servicios externos."
+      },
+      {
+        "id": "presentation-layer",
+        "label": "Capa de Presentación y UI",
+        "focus": ["app_shell", "router", "page_layer", "component_layer", "theme_styles"],
+        "note": "Estructura modular de React: Router, Vistas, Componentes reutilizables y Sistema de Estilos MUI/Tailwind."
+      },
+      {
+        "id": "admissions-flow",
+        "label": "Integración y Admisión",
+        "focus": ["component_layer", "config_data", "sianet"],
+        "note": "Flujo de configuración local de admisiones y derivación a la plataforma SIANET."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "user",
+      "type": "external",
+      "label": "Usuario / Cliente",
+      "sublabel": "Navegador Web / Móvil",
+      "pos": [40, 260],
+      "size": [120, 60]
+    },
+    {
+      "id": "cdn",
+      "type": "cloud",
+      "brand": "vercel",
+      "label": "Vercel Hosting",
+      "sublabel": "Edge CDN & SPA Rewrite",
+      "pos": [210, 260],
+      "size": [130, 60]
+    },
+    {
+      "id": "vite_build",
+      "type": "cloud",
+      "label": "Vite 8 Build",
+      "sublabel": "Bundler & Asset Compiler",
+      "pos": [210, 410],
+      "size": [130, 60]
+    },
+    {
+      "id": "app_shell",
+      "type": "frontend",
+      "brand": "react",
+      "label": "App Shell / Root",
+      "sublabel": "main.tsx / App.tsx",
+      "pos": [410, 260],
+      "size": [130, 60]
+    },
+    {
+      "id": "router",
+      "type": "frontend",
+      "label": "React Router v7",
+      "sublabel": "Navegación Client-Side",
+      "pos": [410, 110],
+      "size": [130, 60]
+    },
+    {
+      "id": "page_layer",
+      "type": "frontend",
+      "label": "Capa de Páginas",
+      "sublabel": "src/pages (7 vistas)",
+      "pos": [610, 260],
+      "size": [130, 60]
+    },
+    {
+      "id": "component_layer",
+      "type": "frontend",
+      "label": "Componentes UI",
+      "sublabel": "src/components (Navbar...)",
+      "pos": [810, 260],
+      "size": [140, 60]
+    },
+    {
+      "id": "theme_styles",
+      "type": "frontend",
+      "label": "Sistema de Estilos",
+      "sublabel": "MUI Theme + Tailwind v4",
+      "pos": [610, 410],
+      "size": [130, 60]
+    },
+    {
+      "id": "config_data",
+      "type": "database",
+      "label": "Configuración Local",
+      "sublabel": "admissionConfig.ts",
+      "pos": [810, 410],
+      "size": [140, 60]
+    },
+    {
+      "id": "sianet",
+      "type": "external",
+      "label": "Portal SIANET",
+      "sublabel": "Admisión Externa SIANET",
+      "pos": [1030, 410],
+      "size": [130, 60]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Infraestructura de Despliegue (Vercel Edge)",
+      "wraps": ["cdn", "vite_build"]
+    },
+    {
+      "kind": "security-group",
+      "label": "Aplicación React SPA (src/)",
+      "wraps": ["app_shell", "router", "page_layer", "component_layer", "theme_styles", "config_data"]
+    }
+  ],
+  "connections": [
+    {
+      "id": "user-to-cdn",
+      "from": "user",
+      "to": "cdn",
+      "label": "HTTPS",
+      "labelDy": 18,
+      "variant": "emphasis"
+    },
+    {
+      "id": "vite-to-cdn",
+      "from": "vite_build",
+      "to": "cdn",
+      "label": "Build estático",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "cdn-to-app",
+      "from": "cdn",
+      "to": "app_shell",
+      "label": "JS & Assets",
+      "labelDy": 18
+    },
+    {
+      "id": "app-to-router",
+      "from": "app_shell",
+      "to": "router",
+      "label": "BrowserRouter",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "app-to-pages",
+      "from": "app_shell",
+      "to": "page_layer",
+      "label": "Rutas SPA",
+      "labelDy": 18
+    },
+    {
+      "id": "pages-to-components",
+      "from": "page_layer",
+      "to": "component_layer",
+      "label": "Componentes",
+      "labelDy": 18
+    },
+    {
+      "id": "app-to-styles",
+      "from": "app_shell",
+      "to": "theme_styles",
+      "label": "ThemeProvider",
+      "fromSide": "bottom",
+      "toSide": "left"
+    },
+    {
+      "id": "comp-to-config",
+      "from": "component_layer",
+      "to": "config_data",
+      "label": "Carga Config",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 24
+    },
+    {
+      "id": "comp-to-sianet",
+      "from": "component_layer",
+      "to": "sianet",
+      "label": "Formulario SIANET",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "left"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Infraestructura & Build",
+      "items": [
+        "Despliegue automatizado en Vercel CDN con reescritura de rutas para SPA",
+        "Compilación relámpago con Vite 8, TypeScript y soporte PostCSS/Tailwind v4"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Núcleo React & Enrutamiento",
+      "items": [
+        "Arquitectura SPA basada en React 19 con renderizado eficiente",
+        "Navegación declarativa cliente mediante React Router DOM v7 con 7 rutas principales"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Diseño, Datos & Integración",
+      "items": [
+        "Tema unificado MUI con paleta institucional (Granate #7A1B28 y Dorado #D4AF37)",
+        "Configuración centralizada de costos/fechas e integración directa con portal SIANET"
+      ]
+    }
+  ]
+}

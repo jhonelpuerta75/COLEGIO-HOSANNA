@@ -56,7 +56,7 @@ export default function AdmissionPopup() {
           maxHeight: '92vh',
         },
       }}
-      SlotProps={{
+      slotProps={{
         backdrop: {
           sx: {
             backgroundColor: 'rgba(10, 25, 47, 0.75)',
