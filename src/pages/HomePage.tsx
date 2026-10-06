@@ -6,10 +6,12 @@ import Programs from '../components/Programs';
 import Methodology from '../components/Methodology';
 import Admissions from '../components/Admissions';
 import Footer from '../components/Footer';
+import AdmissionPopup from '../components/AdmissionPopup';
 
 export default function HomePage() {
   return (
     <Box sx={{ bgcolor: 'background.default', overflowX: 'hidden' }}>
+      <AdmissionPopup />
       <Navbar />
       <Hero />
       <About />
@@ -20,3 +22,4 @@ export default function HomePage() {
     </Box>
   );
 }
+
