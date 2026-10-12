@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Pleno Internacional -->
+  <g transform="translate(14, 12)">
+    <rect x="2" y="2" width="52" height="52" rx="14" fill="#0288D1"/>
+    <!-- Checkmark and target symbol -->
+    <circle cx="28" cy="28" r="16" stroke="#FFFFFF" stroke-width="2.5" opacity="0.4"/>
+    <path d="M20 28 L26 34 L38 20" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="80" y="38" font-family="Roboto, sans-serif" font-size="24" font-weight="900" fill="#01579B">pleno</text>
+  <text x="80" y="56" font-family="Roboto, sans-serif" font-size="12" font-weight="700" fill="#0288D1" letter-spacing="1.5">INTERNACIONAL</text>
+</svg>

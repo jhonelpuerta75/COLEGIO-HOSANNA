@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Richmond Studio & Learning Platform -->
+  <g transform="translate(14, 12)">
+    <rect x="2" y="2" width="52" height="52" rx="12" fill="#D32F2F"/>
+    <text x="28" y="38" font-family="'Times New Roman', serif" font-size="34" font-weight="900" fill="#FFFFFF" text-anchor="middle">R</text>
+  </g>
+  <text x="78" y="36" font-family="'Times New Roman', Georgia, serif" font-size="24" font-weight="800" fill="#B71C1C" letter-spacing="1">Richmond</text>
+  <text x="78" y="55" font-family="Roboto, sans-serif" font-size="11" font-weight="700" fill="#546E7A" letter-spacing="0.8">STUDIO &amp; LEARNING PLATFORM</text>
+</svg>

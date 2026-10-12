@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Google Workspace for Education -->
+  <g transform="translate(10, 10)">
+    <!-- 4-color Google geometric symbol -->
+    <path d="M12 20 L28 10 L44 20 L44 40 L28 50 L12 40 Z" fill="#EA4335" opacity="0.15"/>
+    <path d="M16 38 L30 48 L44 38" stroke="#34A853" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M16 22 L30 12 L44 22" stroke="#4285F4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M16 22 L16 38" stroke="#EA4335" stroke-width="5" stroke-linecap="round"/>
+    <path d="M44 22 L44 38" stroke="#FBBC05" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <text x="75" y="38" font-family="'Google Sans', Roboto, sans-serif" font-size="20" font-weight="700" fill="#202124">Google Workspace</text>
+  <text x="75" y="56" font-family="'Google Sans', Roboto, sans-serif" font-size="13" font-weight="500" fill="#1a73e8">for Education</text>
+</svg>

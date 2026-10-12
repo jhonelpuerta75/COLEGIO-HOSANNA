@@ -13,6 +13,7 @@ import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Link as RouterLink } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -68,12 +69,13 @@ const LevelPrimaria: React.FC = () => {
               </Typography>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
                 <Button 
+                  component={RouterLink}
+                  to="/propuesta-educativa"
                   variant="contained" 
                   size="large" 
-                  href="#metodologia"
                   sx={{ bgcolor: 'white', color: 'secondary.main', px: 5, py: 2, fontWeight: 800, '&:hover': { bgcolor: 'primary.light', color: 'white' } }}
                 >
-                  Descubrir Metodología
+                  Descubrir Propuesta Educativa
                 </Button>
                 <Button 
                   variant="outlined" 
@@ -152,7 +154,7 @@ const LevelPrimaria: React.FC = () => {
           </Grid>
         </Container>
 
-        {/* Innovation Grid - Inspired by MethodologyPage */}
+        {/* Innovation Grid - Inspired by EducationalProposalPage */}
         <Box sx={{ bgcolor: 'secondary.main', py: 15, color: 'white' }}>
           <Container maxWidth="lg">
             <Box sx={{ maxWidth: 800, mb: 10 }} data-aos="fade-up">

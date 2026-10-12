@@ -15,6 +15,7 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import SportsScoreIcon from '@mui/icons-material/SportsScore';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Link as RouterLink } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { admissionConfig } from '../config/admissionConfig';
@@ -79,12 +80,13 @@ const LevelSecundaria: React.FC = () => {
                   Proceso Admisión {admissionConfig.admissionYear}
                 </Button>
                 <Button 
+                  component={RouterLink}
+                  to="/propuesta-educativa"
                   variant="outlined" 
                   size="large" 
-                  href="/metodologia"
                   sx={{ borderColor: 'rgba(255,255,255,0.4)', color: 'white', px: 5, py: 2, fontWeight: 800, '&:hover': { borderColor: 'white', bgcolor: 'rgba(255,255,255,0.1)' } }}
                 >
-                  Propuesta Académica
+                  Propuesta Educativa
                 </Button>
               </Stack>
             </Box>

@@ -10,7 +10,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import HubIcon from '@mui/icons-material/Hub';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
-const methodologyPillars = [
+const educationalProposalPillars = [
   {
     icon: <SchoolIcon sx={{ fontSize: 32 }} />,
     title: 'Programa Pedagógico',
@@ -31,9 +31,9 @@ const methodologyPillars = [
   }
 ];
 
-export default function Methodology() {
+export default function EducationalProposal() {
   return (
-    <Box id="metodologia" sx={{ bgcolor: 'background.paper', py: { xs: 8, md: 12 } }}>
+    <Box id="propuesta-educativa" sx={{ bgcolor: 'background.paper', py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
         <Grid container spacing={8} alignItems="center">
           <Grid 
@@ -47,14 +47,14 @@ export default function Methodology() {
               Nuestra Propuesta
             </Typography>
             <Typography variant="h2" sx={{ mt: 1, mb: 3 }}>
-              Metodología Educativa
+              Propuesta Educativa
             </Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85, mb: 4 }}>
               En el Colegio Hosanna, implementamos un modelo pedagógico dinámico y colaborativo que prepara a los estudiantes para los retos del siglo XXI.
             </Typography>
 
             <Stack spacing={4} sx={{ mb: 4 }}>
-              {methodologyPillars.map((pillar) => (
+              {educationalProposalPillars.map((pillar) => (
                 <Box key={pillar.title} sx={{ display: 'flex', gap: 2.5 }}>
                   <Box sx={{
                     color: pillar.color,
@@ -81,7 +81,7 @@ export default function Methodology() {
 
             <Button 
               component={RouterLink}
-              to="/metodologia"
+              to="/propuesta-educativa"
               variant="contained" 
               endIcon={<ArrowForwardIcon />}
               sx={{ px: 4 }}
@@ -113,6 +113,7 @@ export default function Methodology() {
                 <Box 
                   component="img"
                   src="/logo-hosanna.png"
+                  alt="Colegio Hosanna"
                   sx={{ width: '100%', maxWidth: 300, height: 'auto', filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.1))' }}
                 />
               </Box>
@@ -140,3 +141,5 @@ export default function Methodology() {
     </Box>
   );
 }
+
+export { EducationalProposal as PropuestaEducativa };

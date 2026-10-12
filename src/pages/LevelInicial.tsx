@@ -100,7 +100,7 @@ const LevelInicial: React.FC = () => {
           </div>
         </section>
 
-        {/* Our Methodology */}
+        {/* Propuesta Educativa */}
         <section className="relative overflow-hidden bg-gradient-to-b from-pink-100 via-yellow-50 to-sky-100 py-24 px-6 rounded-t-[4rem]">
           <div className="absolute top-10 left-8 w-24 h-24 bg-pink-300/40 rounded-full blur-2xl"></div>
           <div className="absolute top-24 right-10 w-28 h-28 bg-yellow-300/50 rounded-full blur-2xl"></div>

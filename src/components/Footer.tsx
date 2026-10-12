@@ -17,7 +17,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import SendIcon from '@mui/icons-material/Send';
 
 const footerLinks = {
-  'Institución': ['Nosotros', 'Misión y Visión', 'Metodología', 'Historia'],
+  'Institución': ['Nosotros', 'Misión y Visión', 'Propuesta Educativa', 'Historia'],
   'Educación': ['Nivel Inicial', 'Nivel Primaria', 'Nivel Secundaria', 'Calendario Escolar'],
   'Admisión': ['Proceso de Admisión', 'Requisitos', 'Pensiones', 'SIANET'],
 };

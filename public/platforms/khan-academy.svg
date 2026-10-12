@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Khan Academy -->
+  <g transform="translate(14, 12)">
+    <!-- Sprout leaf icon -->
+    <circle cx="28" cy="28" r="26" fill="#14BF96" opacity="0.12"/>
+    <path d="M28 42 C28 42 27 34 22 28 C17 22 10 20 10 20 C10 20 18 24 22 30 C25 35 26 40 28 42 Z" fill="#14BF96"/>
+    <path d="M28 42 C28 42 29 32 36 26 C43 20 50 18 50 18 C50 18 42 22 38 29 C34 35 30 40 28 42 Z" fill="#14BF96"/>
+    <circle cx="28" cy="18" r="5" fill="#14BF96"/>
+  </g>
+  <text x="78" y="38" font-family="'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0b2149">Khan Academy</text>
+  <text x="78" y="55" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#14BF96" letter-spacing="0.5">APRENDIZAJE PERSONALIZADO</text>
+</svg>

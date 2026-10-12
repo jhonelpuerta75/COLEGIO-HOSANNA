@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Edi Santillana / Compartir -->
+  <g transform="translate(14, 12)">
+    <circle cx="28" cy="28" r="26" fill="#F44336" opacity="0.1"/>
+    <!-- Red/Orange stylized Santillana emblem -->
+    <path d="M12 28 C12 18 20 12 28 12 C36 12 44 18 44 28 C44 38 36 44 28 44 C20 44 12 38 12 28 Z" fill="#E53935"/>
+    <path d="M22 22 C22 18 25 16 28 16 C31 16 34 18 34 22 C34 26 22 28 22 34 C22 38 25 40 28 40 C31 40 34 38 34 34" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </g>
+  <text x="78" y="36" font-family="Roboto, sans-serif" font-size="22" font-weight="800" fill="#E53935">Edi Santillana</text>
+  <text x="78" y="55" font-family="Roboto, sans-serif" font-size="12" font-weight="600" fill="#546E7A" letter-spacing="0.5">COMPARTIR APRENDIZAJES</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- BeeVerso -->
+  <g transform="translate(14, 12)">
+    <circle cx="28" cy="28" r="26" fill="#FFA000" opacity="0.15"/>
+    <circle cx="28" cy="28" r="22" fill="#FFB300"/>
+    <!-- Cute bee stripes and book -->
+    <path d="M18 24 L38 24" stroke="#212121" stroke-width="3" stroke-linecap="round"/>
+    <path d="M19 32 L37 32" stroke="#212121" stroke-width="3" stroke-linecap="round"/>
+    <!-- Wings -->
+    <ellipse cx="22" cy="14" rx="5" ry="8" fill="#FFFFFF" opacity="0.8" transform="rotate(-25 22 14)"/>
+    <ellipse cx="34" cy="14" rx="5" ry="8" fill="#FFFFFF" opacity="0.8" transform="rotate(25 34 14)"/>
+  </g>
+  <text x="80" y="38" font-family="'Comic Sans MS', 'Fredoka', 'Quicksand', Roboto, sans-serif" font-size="24" font-weight="900" fill="#E65100">Bee<tspan fill="#212121">Verso</tspan></text>
+  <text x="80" y="56" font-family="Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#FFA000" letter-spacing="1">COMPRENSIÓN LECTORA</text>
+</svg>

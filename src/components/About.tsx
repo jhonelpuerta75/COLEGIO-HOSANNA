@@ -81,8 +81,8 @@ export default function About() {
             size={{ xs: 12, md: 6 }}
             data-aos="fade-right"
           >
-            <Card sx={{ height: '100%', p: { xs: 3, md: 4 } }}>
-              <CardContent sx={{ p: '0 !important' }}>
+            <Card sx={{ height: '100%', p: { xs: 3, md: 4 }, display: 'flex', flexDirection: 'column' }}>
+              <CardContent sx={{ p: '0 !important', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 2 }}>
                   <Box
                     sx={{
@@ -100,9 +100,84 @@ export default function About() {
                   <Typography variant="h5">Visión</Typography>
                 </Stack>
                 <Divider sx={{ mb: 2.5 }} />
-                <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85 }}>
-                  Ser un referente de excelencia educativa cristiana, formando líderes íntegros que transformen la sociedad, guiados por principios bíblicos y una cosmovisión orientada al propósito de Dios.
+                <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85, mb: 3 }}>
+                  “Somos hechura de Dios, creados en Cristo Jesús para buenas obras”. (Efesios 2:10)
+                  <br /><br />
+                  Nuestro colegio hosanna, se formó hace 30 años con la visión de proporcionar una educación centrada en cristo, con la excelencia e innovación educativa, y formación integral para a gloria de Dios.
                 </Typography>
+
+                <Box
+                  sx={{
+                    mt: 'auto',
+                    pt: 2.5,
+                    flexGrow: 1,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      minHeight: 200,
+                      py: 3.5,
+                      px: 2,
+                      borderRadius: 3,
+                      background: 'linear-gradient(180deg, rgba(4, 107, 210, 0.05) 0%, rgba(10, 31, 68, 0.02) 100%)',
+                      border: '1px solid',
+                      borderColor: 'rgba(4, 107, 210, 0.12)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      position: 'relative',
+                      overflow: 'hidden',
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        borderColor: 'primary.light',
+                        boxShadow: '0 8px 24px rgba(4, 107, 210, 0.08)',
+                        transform: 'translateY(-2px)',
+                      },
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src="/logo-hosanna.png"
+                      alt="Insignia Colegio Hosanna"
+                      sx={{
+                        maxHeight: { xs: 130, sm: 150, md: 175 },
+                        maxWidth: '85%',
+                        width: 'auto',
+                        objectFit: 'contain',
+                        filter: 'drop-shadow(0 10px 22px rgba(4, 107, 210, 0.22))',
+                        transition: 'transform 0.3s ease',
+                        '&:hover': {
+                          transform: 'scale(1.05)',
+                        },
+                      }}
+                    />
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        mt: 2,
+                        fontWeight: 700,
+                        color: 'primary.main',
+                        letterSpacing: '0.12em',
+                        textTransform: 'uppercase',
+                        fontSize: '0.72rem',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        bgcolor: 'rgba(4, 107, 210, 0.08)',
+                        px: 2,
+                        py: 0.5,
+                        borderRadius: 10,
+                      }}
+                    >
+                      Pucallpa, Perú • Desde 1993
+                    </Typography>
+                  </Box>
+                </Box>
               </CardContent>
             </Card>
           </Grid>
@@ -131,7 +206,13 @@ export default function About() {
                 </Stack>
                 <Divider sx={{ mb: 2.5 }} />
                 <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85 }}>
-                  Brindar una formación integral que combina excelencia académica, innovación y pensamiento crítico, equipando a cada estudiante para desarrollar su máximo potencial como obra maestra de Dios.
+                  Colegio Hosanna se estableció para crear la próxima generación en la que una cosmovisión cristiana basada en Las Escrituras esté completamente presente. Frente al llamado de Dios, el colegio ayuda a los padres que quieren criar a sus hijos en base a la Palabra de Dios, reconociendo que creó Dios al hombre a su imagen y semejanza.
+
+                  El Plan de educación brindado en nuestro colegio se establece sobre la base de la verdad de que La Verdad es «Jesucristo» (Juan 14: 6 “Yo soy el camino, la verdad y la vida”), y se enseña a recrear (restaurar) y desarrollar una verdadera comprensión de Dios y los seres humanos, y el mundo, y su relación entre ellos.
+
+                  A través del estudio a cada tema, nuestros estudiantes comprenderán la voluntad y el camino de Dios para todas las áreas de la vida humana y serán formado con una mente y corazón que responda de una manera bíblica, teniendo una conciencia de los problemas del mundo y un anhelo por la verdad.
+
+                  Adoptando estrategias de aprendizaje efectivas y diversas que les permitan pensar de manera exploratoria, crítica y creativa en sus campos intelectuales, los estudiantes de Colegio Hosanna tendrán la oportunidad de equiparlos con las habilidades y la capacidad de responder como la obra maestra de Dios en el mundo como aquellos creados para el bien.
                 </Typography>
               </CardContent>
             </Card>

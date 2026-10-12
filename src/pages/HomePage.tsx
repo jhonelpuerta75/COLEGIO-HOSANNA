@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Programs from '../components/Programs';
-import Methodology from '../components/Methodology';
+import EducationalProposal from '../components/EducationalProposal';
 import Admissions from '../components/Admissions';
 import Footer from '../components/Footer';
 import AdmissionPopup from '../components/AdmissionPopup';
@@ -16,7 +16,7 @@ export default function HomePage() {
       <Hero />
       <About />
       <Programs />
-      <Methodology />
+      <EducationalProposal />
       <Admissions />
       <Footer />
     </Box>

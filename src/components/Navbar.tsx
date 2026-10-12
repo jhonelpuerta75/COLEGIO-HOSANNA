@@ -23,8 +23,14 @@ import MenuItem from '@mui/material/MenuItem';
 import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { admissionConfig } from '../config/admissionConfig';
+
+const propuestaEducativaItems = [
+  { label: 'Áreas de Desarrollo Específicas', href: '/propuesta-educativa/areas-de-desarrollo' },
+  { label: 'Certificaciones', href: '/propuesta-educativa/areas-de-desarrollo#certificaciones' },
+  { label: 'Ensamblaje de Cuerdas', href: '/propuesta-educativa/areas-de-desarrollo#ensamblaje-de-cuerdas' },
+];
 
 const navLinks = [
   { label: 'Inicio', href: '/' },
@@ -38,55 +44,100 @@ const navLinks = [
       { label: 'Secundaria', href: '/secundaria' },
     ]
   },
-  { label: 'Metodología', href: '/metodologia' },
+  {
+    label: 'Propuesta Educativa',
+    href: '/propuesta-educativa/areas-de-desarrollo',
+    isPropuesta: true,
+  },
   { label: 'Contacto', href: '/#contacto' },
   { label: 'Admisión', href: '/admision' },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  // Niveles Dropdown State
   const [nivelesAnchorEl, setNivelesAnchorEl] = useState<null | HTMLElement>(null);
   const [mobileNivelesOpen, setMobileNivelesOpen] = useState(false);
+  const nivelesTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Propuesta Educativa Dropdown State
+  const [propuestaAnchorEl, setPropuestaAnchorEl] = useState<null | HTMLElement>(null);
+  const [mobilePropuestaOpen, setMobilePropuestaOpen] = useState(false);
+  const propuestaTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 10 });
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (location.hash) {
-      const element = document.getElementById(location.hash.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      const id = location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [location]);
 
-  const [nivelesTimeout, setNivelesTimeout] = useState<any | null>(null);
-
+  // Niveles handlers
   const handleNivelesOpen = (event: React.MouseEvent<HTMLElement>) => {
-    if (nivelesTimeout) clearTimeout(nivelesTimeout);
+    if (nivelesTimeoutRef.current) clearTimeout(nivelesTimeoutRef.current);
     setNivelesAnchorEl(event.currentTarget);
   };
 
   const handleNivelesClose = () => {
-    const timeout = setTimeout(() => {
+    nivelesTimeoutRef.current = setTimeout(() => {
       setNivelesAnchorEl(null);
-    }, 300); // More generous delay for stability
-    setNivelesTimeout(timeout);
+    }, 250);
   };
 
-  const handleMenuEnter = () => {
-    if (nivelesTimeout) clearTimeout(nivelesTimeout);
+  const handleNivelesMenuEnter = () => {
+    if (nivelesTimeoutRef.current) clearTimeout(nivelesTimeoutRef.current);
   };
 
-  const toggleMobileNiveles = () => {
-    setMobileNivelesOpen(!mobileNivelesOpen);
+  // Propuesta Educativa handlers
+  const handlePropuestaOpen = (event: React.MouseEvent<HTMLElement>) => {
+    if (propuestaTimeoutRef.current) clearTimeout(propuestaTimeoutRef.current);
+    setPropuestaAnchorEl(event.currentTarget);
+  };
+
+  const handlePropuestaClose = () => {
+    propuestaTimeoutRef.current = setTimeout(() => {
+      setPropuestaAnchorEl(null);
+    }, 250);
+  };
+
+  const handlePropuestaMenuEnter = () => {
+    if (propuestaTimeoutRef.current) clearTimeout(propuestaTimeoutRef.current);
+  };
+
+  const handleCloseAll = () => {
+    if (nivelesTimeoutRef.current) clearTimeout(nivelesTimeoutRef.current);
+    if (propuestaTimeoutRef.current) clearTimeout(propuestaTimeoutRef.current);
+    setNivelesAnchorEl(null);
+    setPropuestaAnchorEl(null);
+    setMobileOpen(false);
   };
 
   const handleLinkClick = (href: string) => {
-    setMobileOpen(false);
-    if (href.startsWith('/#')) {
+    handleCloseAll();
+    if (href.includes('#')) {
+      const [path, hash] = href.split('#');
+      const isCurrentPage = path === '' || path === location.pathname || (path === '/' && location.pathname === '/');
+      if (isCurrentPage) {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        navigate(href);
+      }
+    } else if (href.startsWith('/#')) {
       const id = href.substring(2);
       if (location.pathname === '/') {
         const element = document.getElementById(id);
@@ -98,6 +149,8 @@ export default function Navbar() {
       }
     }
   };
+
+  const isPropuestaActive = location.pathname.startsWith('/propuesta-educativa');
 
   return (
     <>
@@ -123,6 +176,7 @@ export default function Navbar() {
               <Box
                 component="img"
                 src="/logo-hosanna.png"
+                alt="Logo Colegio Hosanna"
                 sx={{
                   width: 'auto',
                   height: { xs: 42, sm: 58 },
@@ -157,80 +211,177 @@ export default function Navbar() {
             </Box>
 
             <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0.5 }}>
-              {navLinks.slice(0, -1).map((link) => (
-                link.children ? (
-                  <Box
-                    key={link.label}
-                    onMouseEnter={handleNivelesOpen}
-                    onMouseLeave={handleNivelesClose}
-                  >
-                    <Button
-                      endIcon={<KeyboardArrowDownIcon sx={{
-                        transition: 'transform 0.2s',
-                        transform: nivelesAnchorEl ? 'rotate(180deg)' : 'none'
-                      }} />}
-                      sx={{
-                        color: 'text.primary',
-                        fontSize: '0.96rem',
-                        px: 1.8,
-                        '&:hover': { color: 'primary.main', bgcolor: 'rgba(4,107,210,0.08)' },
-                      }}
+              {navLinks.slice(0, -1).map((link) => {
+                // Niveles Dropdown
+                if (link.label === 'Niveles' && link.children) {
+                  return (
+                    <Box
+                      key={link.label}
+                      onMouseEnter={handleNivelesOpen}
+                      onMouseLeave={handleNivelesClose}
                     >
-                      {link.label}
-                    </Button>
-                    <Menu
-                      anchorEl={nivelesAnchorEl}
-                      open={Boolean(nivelesAnchorEl)}
-                      onClose={handleNivelesClose}
-                      disableScrollLock
-                      disableRestoreFocus
-                      TransitionProps={{ timeout: 200 }}
-                      anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'left',
-                      }}
-                      transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'left',
-                      }}
-                      sx={{
-                        pointerEvents: 'none',
-                        '& .MuiPaper-root': {
-                          pointerEvents: 'auto',
-                          bgcolor: 'background.paper',
+                      <Button
+                        endIcon={<KeyboardArrowDownIcon sx={{
+                          transition: 'transform 0.2s',
+                          transform: nivelesAnchorEl ? 'rotate(180deg)' : 'none'
+                        }} />}
+                        onClick={(e) => {
+                          if (nivelesAnchorEl) {
+                            handleCloseAll();
+                          } else {
+                            handleNivelesOpen(e);
+                          }
+                        }}
+                        sx={{
                           color: 'text.primary',
-                          border: '1px solid',
-                          borderColor: 'divider',
-                          boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
-                          minWidth: 180,
-                        }
-                      }}
-                      MenuListProps={{
-                        onMouseEnter: handleMenuEnter,
-                        onMouseLeave: handleNivelesClose,
-                        sx: { py: 1 }
-                      }}
-                    >
-                      {link.children.map((child) => (
-                        <MenuItem
-                          key={child.label}
-                          onClick={() => { handleNivelesClose(); handleLinkClick(child.href); }}
-                          component={RouterLink}
-                          to={child.href}
-                          sx={{
+                          fontSize: '0.96rem',
+                          px: 1.8,
+                          '&:hover': { color: 'primary.main', bgcolor: 'rgba(4,107,210,0.08)' },
+                        }}
+                      >
+                        {link.label}
+                      </Button>
+                      <Menu
+                        anchorEl={nivelesAnchorEl}
+                        open={Boolean(nivelesAnchorEl)}
+                        onClose={handleNivelesClose}
+                        disableScrollLock
+                        disableRestoreFocus
+                        TransitionProps={{ timeout: 200 }}
+                        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                        sx={{
+                          pointerEvents: 'none',
+                          '& .MuiPaper-root': {
+                            pointerEvents: 'auto',
+                            bgcolor: 'background.paper',
                             color: 'text.primary',
-                            fontSize: '0.96rem',
-                            py: 1.2,
-                            px: 2.2,
-                            '&:hover': { bgcolor: 'rgba(4,107,210,0.08)', color: 'primary.main' }
-                          }}
-                        >
-                          {child.label}
-                        </MenuItem>
-                      ))}
-                    </Menu>
-                  </Box>
-                ) : (
+                            border: '1px solid',
+                            borderColor: 'divider',
+                            boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
+                            minWidth: 180,
+                            borderRadius: 2,
+                          }
+                        }}
+                        MenuListProps={{
+                          onMouseEnter: handleNivelesMenuEnter,
+                          onMouseLeave: handleNivelesClose,
+                          sx: { py: 1 }
+                        }}
+                      >
+                        {link.children.map((child) => (
+                          <MenuItem
+                            key={child.label}
+                            onClick={() => { handleCloseAll(); handleLinkClick(child.href); }}
+                            component={RouterLink}
+                            to={child.href}
+                            sx={{
+                              color: 'text.primary',
+                              fontSize: '0.96rem',
+                              py: 1.2,
+                              px: 2.2,
+                              '&:hover': { bgcolor: 'rgba(4,107,210,0.08)', color: 'primary.main' }
+                            }}
+                          >
+                            {child.label}
+                          </MenuItem>
+                        ))}
+                      </Menu>
+                    </Box>
+                  );
+                }
+
+                // Propuesta Educativa Dropdown with Nested Submenu
+                if (link.isPropuesta) {
+                  return (
+                    <Box
+                      key={link.label}
+                      onMouseEnter={handlePropuestaOpen}
+                      onMouseLeave={handlePropuestaClose}
+                    >
+                      <Button
+                        endIcon={<KeyboardArrowDownIcon sx={{
+                          transition: 'transform 0.2s',
+                          transform: propuestaAnchorEl ? 'rotate(180deg)' : 'none'
+                        }} />}
+                        onClick={(e) => {
+                          if (propuestaAnchorEl) {
+                            handleCloseAll();
+                          } else {
+                            handlePropuestaOpen(e);
+                          }
+                        }}
+                        sx={{
+                          color: isPropuestaActive ? 'primary.main' : 'text.primary',
+                          bgcolor: isPropuestaActive ? 'rgba(4,107,210,0.08)' : 'transparent',
+                          fontWeight: isPropuestaActive ? 700 : 500,
+                          fontSize: '0.96rem',
+                          px: 1.8,
+                          '&:hover': { color: 'primary.main', bgcolor: 'rgba(4,107,210,0.08)' },
+                        }}
+                      >
+                        {link.label}
+                      </Button>
+
+                      {/* Level 1 Menu for Propuesta Educativa */}
+                      <Menu
+                        anchorEl={propuestaAnchorEl}
+                        open={Boolean(propuestaAnchorEl)}
+                        onClose={handlePropuestaClose}
+                        disableScrollLock
+                        disableRestoreFocus
+                        TransitionProps={{ timeout: 200 }}
+                        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                        sx={{
+                          pointerEvents: 'none',
+                          '& .MuiPaper-root': {
+                            pointerEvents: 'auto',
+                            bgcolor: 'background.paper',
+                            color: 'text.primary',
+                            border: '1px solid',
+                            borderColor: 'divider',
+                            boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
+                            minWidth: 260,
+                            borderRadius: 2,
+                            overflow: 'visible',
+                          }
+                        }}
+                        MenuListProps={{
+                          onMouseEnter: handlePropuestaMenuEnter,
+                          onMouseLeave: handlePropuestaClose,
+                          sx: { py: 1 }
+                        }}
+                      >
+                        {propuestaEducativaItems.map((item) => (
+                          <MenuItem
+                            key={item.label}
+                            component={RouterLink}
+                            to={item.href}
+                            onClick={() => {
+                              handleCloseAll();
+                              handleLinkClick(item.href);
+                            }}
+                            sx={{
+                              color: location.pathname === item.href ? 'primary.main' : 'text.primary',
+                              fontWeight: location.pathname === item.href ? 700 : 500,
+                              bgcolor: location.pathname === item.href ? 'rgba(4,107,210,0.08)' : 'transparent',
+                              fontSize: '0.96rem',
+                              py: 1.2,
+                              px: 2.2,
+                              '&:hover': { bgcolor: 'rgba(4,107,210,0.08)', color: 'primary.main' }
+                            }}
+                          >
+                            {item.label}
+                          </MenuItem>
+                        ))}
+                      </Menu>
+                    </Box>
+                  );
+                }
+
+                // Standard nav buttons (Inicio, Nosotros, Contacto)
+                return (
                   <Button
                     key={link.label}
                     component={RouterLink}
@@ -246,8 +397,9 @@ export default function Navbar() {
                   >
                     {link.label}
                   </Button>
-                )
-              ))}
+                );
+              })}
+
               <Button
                 variant="contained"
                 component={RouterLink}
@@ -271,6 +423,7 @@ export default function Navbar() {
             <IconButton
               sx={{ display: { xs: 'flex', md: 'none' }, color: 'text.primary' }}
               onClick={() => setMobileOpen(true)}
+              aria-label="Abrir menú"
             >
               <MenuIcon />
             </IconButton>
@@ -278,11 +431,12 @@ export default function Navbar() {
         </Container>
       </AppBar>
 
+      {/* Mobile Drawer */}
       <Drawer
         anchor="right"
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
-        PaperProps={{ sx: { width: 280, bgcolor: 'secondary.main' } }}
+        PaperProps={{ sx: { width: 300, bgcolor: 'secondary.main' } }}
       >
         <Box sx={{ p: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Typography variant="h6" sx={{ color: 'white', fontWeight: 700 }}>Menú</Typography>
@@ -292,13 +446,14 @@ export default function Navbar() {
         </Box>
         <Divider sx={{ borderColor: 'rgba(255,255,255,0.12)' }} />
         <List>
-          {navLinks.map((link) => (
-            <Box key={link.label}>
-              {link.children ? (
-                <>
+          {navLinks.map((link) => {
+            // Mobile Niveles
+            if (link.label === 'Niveles' && link.children) {
+              return (
+                <Box key={link.label}>
                   <ListItem disablePadding>
                     <ListItemButton
-                      onClick={toggleMobileNiveles}
+                      onClick={() => setMobileNivelesOpen(!mobileNivelesOpen)}
                       sx={{ color: 'rgba(255,255,255,0.85)', '&:hover': { bgcolor: 'rgba(255,255,255,0.08)' } }}
                     >
                       <ListItemText primary={link.label} />
@@ -310,11 +465,16 @@ export default function Navbar() {
                       {link.children.map((child) => (
                         <ListItemButton
                           key={child.label}
-                          href={child.href}
-                          onClick={() => setMobileOpen(false)}
+                          component={RouterLink}
+                          to={child.href}
+                          onClick={() => {
+                            setMobileOpen(false);
+                            handleLinkClick(child.href);
+                          }}
                           sx={{
                             pl: 4,
-                            color: 'rgba(255,255,255,0.7)',
+                            color: location.pathname === child.href ? '#64b5f6' : 'rgba(255,255,255,0.7)',
+                            bgcolor: location.pathname === child.href ? 'rgba(255,255,255,0.1)' : 'transparent',
                             '&:hover': { bgcolor: 'rgba(255,255,255,0.08)' }
                           }}
                         >
@@ -323,25 +483,75 @@ export default function Navbar() {
                       ))}
                     </List>
                   </Collapse>
-                </>
-              ) : (
-                <ListItem disablePadding>
-                  <ListItemButton
-                    component={RouterLink}
-                    to={link.href}
-                    onClick={() => handleLinkClick(link.href)}
-                    sx={{
-                      color: location.pathname === link.href ? 'white' : 'rgba(255,255,255,0.85)',
-                      bgcolor: location.pathname === link.href ? 'rgba(255,255,255,0.1)' : 'transparent',
-                      '&:hover': { bgcolor: 'rgba(255,255,255,0.08)' }
-                    }}
-                  >
-                    <ListItemText primary={link.label} />
-                  </ListItemButton>
-                </ListItem>
-              )}
-            </Box>
-          ))}
+                </Box>
+              );
+            }
+
+            // Mobile Propuesta Educativa (Multi-level)
+            if (link.isPropuesta) {
+              return (
+                <Box key={link.label}>
+                  <ListItem disablePadding>
+                    <ListItemButton
+                      onClick={() => setMobilePropuestaOpen(!mobilePropuestaOpen)}
+                      sx={{
+                        color: isPropuestaActive ? '#64b5f6' : 'rgba(255,255,255,0.85)',
+                        bgcolor: isPropuestaActive ? 'rgba(255,255,255,0.06)' : 'transparent',
+                        '&:hover': { bgcolor: 'rgba(255,255,255,0.08)' }
+                      }}
+                    >
+                      <ListItemText primary={link.label} />
+                      {mobilePropuestaOpen ? <ExpandLess /> : <ExpandMore />}
+                    </ListItemButton>
+                  </ListItem>
+                  <Collapse in={mobilePropuestaOpen} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                      {propuestaEducativaItems.map((item) => (
+                        <ListItemButton
+                          key={item.label}
+                          component={RouterLink}
+                          to={item.href}
+                          onClick={() => {
+                            setMobileOpen(false);
+                            handleLinkClick(item.href);
+                          }}
+                          sx={{
+                            pl: 3.5,
+                            color: location.pathname === item.href ? '#64b5f6' : 'rgba(255,255,255,0.7)',
+                            bgcolor: location.pathname === item.href ? 'rgba(255,255,255,0.1)' : 'transparent',
+                            '&:hover': { bgcolor: 'rgba(255,255,255,0.08)' }
+                          }}
+                        >
+                          <ListItemText
+                            primary={item.label}
+                            primaryTypographyProps={{ fontSize: '0.88rem' }}
+                          />
+                        </ListItemButton>
+                      ))}
+                    </List>
+                  </Collapse>
+                </Box>
+              );
+            }
+
+            // Standard links
+            return (
+              <ListItem key={link.label} disablePadding>
+                <ListItemButton
+                  component={RouterLink}
+                  to={link.href}
+                  onClick={() => handleLinkClick(link.href)}
+                  sx={{
+                    color: location.pathname === link.href ? 'white' : 'rgba(255,255,255,0.85)',
+                    bgcolor: location.pathname === link.href ? 'rgba(255,255,255,0.1)' : 'transparent',
+                    '&:hover': { bgcolor: 'rgba(255,255,255,0.08)' }
+                  }}
+                >
+                  <ListItemText primary={link.label} />
+                </ListItemButton>
+              </ListItem>
+            );
+          })}
         </List>
         <Box sx={{ p: 2 }}>
           <Button
