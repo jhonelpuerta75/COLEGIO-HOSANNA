@@ -43,7 +43,7 @@ export default function AdmissionPopup() {
       keepMounted
       onClose={handleClose}
       aria-labelledby="admission-popup-title"
-      maxWidth="sm"
+      maxWidth="md"
       fullWidth
       PaperProps={{
         sx: {
@@ -52,7 +52,8 @@ export default function AdmissionPopup() {
           bgcolor: '#ffffff',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4)',
           position: 'relative',
-          m: 2,
+          m: { xs: 1.5, sm: 2 },
+          maxWidth: { xs: '420px', sm: '580px', md: '700px' },
           maxHeight: '92vh',
         },
       }}
@@ -104,10 +105,11 @@ export default function AdmissionPopup() {
         <Box
           sx={{
             width: '100%',
-            maxHeight: '72vh',
+            maxHeight: '75vh',
             overflowY: 'auto',
             display: 'flex',
             justifyContent: 'center',
+            alignItems: 'center',
             bgcolor: '#0c1e38',
             position: 'relative',
             // Custom scrollbar
@@ -120,15 +122,31 @@ export default function AdmissionPopup() {
             },
           }}
         >
-          <img
+          {/* Mobile Flyer (Vertical) */}
+          <Box
+            component="img"
             src="/admision-2027.png"
             alt="Admisión 2027 Colegio Privado Hosanna"
-            style={{
+            sx={{
+              display: { xs: 'block', sm: 'none' },
               width: '100%',
               height: 'auto',
               maxHeight: '75vh',
               objectFit: 'contain',
-              display: 'block',
+            }}
+          />
+
+          {/* Web / Desktop Flyer (Wider) */}
+          <Box
+            component="img"
+            src="/admision-2027-web.png"
+            alt="Admisión 2027 Colegio Privado Hosanna"
+            sx={{
+              display: { xs: 'none', sm: 'block' },
+              width: '100%',
+              height: 'auto',
+              maxHeight: '75vh',
+              objectFit: 'contain',
             }}
           />
         </Box>
