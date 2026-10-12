@@ -43,24 +43,24 @@ export default function AdmissionPopup() {
       keepMounted
       onClose={handleClose}
       aria-labelledby="admission-popup-title"
-      maxWidth="md"
-      fullWidth
+      maxWidth={false}
       PaperProps={{
         sx: {
           borderRadius: '20px',
           overflow: 'hidden',
-          bgcolor: '#ffffff',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4)',
+          bgcolor: '#0a192f',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6)',
           position: 'relative',
           m: { xs: 1.5, sm: 2 },
-          maxWidth: { xs: '420px', sm: '580px', md: '700px' },
-          maxHeight: '92vh',
+          width: 'fit-content',
+          maxWidth: { xs: '92vw', sm: '88vw', md: '750px' },
+          maxHeight: '94vh',
         },
       }}
       slotProps={{
         backdrop: {
           sx: {
-            backgroundColor: 'rgba(10, 25, 47, 0.75)',
+            backgroundColor: 'rgba(10, 25, 47, 0.78)',
             backdropFilter: 'blur(8px)',
           },
         },
@@ -72,8 +72,8 @@ export default function AdmissionPopup() {
         onClick={handleClose}
         sx={{
           position: 'absolute',
-          right: 14,
-          top: 14,
+          right: 12,
+          top: 12,
           zIndex: 20,
           color: '#ffffff',
           backgroundColor: 'rgba(0, 0, 0, 0.65)',
@@ -98,28 +98,19 @@ export default function AdmissionPopup() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          bgcolor: '#ffffff',
+          bgcolor: '#0a192f',
+          width: '100%',
         }}
       >
         {/* Flyer Image Container */}
         <Box
           sx={{
             width: '100%',
-            maxHeight: '75vh',
-            overflowY: 'auto',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            bgcolor: '#0c1e38',
             position: 'relative',
-            // Custom scrollbar
-            '&::-webkit-scrollbar': {
-              width: '6px',
-            },
-            '&::-webkit-scrollbar-thumb': {
-              backgroundColor: 'rgba(255,255,255,0.3)',
-              borderRadius: '3px',
-            },
+            lineHeight: 0,
           }}
         >
           {/* Mobile Flyer (Vertical) */}
@@ -129,10 +120,10 @@ export default function AdmissionPopup() {
             alt="Admisión 2027 Colegio Privado Hosanna"
             sx={{
               display: { xs: 'block', sm: 'none' },
-              width: '100%',
+              width: 'auto',
               height: 'auto',
-              maxHeight: '75vh',
-              objectFit: 'contain',
+              maxWidth: '92vw',
+              maxHeight: '74vh',
             }}
           />
 
@@ -143,10 +134,10 @@ export default function AdmissionPopup() {
             alt="Admisión 2027 Colegio Privado Hosanna"
             sx={{
               display: { xs: 'none', sm: 'block' },
-              width: '100%',
+              width: 'auto',
               height: 'auto',
-              maxHeight: '75vh',
-              objectFit: 'contain',
+              maxWidth: { sm: '85vw', md: '700px' },
+              maxHeight: '74vh',
             }}
           />
         </Box>
