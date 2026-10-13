@@ -175,7 +175,7 @@ export default function Navbar() {
             >
               <Box
                 component="img"
-                src="/logo-hosanna.png"
+                src="/logo-hosannaalterno.png"
                 alt="Logo Colegio Hosanna"
                 sx={{
                   width: 'auto',
@@ -184,30 +184,7 @@ export default function Navbar() {
                   filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))'
                 }}
               />
-              <Box sx={{ display: 'block' }}>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    color: 'text.primary',
-                    fontWeight: 700,
-                    lineHeight: 1.1,
-                    fontSize: { xs: '1rem', sm: '1.3rem' },
-                  }}
-                >
-                  Colegio Hosanna
-                </Typography>
-                <Typography
-                  variant="caption"
-                  sx={{ 
-                    color: 'text.secondary', 
-                    fontSize: { xs: '0.68rem', sm: '0.78rem' }, 
-                    letterSpacing: '0.08em',
-                    display: 'block'
-                  }}
-                >
-                  PUCALLPA, PERÚ
-                </Typography>
-              </Box>
+
             </Box>
 
             <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 0.5 }}>
@@ -404,19 +381,62 @@ export default function Navbar() {
                 variant="contained"
                 component={RouterLink}
                 to="/admision"
-                sx={{ 
-                  ml: 2, 
-                  bgcolor: '#e7ebda', 
+                sx={{
+                  ml: { md: 1, lg: 2 },
+                  bgcolor: '#e7ebda',
                   color: '#0a1f44',
                   fontWeight: 800,
-                  px: 3.5,
-                  py: 1.2,
-                  fontSize: '0.96rem',
-                  '&:hover': { bgcolor: '#d8dcc8' } 
+                  px: { md: 2, lg: 3 },
+                  py: 1.1,
+                  fontSize: { md: '0.9rem', lg: '0.96rem' },
+                  whiteSpace: 'nowrap',
+                  '&:hover': { bgcolor: '#d8dcc8' }
                 }}
                 startIcon={<AssignmentIcon />}
               >
                 Admisión {admissionConfig.admissionYear}
+              </Button>
+
+              <Button
+                component="a"
+                href="https://www.sianet.pe/hosannapucallpa"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Acceso SIANET Colegio Hosanna"
+                aria-label="Acceso a SIANET"
+                sx={{
+                  ml: 1.5,
+                  px: 1.8,
+                  py: 0.8,
+                  height: { md: 40, lg: 44 },
+                  borderRadius: 2,
+                  bgcolor: '#ffffff',
+                  border: '1.5px solid #061f5c',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 2px 8px rgba(6, 31, 92, 0.08)',
+                  transition: 'all 0.25s ease',
+                  '&:hover': {
+                    bgcolor: '#f4f7fc',
+                    borderColor: '#0a3294',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 6px 14px rgba(6, 31, 92, 0.16)',
+                  },
+                }}
+              >
+                <Box
+                  component="img"
+                  src="/sianet-button.png"
+                  alt="SIANET"
+                  sx={{
+                    height: { md: 24, lg: 28 },
+                    width: 'auto',
+                    maxWidth: 120,
+                    objectFit: 'contain',
+                    display: 'block',
+                  }}
+                />
               </Button>
             </Box>
 
@@ -553,7 +573,36 @@ export default function Navbar() {
             );
           })}
         </List>
-        <Box sx={{ p: 2 }}>
+        <Box sx={{ p: 2, display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+          <Button
+            variant="outlined"
+            fullWidth
+            component="a"
+            href="https://www.sianet.pe/hosannapucallpa"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Acceso SIANET Colegio Hosanna"
+            aria-label="Acceso a SIANET"
+            sx={{
+              bgcolor: '#ffffff',
+              borderColor: '#ffffff',
+              py: 1,
+              borderRadius: 2,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+              '&:hover': { bgcolor: '#f4f7fc', borderColor: '#ffffff' }
+            }}
+          >
+            <Box
+              component="img"
+              src="/sianet-button.png"
+              alt="SIANET"
+              sx={{ height: 28, width: 'auto', objectFit: 'contain' }}
+            />
+          </Button>
+
           <Button
             variant="contained"
             fullWidth
