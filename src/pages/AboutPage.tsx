@@ -59,7 +59,8 @@ export default function AboutPage() {
             <Box sx={{ position: 'relative' }}>
               <Box
                 component="img"
-                src="/hero-school.webp"
+                src="/hs-photos/fondo2-nivelado.jpeg"
+                alt="Tres décadas de compromiso educativo - Colegio Hosanna"
                 sx={{
                   width: '100%',
                   borderRadius: 4,
@@ -361,28 +362,7 @@ export default function AboutPage() {
       </Container>
 
 
-      {/* Final CTA */}
-      <Box
-        data-aos="zoom-in"
-        sx={{ bgcolor: 'secondary.main', color: 'white', py: 10, textAlign: 'center' }}>
-        <Container maxWidth="md">
-          <Typography variant="h3" sx={{ mb: 4 }}>¿Quieres formar parte de nuestra familia?</Typography>
-          <Button
-            variant="contained"
-            size="large"
-            href="#admision"
-            sx={{
-              bgcolor: 'primary.main',
-              px: 6,
-              py: 2,
-              fontSize: '1.1rem',
-              '&:hover': { bgcolor: 'primary.dark' }
-            }}
-          >
-            Iniciar proceso de Admisión
-          </Button>
-        </Container>
-      </Box>
+
 
       <Footer />
     </Box>
