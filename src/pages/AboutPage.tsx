@@ -362,8 +362,6 @@ export default function AboutPage() {
       </Container>
 
 
-
-
       <Footer />
     </Box>
   );
