@@ -9,7 +9,6 @@ import Button from '@mui/material/Button';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import PublicIcon from '@mui/icons-material/Public';
-import SportsBasketballIcon from '@mui/icons-material/SportsBasketball';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';

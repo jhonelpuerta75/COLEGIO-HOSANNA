@@ -59,7 +59,7 @@ const AdmissionsPage: React.FC = () => {
             pt: { xs: 15, md: 20 },
             pb: { xs: 10, md: 12 },
             textAlign: 'center',
-            background: 'linear-gradient(rgba(10, 31, 68, 0.9), rgba(10, 31, 68, 0.9)), url(https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=2000&q=80)',
+            background: 'linear-gradient(rgba(10, 31, 68, 0.9), rgba(10, 31, 68, 0.9)), url(/hs-photos/fondo4.jpeg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
@@ -583,7 +583,7 @@ const AdmissionsPage: React.FC = () => {
                             { desc: 'CERTIFICADO DE ESTUDIOS (FÍSICO O DIGITAL)', total: 'S/. 100.00' },
                             { desc: 'TRAMITE DE TRASLADO', total: 'S/. 100.00' },
                             { desc: 'CONSTANCIAS', total: 'S/. 50.00' },
-                            { desc: 'EXÁMENES DE RECUPERACIÓN', total: 'S/. 100.00 – (x Curso)' },
+                            { desc: 'EXÁMENES DE REPROGRAMACIÓN', total: 'S/. 100.00 – (x Curso)' },
                           ].map((item, idx) => (
                             <TableRow
                               key={idx}

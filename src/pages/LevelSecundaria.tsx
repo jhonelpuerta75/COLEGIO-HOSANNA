@@ -12,7 +12,6 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import PublicIcon from '@mui/icons-material/Public';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import SportsScoreIcon from '@mui/icons-material/SportsScore';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link as RouterLink } from 'react-router-dom';

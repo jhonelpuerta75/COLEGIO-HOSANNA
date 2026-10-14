@@ -228,45 +228,38 @@ export default function EducationalProposalPage() {
   const sportsPhotos = [
     {
       id: 1,
-      image: '/hero-school.webp',
+      image: '/hs-photos/gras-natural.jpeg',
       title: 'Canchas de Grass Natural y Loza',
       badge: 'Infraestructura',
       description: 'Espacios reglamentarios acondicionados para fútbol, futsal y vóley.'
     },
     {
       id: 2,
-      image: '/hero-school.webp',
+      image: '/hs-photos/piscina.jpeg',
       title: 'Piscinas para Natación',
       badge: 'Natación Formativa',
       description: 'Instalaciones acuáticas seguras para la estimulación y desarrollo físico.'
     },
     {
       id: 3,
-      image: '/hero-school.webp',
+      image: '/hs-photos/Cancha_techada.jpg',
       title: 'Mini Olimpiadas Hosanna',
       badge: 'Competencia Escolar',
       description: 'Encuentros deportivos interaulas programados a lo largo del año.'
     },
     {
       id: 4,
-      image: '/hero-school.webp',
+      image: '/hs-photos/campeonato-padres.jpeg',
       title: 'Campeonatos de Padres de Familia',
       badge: 'Integración Familiar',
       description: 'Torneos de confraternidad por el Día del Padre y de la Madre.'
     },
     {
       id: 5,
-      image: '/hero-school.webp',
+      image: '/hs-photos/ginkana.jpeg',
       title: 'Juegos de Gimkana',
       badge: 'Padres y Alumnos',
       description: 'Jornadas recreativas fortaleciendo el espíritu deportivo y la unión.'
-    },
-    {
-      id: 6,
-      image: '/hero-school.webp',
-      title: 'Bienestar Físico y Trabajo en Equipo',
-      badge: 'Deporte & Salud',
-      description: 'Formación en disciplina, sana competencia y estilo de vida activo.'
     }
   ];
 
@@ -2800,6 +2793,76 @@ export default function EducationalProposalPage() {
             </Grid>
           </Card>
 
+          {/* Fotografía del Concierto de Gala del Ensamble */}
+          <Box
+            data-aos="fade-up"
+            sx={{
+              mb: 5,
+              position: 'relative',
+              borderRadius: 4,
+              overflow: 'hidden',
+              boxShadow: '0 25px 60px rgba(0, 0, 0, 0.45)',
+              border: '1.5px solid rgba(255, 179, 0, 0.3)',
+              maxHeight: { xs: 360, sm: 480, md: 540 },
+              bgcolor: 'rgba(10, 31, 68, 0.6)',
+              '&:hover img': {
+                transform: 'scale(1.02)'
+              }
+            }}
+          >
+            <Box
+              component="img"
+              src="/hs-photos/ensamblaje2.jpeg"
+              alt="Concierto de Gala del Ensamble de Cuerdas - Colegio Hosanna"
+              sx={{
+                width: '100%',
+                height: '100%',
+                maxHeight: { xs: 360, sm: 480, md: 540 },
+                objectFit: 'cover',
+                display: 'block',
+                transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+            />
+            <Box
+              sx={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                p: { xs: 2.5, sm: 3.5 },
+                pt: { xs: 6, sm: 8 },
+                background: 'linear-gradient(to top, rgba(10, 31, 68, 0.95) 0%, rgba(10, 31, 68, 0.65) 60%, transparent 100%)',
+                display: 'flex',
+                flexDirection: { xs: 'column', sm: 'row' },
+                justifyContent: 'space-between',
+                alignItems: { xs: 'flex-start', sm: 'flex-end' },
+                gap: 1.5
+              }}
+            >
+              <Box>
+                <Chip
+                  icon={<MusicNoteIcon style={{ color: '#ffb300' }} />}
+                  label="Presentación en Vivo"
+                  size="small"
+                  sx={{
+                    bgcolor: 'rgba(255, 179, 0, 0.2)',
+                    color: '#ffc107',
+                    fontWeight: 700,
+                    fontSize: '0.75rem',
+                    mb: 1,
+                    border: '1px solid rgba(255, 179, 0, 0.35)'
+                  }}
+                />
+                <Typography variant="h5" sx={{ fontWeight: 800, color: 'white', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
+                  Ensamble de Cuerdas Hosanna en Concierto
+                </Typography>
+                <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.85)', maxWidth: 680, mt: 0.5 }}>
+                  Nuestros estudiantes compartiendo con las familias y la comunidad el fruto de su dedicación, disciplina y adoración musical.
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+
           {/* Cita artística y bíblica */}
           <Box
             data-aos="fade-up"
@@ -2823,28 +2886,7 @@ export default function EducationalProposalPage() {
         </Container>
       </Box>
 
-      {/* Final CTA */}
-      <Box
-        data-aos="zoom-in"
-        sx={{ bgcolor: 'secondary.main', color: 'white', py: 10, textAlign: 'center' }}>
-        <Container maxWidth="md">
-          <Typography variant="h3" sx={{ mb: 4 }}>Conoce más sobre nuestra propuesta educativa</Typography>
-          <Button
-            variant="contained"
-            size="large"
-            href="#contacto"
-            sx={{
-              bgcolor: 'primary.main',
-              px: 6,
-              py: 2,
-              fontSize: '1.1rem',
-              '&:hover': { bgcolor: 'primary.dark' }
-            }}
-          >
-            Solicitar Información
-          </Button>
-        </Container>
-      </Box>
+
 
       <Footer />
     </Box>

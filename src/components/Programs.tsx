@@ -18,7 +18,7 @@ const levels = [
   {
     title: 'Nivel Inicial',
     subtitle: '3, 4 y 5 años',
-    image: '/level-inicial.webp',
+    image: '/hs-photos/inicial.jpeg',
     icon: <ChildCareIcon />,
     color: '#046bd2',
     description:
@@ -28,7 +28,7 @@ const levels = [
   {
     title: 'Nivel Primaria',
     subtitle: '1° a 6° Grado',
-    image: '/level-primaria.webp',
+    image: '/hs-photos/primaria.jpeg',
     icon: <MenuBookIcon />,
     color: '#034a93',
     description:
@@ -38,7 +38,7 @@ const levels = [
   {
     title: 'Nivel Secundaria',
     subtitle: '1° a 5° Año',
-    image: '/level-secundaria.webp',
+    image: '/hs-photos/Secundaria.jpeg',
     icon: <SchoolIcon />,
     color: '#0a1f44',
     description:
