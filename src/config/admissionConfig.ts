@@ -15,16 +15,16 @@ export const admissionConfig = {
   // Costos por Nivel Académico
   costs: {
     inicial: {
-      enrollment: '650.00', // Matrícula
-      tuition: '650.00',    // Pensión
+      enrollment: '685.00', // Matrícula
+      tuition: '685.00',    // Pensión
     },
     primaria: {
-      enrollment: '710.00',
-      tuition: '710.00',
+      enrollment: '745.00',
+      tuition: '745.00',
     },
     secundaria: {
-      enrollment: '740.00',
-      tuition: '740.00',
+      enrollment: '775.00',
+      tuition: '775.00',
     },
     discountOnTime: '30.00', // Descuento por pago puntual (antes del último día del mes)
   },

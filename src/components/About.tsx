@@ -174,7 +174,7 @@ export default function About() {
                         borderRadius: 10,
                       }}
                     >
-                      Pucallpa, Perú • Desde 1993
+                      Pucallpa, Perú • Desde 1992
                     </Typography>
                   </Box>
                 </Box>
@@ -205,15 +205,20 @@ export default function About() {
                   <Typography variant="h5">Misión</Typography>
                 </Stack>
                 <Divider sx={{ mb: 2.5 }} />
-                <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85 }}>
-                  Colegio Hosanna se estableció para crear la próxima generación en la que una cosmovisión cristiana basada en Las Escrituras esté completamente presente. Frente al llamado de Dios, el colegio ayuda a los padres que quieren criar a sus hijos en base a la Palabra de Dios, reconociendo que creó Dios al hombre a su imagen y semejanza.
-
-                  El Plan de educación brindado en nuestro colegio se establece sobre la base de la verdad de que La Verdad es «Jesucristo» (Juan 14: 6 “Yo soy el camino, la verdad y la vida”), y se enseña a recrear (restaurar) y desarrollar una verdadera comprensión de Dios y los seres humanos, y el mundo, y su relación entre ellos.
-
-                  A través del estudio a cada tema, nuestros estudiantes comprenderán la voluntad y el camino de Dios para todas las áreas de la vida humana y serán formado con una mente y corazón que responda de una manera bíblica, teniendo una conciencia de los problemas del mundo y un anhelo por la verdad.
-
-                  Adoptando estrategias de aprendizaje efectivas y diversas que les permitan pensar de manera exploratoria, crítica y creativa en sus campos intelectuales, los estudiantes de Colegio Hosanna tendrán la oportunidad de equiparlos con las habilidades y la capacidad de responder como la obra maestra de Dios en el mundo como aquellos creados para el bien.
-                </Typography>
+                <Stack spacing={2}>
+                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85, textAlign: 'justify' }}>
+                    Colegio Hosanna se estableció para crear la próxima generación en la que una cosmovisión cristiana basada en Las Escrituras esté completamente presente. Frente al llamado de Dios, el colegio ayuda a los padres que quieren criar a sus hijos en base a la Palabra de Dios, reconociendo que creó Dios al hombre a su imagen y semejanza.
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85, textAlign: 'justify' }}>
+                    El Plan de educación brindado en nuestro colegio se establece sobre la base de la verdad de que La Verdad es «Jesucristo» (Juan 14: 6 “Yo soy el camino, la verdad y la vida”), y se enseña a recrear (restaurar) y desarrollar una verdadera comprensión de Dios y los seres humanos, y el mundo, y su relación entre ellos.
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85, textAlign: 'justify' }}>
+                    A través del estudio a cada tema, nuestros estudiantes comprenderán la voluntad y el camino de Dios para todas las áreas de la vida humana y serán formado con una mente y corazón que responda de una manera bíblica, teniendo una conciencia de los problemas del mundo y un anhelo por la verdad.
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85, textAlign: 'justify' }}>
+                    Adoptando estrategias de aprendizaje efectivas y diversas que les permitan pensar de manera exploratoria, crítica y creativa en sus campos intelectuales, los estudiantes de Colegio Hosanna tendrán la oportunidad de equiparlos con las habilidades y la capacidad de responder como la obra maestra de Dios en el mundo como aquellos creados para el bien.
+                  </Typography>
+                </Stack>
               </CardContent>
             </Card>
           </Grid>

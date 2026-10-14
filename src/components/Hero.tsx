@@ -50,7 +50,7 @@ export default function Hero() {
         <Box data-aos="fade-right" sx={{ maxWidth: { xs: '100%', md: '750px' } }}>
           <Chip
             icon={<VerifiedIcon sx={{ fontSize: '1rem !important' }} />}
-            label="Institución Educativa Privada · Desde 1993"
+            label="Institución Educativa Privada · Desde 1992"
             size="small"
             sx={{
               mb: 3,
@@ -100,7 +100,7 @@ export default function Hero() {
             }}
           >
             Formamos líderes íntegros desde el nivel Inicial hasta Secundaria, combinando excelencia académica
-            y una sólida cosmovisión cristiana.
+            y una sólida formación cristiana.
           </Typography>
 
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>

@@ -58,30 +58,30 @@ export default function Footer() {
             <Grid size={{ xs: 12, md: 4 }} data-aos="fade-right">
               <Stack spacing={2.5}>
                 {[
-                  { 
-                    title: 'Correo Electrónico', 
-                    value: 'informes@hosanna.edu.pe', 
-                    icon: <EmailIcon />, 
+                  {
+                    title: 'Correo Electrónico',
+                    value: 'informes@hosanna.edu.pe',
+                    icon: <EmailIcon />,
                     color: '#1a3a8a',
                     href: 'mailto:informes@hosanna.edu.pe'
                   },
-                  { 
-                    title: 'WhatsApp', 
-                    value: '+51 945 466 093', 
-                    icon: <WhatsAppIcon />, 
+                  {
+                    title: 'WhatsApp',
+                    value: '+51 945 466 093',
+                    icon: <WhatsAppIcon />,
                     color: '#25D366',
                     href: 'https://wa.me/51945466093'
                   }
                 ].map((item, idx) => (
-                  <Card 
-                    key={idx} 
+                  <Card
+                    key={idx}
                     component="a"
                     href={item.href}
                     target={item.href.startsWith('http') ? '_blank' : '_self'}
-                    sx={{ 
+                    sx={{
                       textDecoration: 'none',
-                      borderRadius: 4, 
-                      boxShadow: '0 4px 20px rgba(0,0,0,0.04)', 
+                      borderRadius: 4,
+                      boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
                       border: 'none',
                       transition: 'all 0.3s',
                       display: 'block',
@@ -89,14 +89,14 @@ export default function Footer() {
                     }}
                   >
                     <CardContent sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
-                      <Box sx={{ 
-                        bgcolor: item.color, 
-                        color: 'white', 
-                        width: 44, 
-                        height: 44, 
-                        borderRadius: '12px', 
-                        display: 'flex', 
-                        alignItems: 'center', 
+                      <Box sx={{
+                        bgcolor: item.color,
+                        color: 'white',
+                        width: 44,
+                        height: 44,
+                        borderRadius: '12px',
+                        display: 'flex',
+                        alignItems: 'center',
                         justifyContent: 'center',
                         flexShrink: 0
                       }}>
@@ -115,22 +115,22 @@ export default function Footer() {
                 ))}
 
                 {/* Localización card with Map */}
-                <Card sx={{ 
-                  borderRadius: 4, 
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.04)', 
+                <Card sx={{
+                  borderRadius: 4,
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
                   border: 'none',
                   overflow: 'hidden'
                 }}>
                   <CardContent sx={{ p: 0 }}>
                     <Box sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
-                      <Box sx={{ 
-                        bgcolor: '#f57c00', 
-                        color: 'white', 
-                        width: 44, 
-                        height: 44, 
-                        borderRadius: '12px', 
-                        display: 'flex', 
-                        alignItems: 'center', 
+                      <Box sx={{
+                        bgcolor: '#f57c00',
+                        color: 'white',
+                        width: 44,
+                        height: 44,
+                        borderRadius: '12px',
+                        display: 'flex',
+                        alignItems: 'center',
                         justifyContent: 'center',
                         flexShrink: 0
                       }}>
@@ -146,13 +146,13 @@ export default function Footer() {
                       </Box>
                     </Box>
                     <Box sx={{ height: 160, width: '100%', borderTop: '1px solid', borderColor: 'divider' }}>
-                      <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.969853316!2d-74.5510651!3d-8.3846667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a3bc3d67f130df%3A0xc34a66a1a6ba2c90!2sAv.%20Centenario%201128%2C%20Pucallpa%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1713620000000!5m2!1ses!2spe" 
-                        width="100%" 
-                        height="100%" 
-                        style={{ border: 0 }} 
-                        allowFullScreen 
-                        loading="lazy" 
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.969853316!2d-74.5510651!3d-8.3846667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a3bc3d67f130df%3A0xc34a66a1a6ba2c90!2sAv.%20Centenario%201128%2C%20Pucallpa%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1713620000000!5m2!1ses!2spe"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
                       ></iframe>
                     </Box>
@@ -160,10 +160,10 @@ export default function Footer() {
                 </Card>
 
                 {/* Horario de Atención */}
-                <Card sx={{ 
-                  borderRadius: 4, 
-                  bgcolor: '#1a3a8a', 
-                  color: 'white', 
+                <Card sx={{
+                  borderRadius: 4,
+                  bgcolor: '#1a3a8a',
+                  color: 'white',
                   boxShadow: '0 10px 35px rgba(26,58,138,0.2)'
                 }}>
                   <CardContent sx={{ p: 2.5 }}>
@@ -192,9 +192,9 @@ export default function Footer() {
 
             {/* Form Column */}
             <Grid size={{ xs: 12, md: 8 }} data-aos="fade-left">
-              <Card sx={{ 
-                p: { xs: 3, md: 6 }, 
-                borderRadius: 6, 
+              <Card sx={{
+                p: { xs: 3, md: 6 },
+                borderRadius: 6,
                 boxShadow: '0 15px 50px rgba(0,0,0,0.06)',
                 border: 'none',
                 height: '100%',
@@ -204,8 +204,8 @@ export default function Footer() {
                 <Typography variant="h4" sx={{ mb: 4, fontWeight: 800, color: '#1a3a8a' }}>
                   Envíanos un mensaje
                 </Typography>
-                
-                <Box 
+
+                <Box
                   component="form"
                   action="https://formspree.io/f/informes@hosanna.edu.pe"
                   method="POST"
@@ -284,10 +284,10 @@ export default function Footer() {
                       />
                     </Box>
 
-                    <Stack 
-                      direction={{ xs: 'column', lg: 'row' }} 
-                      justifyContent="space-between" 
-                      alignItems={{ xs: 'flex-start', lg: 'center' }} 
+                    <Stack
+                      direction={{ xs: 'column', lg: 'row' }}
+                      justifyContent="space-between"
+                      alignItems={{ xs: 'flex-start', lg: 'center' }}
                       spacing={3}
                       sx={{ pt: 1 }}
                     >
@@ -304,10 +304,10 @@ export default function Footer() {
                         variant="contained"
                         size="large"
                         endIcon={<SendIcon />}
-                        sx={{ 
-                          bgcolor: '#1a3a8a', 
-                          px: 5, 
-                          py: 2, 
+                        sx={{
+                          bgcolor: '#1a3a8a',
+                          px: 5,
+                          py: 2,
                           borderRadius: 3,
                           textTransform: 'none',
                           fontSize: '1rem',
@@ -350,7 +350,7 @@ export default function Footer() {
               </Stack>
               <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.5)', lineHeight: 1.8 }}>
                 Institución educativa privada reconocida por el Ministerio de Educación del Perú.
-                Formando líderes desde 1993.
+                Formando líderes desde 1992.
               </Typography>
             </Grid>
 

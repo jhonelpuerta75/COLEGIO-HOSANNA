@@ -6,6 +6,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import Divider from '@mui/material/Divider';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import FlagIcon from '@mui/icons-material/Flag';
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
@@ -37,7 +38,7 @@ export default function AboutPage() {
           data-aos="fade-up"
         >
           <Typography variant="overline" sx={{ letterSpacing: '0.2em', fontWeight: 700, opacity: 0.8 }}>
-            Desde 1993
+            Desde 1992
           </Typography>
           <Typography variant="h1" sx={{ mt: 2, mb: 3, fontSize: { xs: '3rem', md: '4.5rem' } }}>
             Nuestra Institución
@@ -93,7 +94,7 @@ export default function AboutPage() {
               </Box>
               <Typography variant="h2">Tres décadas de compromiso educativo</Typography>
               <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Fundado en 1993, el Colegio Hosanna nació con la visión de proporcionar una educación que no solo alimentara el intelecto, sino también el espíritu. A lo largo de estos años, hemos visto a cientos de estudiantes graduarse con las herramientas necesarias para triunfar en la vida universitaria y profesional.
+                Fundado en 1992, el Colegio Hosanna nació con la visión de proporcionar una educación que no solo alimentara el intelecto, sino también el espíritu. A lo largo de estos años, hemos visto a cientos de estudiantes graduarse con las herramientas necesarias para triunfar en la vida universitaria y profesional.
               </Typography>
               <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
                 Nuestra evolución ha sido constante, integrando nuevas tecnologías y metodologías pedagógicas, pero manteniendo siempre intactos nuestros valores fundacionales de honradez, solidaridad y nobleza.
@@ -104,49 +105,155 @@ export default function AboutPage() {
       </Container>
 
       {/* Misión y Visión Section */}
-      <Box sx={{ bgcolor: 'rgba(4,107,210,0.03)', py: { xs: 8, md: 12 } }}>
-        <Container maxWidth="lg">
-          <Grid container spacing={4}>
-            <Grid
-              size={{ xs: 12, md: 6 }}
-              data-aos="zoom-in"
-            >
-              <Card sx={{ p: 4, height: '100%', border: 'none', boxShadow: '0 10px 30px rgba(4,107,210,0.05)' }}>
-                <CardContent sx={{ p: 0 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
-                    <Box sx={{ bgcolor: 'primary.main', color: 'white', p: 1.5, borderRadius: 2 }}>
-                      <FlagIcon />
-                    </Box>
-                    <Typography variant="h4">Misión</Typography>
+      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
+        <Grid container spacing={5} alignItems="stretch">
+          <Grid
+            size={{ xs: 12, md: 6 }}
+            data-aos="fade-right"
+          >
+            <Card sx={{ height: '100%', p: { xs: 3, md: 4 }, display: 'flex', flexDirection: 'column' }}>
+              <CardContent sx={{ p: '0 !important', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 2 }}>
+                  <Box
+                    sx={{
+                      width: 40,
+                      height: 40,
+                      borderRadius: '8px',
+                      bgcolor: 'primary.main',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <VisibilityIcon sx={{ color: 'white', fontSize: 20 }} />
                   </Box>
-                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8, fontSize: '1.1rem' }}>
-                    Brindar una formación integral que combina excelencia académica, innovación y pensamiento crítico, equipando a cada estudiante para desarrollar su máximo potencial como obra maestra de Dios.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid
-              size={{ xs: 12, md: 6 }}
-              data-aos="zoom-in"
-              data-aos-delay="200"
-            >
-              <Card sx={{ p: 4, height: '100%', border: 'none', boxShadow: '0 10px 30px rgba(4,107,210,0.05)' }}>
-                <CardContent sx={{ p: 0 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
-                    <Box sx={{ bgcolor: 'secondary.main', color: 'white', p: 1.5, borderRadius: 2 }}>
-                      <VisibilityIcon />
-                    </Box>
-                    <Typography variant="h4">Visión</Typography>
+                  <Typography variant="h5">Visión</Typography>
+                </Stack>
+                <Divider sx={{ mb: 2.5 }} />
+                <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85, mb: 3 }}>
+                  “Somos hechura de Dios, creados en Cristo Jesús para buenas obras”. (Efesios 2:10)
+                  <br /><br />
+                  Nuestro colegio hosanna, se formó hace 30 años con la visión de proporcionar una educación centrada en cristo, con la excelencia e innovación educativa, y formación integral para a gloria de Dios.
+                </Typography>
+
+                <Box
+                  sx={{
+                    mt: 'auto',
+                    pt: 2.5,
+                    flexGrow: 1,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      minHeight: 200,
+                      py: 3.5,
+                      px: 2,
+                      borderRadius: 3,
+                      background: 'linear-gradient(180deg, rgba(4, 107, 210, 0.05) 0%, rgba(10, 31, 68, 0.02) 100%)',
+                      border: '1px solid',
+                      borderColor: 'rgba(4, 107, 210, 0.12)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      position: 'relative',
+                      overflow: 'hidden',
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        borderColor: 'primary.light',
+                        boxShadow: '0 8px 24px rgba(4, 107, 210, 0.08)',
+                        transform: 'translateY(-2px)',
+                      },
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src="/logo-hosanna.png"
+                      alt="Insignia Colegio Hosanna"
+                      sx={{
+                        maxHeight: { xs: 130, sm: 150, md: 175 },
+                        maxWidth: '85%',
+                        width: 'auto',
+                        objectFit: 'contain',
+                        filter: 'drop-shadow(0 10px 22px rgba(4, 107, 210, 0.22))',
+                        transition: 'transform 0.3s ease',
+                        '&:hover': {
+                          transform: 'scale(1.05)',
+                        },
+                      }}
+                    />
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        mt: 2,
+                        fontWeight: 700,
+                        color: 'primary.main',
+                        letterSpacing: '0.12em',
+                        textTransform: 'uppercase',
+                        fontSize: '0.72rem',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        bgcolor: 'rgba(4, 107, 210, 0.08)',
+                        px: 2,
+                        py: 0.5,
+                        borderRadius: 10,
+                      }}
+                    >
+                      Pucallpa, Perú • Desde 1992
+                    </Typography>
                   </Box>
-                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8, fontSize: '1.1rem' }}>
-                    Ser un referente de excelencia educativa cristiana, formando líderes íntegros que transformen la sociedad, guiados por principios bíblicos y una cosmovisión orientada al propósito de Dios.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
+                </Box>
+              </CardContent>
+            </Card>
           </Grid>
-        </Container>
-      </Box>
+
+          <Grid
+            size={{ xs: 12, md: 6 }}
+            data-aos="fade-left"
+          >
+            <Card sx={{ height: '100%', p: { xs: 3, md: 4 } }}>
+              <CardContent sx={{ p: '0 !important' }}>
+                <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 2 }}>
+                  <Box
+                    sx={{
+                      width: 40,
+                      height: 40,
+                      borderRadius: '8px',
+                      bgcolor: 'secondary.main',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <FlagIcon sx={{ color: 'white', fontSize: 20 }} />
+                  </Box>
+                  <Typography variant="h5">Misión</Typography>
+                </Stack>
+                <Divider sx={{ mb: 2.5 }} />
+                <Stack spacing={2}>
+                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85, textAlign: 'justify' }}>
+                    Colegio Hosanna se estableció para crear la próxima generación en la que una cosmovisión cristiana basada en Las Escrituras esté completamente presente. Frente al llamado de Dios, el colegio ayuda a los padres que quieren criar a sus hijos en base a la Palabra de Dios, reconociendo que creó Dios al hombre a su imagen y semejanza.
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85, textAlign: 'justify' }}>
+                    El Plan de educación brindado en nuestro colegio se establece sobre la base de la verdad de que La Verdad es «Jesucristo» (Juan 14: 6 “Yo soy el camino, la verdad y la vida”), y se enseña a recrear (restaurar) y desarrollar una verdadera comprensión de Dios y los seres humanos, y el mundo, y su relación entre ellos.
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85, textAlign: 'justify' }}>
+                    A través del estudio a cada tema, nuestros estudiantes comprenderán la voluntad y el camino de Dios para todas las áreas de la vida humana y serán formado con una mente y corazón que responda de una manera bíblica, teniendo una conciencia de los problemas del mundo y un anhelo por la verdad.
+                  </Typography>
+                  <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85, textAlign: 'justify' }}>
+                    Adoptando estrategias de aprendizaje efectivas y diversas que les permitan pensar de manera exploratoria, crítica y creativa en sus campos intelectuales, los estudiantes de Colegio Hosanna tendrán la oportunidad de equiparlos con las habilidades y la capacidad de responder como la obra maestra de Dios en el mundo como aquellos creados para el bien.
+                  </Typography>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+      </Container>
 
       {/* Reconocimiento Oficial Section */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
@@ -162,7 +269,7 @@ export default function AboutPage() {
 
         <Grid container spacing={3}>
           {[
-            { level: 'Nivel Inicial', resolution: 'R.D. Nº 0069', date: '26 de enero de 1993', icon: <SchoolIcon /> },
+            { level: 'Nivel Inicial', resolution: 'R.D. Nº 0069', date: '26 de enero de 1992', icon: <SchoolIcon /> },
             { level: 'Nivel Primaria', resolution: 'R.D. Nº 1325', date: '12 de diciembre de 1994', icon: <SchoolIcon /> },
             { level: 'Nivel Secundaria', resolution: 'R.D. Nº 0017', date: '18 de enero de 1999', icon: <SchoolIcon /> }
           ].map((item, idx) => (
