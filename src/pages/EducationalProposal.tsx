@@ -391,24 +391,85 @@ export default function EducationalProposalPage() {
       {/* Hero Section */}
       <Box
         sx={{
+          position: 'relative',
           bgcolor: 'secondary.main',
           color: 'white',
           pt: { xs: 15, md: 20 },
           pb: { xs: 10, md: 15 },
-          backgroundImage: 'linear-gradient(rgba(10, 31, 68, 0.85), rgba(10, 31, 68, 0.85)), url(https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=80)',
+          backgroundImage: 'url(/hs-photos/educationalProposal.jpeg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          textAlign: 'center'
+          textAlign: 'center',
+          overflow: 'hidden',
+          // Capa base para asegurar contraste constante con el texto blanco
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(rgba(10, 31, 68, 0.62), rgba(10, 31, 68, 0.58))',
+            zIndex: 1,
+            pointerEvents: 'none',
+          },
+          // Capa adicional de oscurecimiento que se disuelve en hover para aclarar el fondo
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(rgba(10, 31, 68, 0.26), rgba(10, 31, 68, 0.28))',
+            opacity: 1,
+            transition: 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+            zIndex: 1,
+            pointerEvents: 'none',
+          },
+          '&:hover::after': {
+            opacity: 0,
+          },
+          '& > *': {
+            position: 'relative',
+            zIndex: 2,
+          }
         }}
       >
         <Container maxWidth="md" data-aos="fade-up">
-          <Typography variant="overline" sx={{ letterSpacing: '0.2em', fontWeight: 700, opacity: 0.8 }}>
+          <Typography
+            variant="overline"
+            sx={{
+              letterSpacing: '0.2em',
+              fontWeight: 700,
+              opacity: 0.9,
+              textShadow: '0 2px 10px rgba(0, 0, 0, 0.5)'
+            }}
+          >
             Propuesta Educativa
           </Typography>
-          <Typography variant="h1" sx={{ mt: 2, mb: 3, fontSize: { xs: '2.8rem', md: '4.2rem' } }}>
+          <Typography
+            variant="h1"
+            sx={{
+              mt: 2,
+              mb: 3,
+              fontSize: { xs: '2.8rem', md: '4.2rem' },
+              textShadow: '0 4px 24px rgba(0, 0, 0, 0.6)'
+            }}
+          >
             Áreas de Desarrollo Específicas
           </Typography>
-          <Typography variant="h5" sx={{ fontWeight: 400, opacity: 0.9, lineHeight: 1.6, maxWidth: 800, mx: 'auto' }}>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 400,
+              opacity: 0.95,
+              lineHeight: 1.6,
+              maxWidth: 800,
+              mx: 'auto',
+              textShadow: '0 2px 12px rgba(0, 0, 0, 0.5)'
+            }}
+          >
             Un enfoque formativo integral que combina excelencia académica, desarrollo en valores cristianos, disciplinas deportivas y talleres curriculares prácticos.
           </Typography>
         </Container>

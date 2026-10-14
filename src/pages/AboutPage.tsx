@@ -27,7 +27,7 @@ export default function AboutPage() {
           color: 'white',
           pt: { xs: 15, md: 20 },
           pb: { xs: 10, md: 15 },
-          backgroundImage: 'linear-gradient(rgba(10, 31, 68, 0.8), rgba(10, 31, 68, 0.8)), url(/hero-school.webp)',
+          backgroundImage: 'linear-gradient(rgba(10, 31, 68, 0.8), rgba(10, 31, 68, 0.8)), url(/hs-photos/fondo2-nivelado.jpeg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           textAlign: 'center'

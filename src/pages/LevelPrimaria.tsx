@@ -32,12 +32,12 @@ const LevelPrimaria: React.FC = () => {
 
       <main>
         {/* Modern Hero Section */}
-        <Box 
-          sx={{ 
+        <Box
+          sx={{
             position: 'relative',
-            bgcolor: 'secondary.main', 
-            color: 'white', 
-            pt: { xs: 15, md: 25 }, 
+            bgcolor: 'secondary.main',
+            color: 'white',
+            pt: { xs: 15, md: 25 },
             pb: { xs: 12, md: 20 },
             backgroundImage: 'linear-gradient(rgba(10, 31, 68, 0.7), rgba(10, 31, 68, 0.85)), url(https://images.unsplash.com/photo-1577891776192-c990263309a4?auto=format&fit=crop&w=2000&q=80)',
             backgroundSize: 'cover',
@@ -48,13 +48,13 @@ const LevelPrimaria: React.FC = () => {
         >
           <Container maxWidth="lg">
             <Box sx={{ maxWidth: 800 }} data-aos="fade-up">
-              <Typography 
-                variant="overline" 
-                sx={{ 
-                  letterSpacing: '0.4em', 
-                  fontWeight: 800, 
-                  color: 'primary.light', 
-                  display: 'block', 
+              <Typography
+                variant="overline"
+                sx={{
+                  letterSpacing: '0.4em',
+                  fontWeight: 800,
+                  color: 'primary.light',
+                  display: 'block',
                   mb: 2,
                   textShadow: '0 2px 4px rgba(0,0,0,0.3)'
                 }}
@@ -62,24 +62,24 @@ const LevelPrimaria: React.FC = () => {
                 FORMACIÓN PARA LA VIDA
               </Typography>
               <Typography variant="h1" sx={{ mt: 1, mb: 4, fontSize: { xs: '3.5rem', md: '5.5rem' }, fontWeight: 900, lineHeight: 1 }}>
-                Nivel Primaria: <br/> <Box component="span" sx={{ color: 'primary.light' }}>Excelencia que Trasciende</Box>
+                Nivel Primaria: <br /> <Box component="span" sx={{ color: 'primary.light' }}>Excelencia que Trasciende</Box>
               </Typography>
               <Typography variant="h5" sx={{ fontWeight: 400, opacity: 0.9, lineHeight: 1.6, mb: 6, fontSize: { xs: '1.1rem', md: '1.4rem' } }}>
                 Cimentando las bases del conocimiento y el carácter en un entorno de innovación pedagógica y valores cristianos inamovibles.
               </Typography>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-                <Button 
+                <Button
                   component={RouterLink}
                   to="/propuesta-educativa"
-                  variant="contained" 
-                  size="large" 
+                  variant="contained"
+                  size="large"
                   sx={{ bgcolor: 'white', color: 'secondary.main', px: 5, py: 2, fontWeight: 800, '&:hover': { bgcolor: 'primary.light', color: 'white' } }}
                 >
                   Descubrir Propuesta Educativa
                 </Button>
-                <Button 
-                  variant="outlined" 
-                  size="large" 
+                <Button
+                  variant="outlined"
+                  size="large"
                   href="#admision"
                   sx={{ borderColor: 'rgba(255,255,255,0.4)', color: 'white', px: 5, py: 2, fontWeight: 800, '&:hover': { borderColor: 'white', bgcolor: 'rgba(255,255,255,0.1)' } }}
                 >
@@ -114,10 +114,10 @@ const LevelPrimaria: React.FC = () => {
           <Grid container spacing={8} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }} data-aos="fade-right">
               <Box sx={{ position: 'relative' }}>
-                <Box 
-                  component="img" 
-                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80" 
-                  sx={{ width: '100%', borderRadius: 8, boxShadow: '0 40px 80px rgba(0,0,0,0.15)', position: 'relative', zIndex: 2 }} 
+                <Box
+                  component="img"
+                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80"
+                  sx={{ width: '100%', borderRadius: 8, boxShadow: '0 40px 80px rgba(0,0,0,0.15)', position: 'relative', zIndex: 2 }}
                 />
                 <Box sx={{ position: 'absolute', top: -30, left: -30, width: 200, height: 200, bgcolor: 'primary.light', opacity: 0.1, borderRadius: '50%', zIndex: 1 }} />
               </Box>
@@ -165,32 +165,32 @@ const LevelPrimaria: React.FC = () => {
             </Box>
             <Grid container spacing={4}>
               {[
-                { 
-                  title: 'Aprendizaje Bilingüe', 
+                {
+                  title: 'Aprendizaje Bilingüe',
                   desc: 'Inmersión gradual en el idioma inglés con certificación internacional, enfocada en la fluidez comunicativa.',
                   icon: <PublicIcon sx={{ fontSize: 40 }} />
                 },
-                { 
-                  title: 'Pensamiento Lógico', 
+                {
+                  title: 'Pensamiento Lógico',
                   desc: 'Métodos modernos de enseñanza de matemáticas que fomentan la resolución creativa de problemas cotidianos.',
                   icon: <MenuBookIcon sx={{ fontSize: 40 }} />
                 },
-                { 
-                  title: 'Ciencia y Tecnología', 
+                {
+                  title: 'Ciencia y Tecnología',
                   desc: 'Laboratorios de innovación donde los estudiantes exploran el mundo a través del método científico.',
                   icon: <AutoAwesomeIcon sx={{ fontSize: 40 }} />
                 },
-                { 
-                  title: 'Artes y Oratoria', 
+                {
+                  title: 'Artes y Oratoria',
                   desc: 'Desarrollo de la expresión pública y apreciación estética para formar líderes con voz propia.',
                   icon: <MusicNoteIcon sx={{ fontSize: 40 }} />
                 }
               ].map((card, idx) => (
                 <Grid size={{ xs: 12, md: 6 }} key={idx} data-aos="fade-up" data-aos-delay={idx * 150}>
-                  <Box sx={{ 
-                    p: 5, 
-                    borderRadius: 6, 
-                    bgcolor: 'rgba(255,255,255,0.05)', 
+                  <Box sx={{
+                    p: 5,
+                    borderRadius: 6,
+                    bgcolor: 'rgba(255,255,255,0.05)',
                     border: '1px solid rgba(255,255,255,0.1)',
                     transition: 'all 0.3s',
                     '&:hover': { bgcolor: 'rgba(255,255,255,0.1)', transform: 'translateY(-10px)' }
@@ -208,9 +208,9 @@ const LevelPrimaria: React.FC = () => {
         {/* Foundation Section - Spiritual focused */}
         <Box sx={{ py: 15, position: 'relative' }}>
           <Container maxWidth="lg">
-            <Card sx={{ 
-              borderRadius: 8, 
-              overflow: 'hidden', 
+            <Card sx={{
+              borderRadius: 8,
+              overflow: 'hidden',
               boxShadow: '0 40px 100px rgba(0,0,0,0.1)',
               border: 'none',
               bgcolor: 'white'
@@ -227,10 +227,10 @@ const LevelPrimaria: React.FC = () => {
                   </Button>
                 </Grid>
                 <Grid size={{ xs: 12, md: 5 }}>
-                  <Box 
-                    component="img" 
-                    src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1200&q=80" 
-                    sx={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  <Box
+                    component="img"
+                    src="/hs-photos/primaria.jpeg"
+                    sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </Grid>
               </Grid>
@@ -238,62 +238,6 @@ const LevelPrimaria: React.FC = () => {
           </Container>
         </Box>
 
-        {/* Extended Curriculum Section */}
-        <Container maxWidth="lg" sx={{ py: 12 }}>
-          <Box sx={{ textAlign: 'center', mb: 12 }} data-aos="fade-up">
-            <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 800 }}>EXTENSIÓN ACADÉMICA</Typography>
-            <Typography variant="h3" sx={{ fontWeight: 900, mt: 1 }}>Programa de Desarrollo Creativo</Typography>
-          </Box>
-          <Grid container spacing={4}>
-            {[
-              { label: 'Deportes de Competencia', icon: <SportsBasketballIcon/>, img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80' },
-              { label: 'Ensamble Musical', icon: <MusicNoteIcon/>, img: 'https://images.unsplash.com/photo-1459749411177-042180ce673c?auto=format&fit=crop&w=800&q=80' },
-              { label: 'Laboratorio de Robótica', icon: <AutoAwesomeIcon/>, img: 'https://images.unsplash.com/photo-1530210124550-912dc1381cb8?auto=format&fit=crop&w=800&q=80' },
-              { label: 'Artes Escénicas', icon: <MusicNoteIcon/>, img: 'https://images.unsplash.com/photo-1491333078588-55b6733c7de6?auto=format&fit=crop&w=800&q=80' }
-            ].map((item, idx) => (
-              <Grid size={{ xs: 12, sm: 6, md: 3 }} key={idx} data-aos="fade-up" data-aos-delay={idx * 100}>
-                <Box sx={{ position: 'relative', borderRadius: 6, overflow: 'hidden', height: 450, cursor: 'pointer', '&:hover img': { transform: 'scale(1.1)' } }}>
-                  <Box component="img" src={item.img} sx={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease' }} />
-                  <Box sx={{ 
-                    position: 'absolute', 
-                    bottom: 0, 
-                    left: 0, 
-                    right: 0, 
-                    p: 4, 
-                    pt: 10,
-                    backgroundImage: 'linear-gradient(transparent, rgba(10, 31, 68, 0.95))', 
-                    color: 'white',
-                    textAlign: 'center'
-                  }}>
-                    <Box sx={{ color: 'primary.light', mb: 2 }}>{item.icon}</Box>
-                    <Typography variant="h5" sx={{ fontWeight: 800 }}>{item.label}</Typography>
-                  </Box>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-
-        {/* Final CTA - Premium Background */}
-        <Box sx={{ bgcolor: 'secondary.main', py: 15, position: 'relative', overflow: 'hidden' }}>
-          <Box sx={{ position: 'absolute', top: 0, right: 0, width: '40%', height: '100%', opacity: 0.1, backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
-          <Container maxWidth="md" sx={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
-            <Box data-aos="zoom-in">
-              <Typography variant="h2" sx={{ fontWeight: 900, mb: 4, color: 'white' }}>Inicie el camino hacia la excelencia hoy</Typography>
-              <Typography variant="h5" sx={{ color: 'rgba(255,255,255,0.7)', mb: 8, maxWidth: 600, mx: 'auto' }}>
-                Asegure una formación de calidad para su hijo en un entorno de aprendizaje seguro e innovador.
-              </Typography>
-              <Button 
-                variant="contained" 
-                size="large" 
-                href="/#contacto"
-                sx={{ bgcolor: 'primary.main', px: 8, py: 2.5, fontSize: '1.2rem', fontWeight: 800, borderRadius: 3, boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
-              >
-                Solicitar una Visita
-              </Button>
-            </Box>
-          </Container>
-        </Box>
       </main>
 
       <Footer />
