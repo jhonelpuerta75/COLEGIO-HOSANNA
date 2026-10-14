@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Dialog, DialogContent, IconButton, Box, Button, Slide } from '@mui/material';
+import { Dialog, DialogContent, IconButton, Box, Button, Fade } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import type { TransitionProps } from '@mui/material/transitions';
@@ -10,19 +10,38 @@ const Transition = React.forwardRef(function Transition(
   },
   ref: React.Ref<unknown>,
 ) {
-  return <Slide direction="up" ref={ref} {...props} />;
+  return <Fade ref={ref} {...props} timeout={{ enter: 400, exit: 250 }} />;
 });
 
 export default function AdmissionPopup() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    // Show popup immediately when page loads
-    const timer = setTimeout(() => {
-      setOpen(true);
-    }, 400);
+    let isMounted = true;
 
-    return () => clearTimeout(timer);
+    // Precargar la imagen correspondiente antes de abrir el popup para evitar tirones
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 600;
+    const targetSrc = isMobile ? '/admision-2027.png' : '/admision-2027-web.png';
+
+    const img = new Image();
+    img.src = targetSrc;
+    const preloadPromise = img.decode ? img.decode() : new Promise((resolve) => { img.onload = resolve; });
+
+    // Dar 1.2s para que la página principal, Hero y AOS terminen de cargar completamente
+    const timer = setTimeout(() => {
+      preloadPromise
+        .catch(() => {})
+        .finally(() => {
+          if (isMounted) {
+            setOpen(true);
+          }
+        });
+    }, 1200);
+
+    return () => {
+      isMounted = false;
+      clearTimeout(timer);
+    };
   }, []);
 
   const handleClose = () => {
@@ -40,28 +59,46 @@ export default function AdmissionPopup() {
     <Dialog
       open={open}
       TransitionComponent={Transition}
-      keepMounted
       onClose={handleClose}
       aria-labelledby="admission-popup-title"
       maxWidth={false}
       PaperProps={{
         sx: {
-          borderRadius: '20px',
+          borderRadius: '24px',
           overflow: 'hidden',
           bgcolor: '#0a192f',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6)',
+          boxShadow: '0 30px 60px -12px rgba(0, 0, 0, 0.7), 0 0 50px rgba(4, 107, 210, 0.35)',
+          border: '1.5px solid rgba(255, 255, 255, 0.15)',
           position: 'relative',
           m: { xs: 1.5, sm: 2 },
           width: 'fit-content',
           maxWidth: { xs: '92vw', sm: '88vw', md: '750px' },
           maxHeight: '94vh',
+          transform: 'translate3d(0, 0, 0)',
+          willChange: 'transform, opacity',
+          animation: 'smoothBounceIn 0.5s cubic-bezier(0.34, 1.45, 0.64, 1) 0.22s both',
+          '@keyframes smoothBounceIn': {
+            '0%': {
+              opacity: 0,
+              transform: 'scale3d(0.7, 0.7, 1)',
+            },
+            '70%': {
+              opacity: 1,
+              transform: 'scale3d(1.03, 1.03, 1)',
+            },
+            '100%': {
+              opacity: 1,
+              transform: 'scale3d(1, 1, 1)',
+            },
+          },
         },
       }}
       slotProps={{
         backdrop: {
           sx: {
-            backgroundColor: 'rgba(10, 25, 47, 0.78)',
-            backdropFilter: 'blur(8px)',
+            backgroundColor: 'rgba(10, 25, 47, 0.84)',
+            backdropFilter: 'blur(6px)',
+            transition: 'background-color 0.35s ease, backdrop-filter 0.35s ease',
           },
         },
       }}
@@ -118,6 +155,8 @@ export default function AdmissionPopup() {
             component="img"
             src="/admision-2027.png"
             alt="Admisión 2027 Colegio Privado Hosanna"
+            loading="eager"
+            decoding="async"
             sx={{
               display: { xs: 'block', sm: 'none' },
               width: 'auto',
@@ -132,6 +171,8 @@ export default function AdmissionPopup() {
             component="img"
             src="/admision-2027-web.png"
             alt="Admisión 2027 Colegio Privado Hosanna"
+            loading="eager"
+            decoding="async"
             sx={{
               display: { xs: 'none', sm: 'block' },
               width: 'auto',
@@ -170,9 +211,30 @@ export default function AdmissionPopup() {
               bgcolor: '#25D366',
               color: '#ffffff',
               boxShadow: '0 4px 14px 0 rgba(37, 211, 102, 0.4)',
+              animation: 'buttonBounce 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.58s 1 both',
+              '@keyframes buttonBounce': {
+                '0%': {
+                  transform: 'scale3d(1, 1, 1)',
+                },
+                '35%': {
+                  transform: 'scale3d(1.1, 1.1, 1) translateY(-4px)',
+                  boxShadow: '0 8px 24px 0 rgba(37, 211, 102, 0.65)',
+                },
+                '65%': {
+                  transform: 'scale3d(0.96, 0.96, 1) translateY(1px)',
+                },
+                '85%': {
+                  transform: 'scale3d(1.02, 1.02, 1) translateY(-1px)',
+                },
+                '100%': {
+                  transform: 'scale3d(1, 1, 1) translateY(0)',
+                  boxShadow: '0 4px 14px 0 rgba(37, 211, 102, 0.4)',
+                },
+              },
               '&:hover': {
                 bgcolor: '#1da851',
-                transform: 'translateY(-1px)',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 6px 20px 0 rgba(37, 211, 102, 0.5)',
               },
             }}
           >
