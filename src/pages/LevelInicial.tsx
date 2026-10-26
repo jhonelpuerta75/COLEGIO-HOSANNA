@@ -475,7 +475,7 @@ const LevelInicial: React.FC = () => {
             <div data-aos="fade-up" className="text-center mb-16">
               <div className="inline-flex items-center gap-2 bg-white text-sky-600 px-5 py-2 rounded-full border-4 border-sky-200 shadow-md font-black text-sm rotate-[2deg]">
                 <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>photo_camera</span>
-                Momentos felices
+                Momentos
               </div>
               <h2 className="text-4xl md:text-5xl font-black text-slate-800 mt-6 mb-4">Galería de pequeños exploradores</h2>
               <p className="max-w-2xl mx-auto text-slate-600 font-bold">
