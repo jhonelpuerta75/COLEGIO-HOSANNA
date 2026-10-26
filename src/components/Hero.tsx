@@ -31,17 +31,19 @@ export default function Hero() {
           inset: 0,
           width: '100%',
           height: '100%',
-          objectFit: { xs: 'cover', md: 'contain' },
+          objectFit: 'cover',
           objectPosition: { xs: 'center right', md: 'right center' },
         }}
       />
 
       <Box
         sx={{
-          display: { xs: 'block', md: 'none' },
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(to bottom, rgba(9,31,66,0.88) 0%, rgba(9,31,66,0.6) 50%, rgba(9,31,66,0.92) 100%)',
+          background: {
+            xs: 'linear-gradient(to bottom, rgba(9,31,66,0.92) 0%, rgba(9,31,66,0.7) 50%, rgba(9,31,66,0.94) 100%)',
+            md: 'linear-gradient(90deg, rgba(9,31,66,0.96) 0%, rgba(9,31,66,0.88) 38%, rgba(9,31,66,0.5) 70%, rgba(9,31,66,0.1) 100%)',
+          },
           pointerEvents: 'none',
         }}
       />
@@ -74,7 +76,7 @@ export default function Hero() {
               mb: 3,
             }}
           >
-            Porque somos hechura de Dios, creados en Cristo
+            "Somos hechura de Dios, creados en Cristo Jesús
             <Box
               component="span"
               sx={{
@@ -85,7 +87,7 @@ export default function Hero() {
                 mt: 1
               }}
             >
-              Jesús para buenas obras
+              para buenas obras"
             </Box>
           </Typography>
 

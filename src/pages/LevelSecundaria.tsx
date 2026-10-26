@@ -190,7 +190,7 @@ const LevelSecundaria: React.FC = () => {
                 },
                 {
                   title: 'Identidad y Valores',
-                  desc: 'Fortalecimiento de la fe y la ética a través de una cosmovisión cristiana aplicada a la vida cotidiana.',
+                  desc: 'Fortalecimiento de la fe y la ética a través de una formación integral',
                   icon: <SchoolIcon sx={{ fontSize: 40 }} />
                 }
               ].map((card, idx) => (

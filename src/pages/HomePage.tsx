@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import PlatformsRibbon from '../components/PlatformsRibbon';
 import About from '../components/About';
 import Programs from '../components/Programs';
 import EducationalProposal from '../components/EducationalProposal';
@@ -14,6 +15,7 @@ export default function HomePage() {
       <AdmissionPopup />
       <Navbar />
       <Hero />
+      <PlatformsRibbon />
       <About />
       <Programs />
       <EducationalProposal />

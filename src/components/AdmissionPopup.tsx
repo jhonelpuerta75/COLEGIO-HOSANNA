@@ -30,7 +30,7 @@ export default function AdmissionPopup() {
     // Dar 1.2s para que la página principal, Hero y AOS terminen de cargar completamente
     const timer = setTimeout(() => {
       preloadPromise
-        .catch(() => {})
+        .catch(() => { })
         .finally(() => {
           if (isMounted) {
             setOpen(true);
@@ -153,7 +153,7 @@ export default function AdmissionPopup() {
           {/* Mobile Flyer (Vertical) */}
           <Box
             component="img"
-            src="/admision-2027.png"
+            src="/banner-web-hs.jpeg"
             alt="Admisión 2027 Colegio Privado Hosanna"
             loading="eager"
             decoding="async"
@@ -169,7 +169,7 @@ export default function AdmissionPopup() {
           {/* Web / Desktop Flyer (Wider) */}
           <Box
             component="img"
-            src="/admision-2027-web.png"
+            src="/banner-web-hs.jpeg"
             alt="Admisión 2027 Colegio Privado Hosanna"
             loading="eager"
             decoding="async"

@@ -14,6 +14,140 @@ import SchoolIcon from '@mui/icons-material/School';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+// Icono: Manos orando (Formación Espiritual) - Flaticon
+const PrayingHandsIcon = () => (
+  <Box
+    sx={{
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
+  >
+    {/* Destellos de luz como en el flyer */}
+    <svg
+      width="100"
+      height="90"
+      viewBox="0 0 100 90"
+      fill="none"
+      stroke="white"
+      strokeWidth="3.2"
+      strokeLinecap="round"
+      style={{ position: 'absolute', pointerEvents: 'none' }}
+    >
+      <line x1="16" y1="32" x2="6" y2="29" />
+      <line x1="22" y1="18" x2="14" y2="10" />
+      <line x1="78" y1="18" x2="86" y2="10" />
+      <line x1="84" y1="32" x2="94" y2="29" />
+    </svg>
+    <Box
+      component="img"
+      src="/icons/oracion.png"
+      alt="Formación Espiritual"
+      sx={{
+        width: 72,
+        height: 72,
+        objectFit: 'contain',
+        filter: 'brightness(0) invert(1)',
+        display: 'block',
+      }}
+    />
+  </Box>
+);
+
+// Icono: Estudiante graduado con birrete (Excelencia Académica) - Flaticon
+const GraduateIcon = () => (
+  <Box
+    component="img"
+    src="/icons/estudiante.png"
+    alt="Excelencia Académica"
+    sx={{
+      width: 76,
+      height: 76,
+      objectFit: 'contain',
+      filter: 'brightness(0) invert(1)',
+      display: 'block',
+    }}
+  />
+);
+
+// Icono: Estudiante leyendo un libro abierto (Formación Integral) - Flaticon
+const ReadingBookIcon = () => (
+  <Box
+    component="img"
+    src="/icons/libro.png"
+    alt="Formación Integral"
+    sx={{
+      width: 76,
+      height: 76,
+      objectFit: 'contain',
+      filter: 'brightness(0) invert(1)',
+      display: 'block',
+    }}
+  />
+);
+
+// Píldora inferior de insignia dentro de las tarjetas
+const HosannaCardPill = () => (
+  <Box
+    sx={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 0.8,
+      bgcolor: 'white',
+      py: 0.5,
+      px: 1.5,
+      borderRadius: '50px',
+      boxShadow: '0 3px 8px rgba(0,0,0,0.15)',
+    }}
+  >
+    <Box
+      component="img"
+      src="/logo-hosanna.png"
+      alt="Logo Hosanna"
+      sx={{ width: 16, height: 20, objectFit: 'contain' }}
+    />
+    <Box sx={{ textAlign: 'left', lineHeight: 1 }}>
+      <Typography
+        sx={{
+          fontSize: '0.48rem',
+          fontWeight: 800,
+          color: '#64748b',
+          letterSpacing: '0.06em',
+          textTransform: 'uppercase',
+        }}
+      >
+        Colegio Privado
+      </Typography>
+      <Typography
+        sx={{
+          fontSize: '0.72rem',
+          fontWeight: 900,
+          color: '#0a1f44',
+          letterSpacing: '0.06em',
+        }}
+      >
+        HOSANNA
+      </Typography>
+    </Box>
+  </Box>
+);
+
+// Comillas // bicolores como en el flyer original
+const QuoteSlashesTop = () => (
+  <Box component="span" sx={{ display: 'inline-flex', mr: 0.8, verticalAlign: 'middle', userSelect: 'none' }}>
+    <Box component="span" sx={{ color: '#f43f5e', fontWeight: 900, fontSize: '1.35rem', lineHeight: 1 }}>/</Box>
+    <Box component="span" sx={{ color: '#84cc16', fontWeight: 900, fontSize: '1.35rem', lineHeight: 1 }}>/</Box>
+  </Box>
+);
+
+const QuoteSlashesBottom = () => (
+  <Box component="span" sx={{ display: 'inline-flex', ml: 0.8, verticalAlign: 'middle', userSelect: 'none' }}>
+    <Box component="span" sx={{ color: '#0ea5e9', fontWeight: 900, fontSize: '1.35rem', lineHeight: 1 }}>/</Box>
+    <Box component="span" sx={{ color: '#eab308', fontWeight: 900, fontSize: '1.35rem', lineHeight: 1 }}>/</Box>
+  </Box>
+);
+
 export default function AboutPage() {
   return (
     <Box sx={{ bgcolor: 'background.default', overflowX: 'hidden' }}>
@@ -254,6 +388,471 @@ export default function AboutPage() {
           </Grid>
         </Grid>
       </Container>
+
+      {/* ======================================================== */}
+      {/* Sección: Nuestros Valores Principales & Pilares Formativos */}
+      {/* ======================================================== */}
+      <Box
+        sx={{
+          background: 'linear-gradient(180deg, #fff5f2 0%, #fffbfb 35%, #ffffff 100%)',
+          py: { xs: 7, md: 10 },
+          borderTop: '1px solid',
+          borderColor: 'rgba(4, 107, 210, 0.08)',
+        }}
+      >
+        <Container maxWidth="lg">
+          {/* Título superior: NUESTROS VALORES PRINCIPALES */}
+          <Typography
+            variant="h3"
+            sx={{
+              textAlign: 'center',
+              fontWeight: 900,
+              color: '#0284c7',
+              fontSize: { xs: '1.25rem', sm: '1.45rem', md: '1.6rem' },
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              mb: { xs: 5, md: 7 },
+            }}
+            data-aos="fade-down"
+          >
+            NUESTROS VALORES PRINCIPALES
+          </Typography>
+
+          {/* Fila superior: 3 Insignias de Valores a la izquierda y Foto grupal a la derecha */}
+          <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
+            {/* 3 Insignias de Valores */}
+            <Grid size={{ xs: 12, md: 5.5 }} data-aos="fade-right">
+              <Stack spacing={3.5} sx={{ alignItems: { xs: 'center', md: 'flex-start' } }}>
+                {/* 1. HONRADEZ */}
+                <Box sx={{ position: 'relative', width: '100%', maxWidth: { xs: 300, sm: 340 } }}>
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      transform: 'translate(6px, 6px) rotate(-3deg)',
+                      bgcolor: 'rgba(245, 158, 11, 0.12)',
+                      borderRadius: '8px',
+                      border: '1.5px dashed #f59e0b',
+                    }}
+                  />
+                  <Box
+                    sx={{
+                      position: 'relative',
+                      bgcolor: 'white',
+                      border: '2.8px solid #f59e0b',
+                      borderRadius: '8px',
+                      py: 1.5,
+                      px: 3,
+                      transform: 'rotate(-3deg)',
+                      boxShadow: '0 6px 18px rgba(245, 158, 11, 0.16)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src="/logo-hosanna.png"
+                      alt="Hosanna"
+                      sx={{
+                        position: 'absolute',
+                        top: -12,
+                        right: 30,
+                        width: 22,
+                        height: 26,
+                        objectFit: 'contain',
+                        filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))',
+                      }}
+                    />
+                    <Typography
+                      sx={{
+                        fontWeight: 900,
+                        color: '#d97706',
+                        letterSpacing: '0.08em',
+                        fontSize: { xs: '1.35rem', sm: '1.65rem' },
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      HONRADEZ
+                    </Typography>
+                  </Box>
+                </Box>
+
+                {/* 2. SOLIDARIDAD */}
+                <Box sx={{ position: 'relative', width: '100%', maxWidth: { xs: 300, sm: 340 }, ml: { sm: 3, md: 4 } }}>
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      transform: 'translate(6px, 6px) rotate(2deg)',
+                      bgcolor: 'rgba(16, 185, 129, 0.12)',
+                      borderRadius: '8px',
+                      border: '1.5px dashed #10b981',
+                    }}
+                  />
+                  <Box
+                    sx={{
+                      position: 'relative',
+                      bgcolor: 'white',
+                      border: '2.8px solid #10b981',
+                      borderRadius: '8px',
+                      py: 1.5,
+                      px: 3,
+                      transform: 'rotate(2deg)',
+                      boxShadow: '0 6px 18px rgba(16, 185, 129, 0.16)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src="/logo-hosanna.png"
+                      alt="Hosanna"
+                      sx={{
+                        position: 'absolute',
+                        top: -12,
+                        left: 24,
+                        width: 22,
+                        height: 26,
+                        objectFit: 'contain',
+                        filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))',
+                      }}
+                    />
+                    <Typography
+                      sx={{
+                        fontWeight: 900,
+                        color: '#15803d',
+                        letterSpacing: '0.08em',
+                        fontSize: { xs: '1.35rem', sm: '1.65rem' },
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      SOLIDARIDAD
+                    </Typography>
+                  </Box>
+                </Box>
+
+                {/* 3. NOBLEZA */}
+                <Box sx={{ position: 'relative', width: '100%', maxWidth: { xs: 270, sm: 300 }, ml: { sm: 1.5, md: 2 } }}>
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      transform: 'translate(6px, 6px) rotate(-2deg)',
+                      bgcolor: 'rgba(2, 132, 199, 0.12)',
+                      borderRadius: '8px',
+                      border: '1.5px dashed #0284c7',
+                    }}
+                  />
+                  <Box
+                    sx={{
+                      position: 'relative',
+                      bgcolor: 'white',
+                      border: '2.8px solid #0284c7',
+                      borderRadius: '8px',
+                      py: 1.5,
+                      px: 3,
+                      transform: 'rotate(-2deg)',
+                      boxShadow: '0 6px 18px rgba(2, 132, 199, 0.16)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src="/logo-hosanna.png"
+                      alt="Hosanna"
+                      sx={{
+                        position: 'absolute',
+                        top: -12,
+                        left: 20,
+                        width: 22,
+                        height: 26,
+                        objectFit: 'contain',
+                        filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.2))',
+                      }}
+                    />
+                    <Typography
+                      sx={{
+                        fontWeight: 900,
+                        color: '#0284c7',
+                        letterSpacing: '0.08em',
+                        fontSize: { xs: '1.35rem', sm: '1.65rem' },
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      NOBLEZA
+                    </Typography>
+                  </Box>
+                </Box>
+              </Stack>
+            </Grid>
+
+            {/* Foto de la Comunidad en el Campo Deportivo con cintas decorativas */}
+            <Grid size={{ xs: 12, md: 6.5 }} data-aos="fade-left">
+              <Box sx={{ position: 'relative', px: { xs: 1, sm: 2 } }}>
+                {/* Cintas decorativas en esquina superior izquierda */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    top: -16,
+                    left: 0,
+                    zIndex: 0,
+                    display: 'flex',
+                    gap: 0.8,
+                    transform: 'rotate(-20deg)',
+                  }}
+                >
+                  <Box sx={{ width: 14, height: 60, borderRadius: 1.5, bgcolor: '#f97316' }} />
+                  <Box sx={{ width: 14, height: 75, borderRadius: 1.5, bgcolor: '#f59e0b' }} />
+                </Box>
+
+                {/* Cintas decorativas en esquina inferior derecha */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    bottom: -16,
+                    right: 0,
+                    zIndex: 0,
+                    display: 'flex',
+                    gap: 0.8,
+                    transform: 'rotate(-20deg)',
+                  }}
+                >
+                  <Box sx={{ width: 14, height: 75, borderRadius: 1.5, bgcolor: '#10b981' }} />
+                  <Box sx={{ width: 14, height: 60, borderRadius: 1.5, bgcolor: '#f59e0b' }} />
+                  <Box sx={{ width: 14, height: 45, borderRadius: 1.5, bgcolor: '#06b6d4' }} />
+                </Box>
+
+                {/* Marco de foto principal */}
+                <Box
+                  sx={{
+                    position: 'relative',
+                    zIndex: 1,
+                    borderRadius: '16px',
+                    overflow: 'hidden',
+                    boxShadow: '0 16px 36px rgba(10, 31, 68, 0.16)',
+                    border: '4px solid #ffffff',
+                    bgcolor: 'background.paper',
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src="/hs-photos/fondo2-nivelado.jpeg"
+                    alt="Estudiantes en el campo - Colegio Hosanna"
+                    sx={{
+                      width: '100%',
+                      height: 'auto',
+                      display: 'block',
+                      transition: 'transform 0.4s ease',
+                      '&:hover': {
+                        transform: 'scale(1.02)',
+                      },
+                    }}
+                  />
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
+
+          {/* Fila inferior: 3 Columnas con Tarjeta de Color, Título y Texto Bíblico/Formativo */}
+          <Grid container spacing={{ xs: 5, md: 4 }} sx={{ mt: { xs: 8, md: 11 }, justifyContent: 'center' }}>
+            {/* Columna 1: Formación Espiritual */}
+            <Grid size={{ xs: 12, md: 4 }} data-aos="fade-up" data-aos-delay="0">
+              <Box sx={{ textAlign: 'center' }}>
+                {/* Tarjeta Azul */}
+                <Box
+                  sx={{
+                    width: '100%',
+                    maxWidth: 240,
+                    height: 270,
+                    mx: 'auto',
+                    borderRadius: '24px',
+                    bgcolor: '#0284c7',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    pt: 4,
+                    pb: 2.2,
+                    px: 2,
+                    boxShadow: '0 12px 28px rgba(2, 132, 199, 0.28)',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-6px)',
+                      boxShadow: '0 18px 36px rgba(2, 132, 199, 0.38)',
+                    },
+                  }}
+                >
+                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow: 1 }}>
+                    <PrayingHandsIcon />
+                  </Box>
+                  <HosannaCardPill />
+                </Box>
+
+                {/* Título inferior */}
+                <Typography
+                  sx={{
+                    mt: 2.8,
+                    mb: 1.5,
+                    fontWeight: 900,
+                    fontSize: '1.05rem',
+                    color: '#0f172a',
+                    letterSpacing: '0.04em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  FORMACIÓN ESPIRITUAL
+                </Typography>
+
+                {/* Texto exacto */}
+                <Box sx={{ color: '#1e293b', fontSize: '0.98rem', lineHeight: 1.6, maxWidth: 280, mx: 'auto' }}>
+                  <QuoteSlashesTop />
+                  El <strong>Entendimiento Bíblico</strong>
+                  <br />
+                  hacia el éxito en la vida.
+                  <br />
+                  (2 Timoteo 3:16-17).
+                  <QuoteSlashesBottom />
+                </Box>
+              </Box>
+            </Grid>
+
+            {/* Columna 2: Excelencia Académica */}
+            <Grid size={{ xs: 12, md: 4 }} data-aos="fade-up" data-aos-delay="100">
+              <Box sx={{ textAlign: 'center' }}>
+                {/* Tarjeta Verde */}
+                <Box
+                  sx={{
+                    width: '100%',
+                    maxWidth: 240,
+                    height: 270,
+                    mx: 'auto',
+                    borderRadius: '24px',
+                    bgcolor: '#65a30d',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    pt: 4,
+                    pb: 2.2,
+                    px: 2,
+                    boxShadow: '0 12px 28px rgba(101, 163, 13, 0.28)',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-6px)',
+                      boxShadow: '0 18px 36px rgba(101, 163, 13, 0.38)',
+                    },
+                  }}
+                >
+                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow: 1 }}>
+                    <GraduateIcon />
+                  </Box>
+                  <HosannaCardPill />
+                </Box>
+
+                {/* Título inferior */}
+                <Typography
+                  sx={{
+                    mt: 2.8,
+                    mb: 1.5,
+                    fontWeight: 900,
+                    fontSize: '1.05rem',
+                    color: '#0f172a',
+                    letterSpacing: '0.02em',
+                    textTransform: 'none',
+                  }}
+                >
+                  excelencia académica
+                </Typography>
+
+                {/* Texto exacto */}
+                <Box sx={{ color: '#1e293b', fontSize: '0.98rem', lineHeight: 1.6, maxWidth: 280, mx: 'auto' }}>
+                  <QuoteSlashesTop />
+                  <Box component="span" sx={{ fontSize: '1.05rem', fontWeight: 600 }}>
+                    Liderazgo Creativo:
+                  </Box>
+                  <br />
+                  Líder en liderar
+                  <br />
+                  la próxima generación.
+                  <br />
+                  Con <em>innovación constante</em>
+                  <br />
+                  y <em>participación</em>
+                  <br />
+                  <em>activa</em> de nuestros
+                  <br />
+                  estudiantes.
+                  <QuoteSlashesBottom />
+                </Box>
+              </Box>
+            </Grid>
+
+            {/* Columna 3: Formación Integral */}
+            <Grid size={{ xs: 12, md: 4 }} data-aos="fade-up" data-aos-delay="200">
+              <Box sx={{ textAlign: 'center' }}>
+                {/* Tarjeta Amarilla */}
+                <Box
+                  sx={{
+                    width: '100%',
+                    maxWidth: 240,
+                    height: 270,
+                    mx: 'auto',
+                    borderRadius: '24px',
+                    bgcolor: '#ca8a04',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    pt: 4,
+                    pb: 2.2,
+                    px: 2,
+                    boxShadow: '0 12px 28px rgba(202, 138, 4, 0.28)',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-6px)',
+                      boxShadow: '0 18px 36px rgba(202, 138, 4, 0.38)',
+                    },
+                  }}
+                >
+                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow: 1 }}>
+                    <ReadingBookIcon />
+                  </Box>
+                  <HosannaCardPill />
+                </Box>
+
+                {/* Título inferior */}
+                <Typography
+                  sx={{
+                    mt: 2.8,
+                    mb: 1.5,
+                    fontWeight: 900,
+                    fontSize: '1.05rem',
+                    color: '#0f172a',
+                    letterSpacing: '0.03em',
+                  }}
+                >
+                  FORMACIÓN integral
+                </Typography>
+
+                {/* Texto exacto */}
+                <Box sx={{ color: '#1e293b', fontSize: '0.98rem', lineHeight: 1.7, maxWidth: 280, mx: 'auto' }}>
+                  <QuoteSlashesTop />
+                  Ser Honrado
+                  <br />
+                  Ser Solidario
+                  <br />
+                  Ser Noble
+                  <QuoteSlashesBottom />
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
 
       {/* Reconocimiento Oficial Section */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>

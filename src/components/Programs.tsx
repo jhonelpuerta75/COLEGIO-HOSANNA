@@ -38,7 +38,7 @@ const levels = [
   {
     title: 'Nivel Secundaria',
     subtitle: '1° a 5° Año',
-    image: '/hs-photos/Secundaria.jpeg',
+    image: '/SECUNDARIA.png',
     icon: <SchoolIcon />,
     color: '#0a1f44',
     description:
@@ -57,7 +57,7 @@ export default function Programs() {
       }}
     >
       <Container maxWidth="lg">
-        <Box 
+        <Box
           data-aos="fade-up"
           sx={{ textAlign: 'center', mb: 8 }}>
           <Typography
@@ -79,9 +79,9 @@ export default function Programs() {
 
         <Grid container spacing={3} sx={{ justifyContent: 'center' }}>
           {levels.map((level, index) => (
-            <Grid 
-              size={{ xs: 12, md: 4 }} 
-              key={level.title} 
+            <Grid
+              size={{ xs: 12, md: 4 }}
+              key={level.title}
               id={level.title.toLowerCase().replace('nivel ', '')}
               data-aos="zoom-in"
               data-aos-delay={index * 150}

@@ -666,7 +666,6 @@ export default function EducationalProposalPage() {
               <Grid container spacing={2}>
                 {[
                   { title: 'Havruta Learning', desc: 'Debate y análisis entre pares para profundizar conceptos.' },
-                  { title: 'Thinking-Based Learning', desc: 'Desarrollo del pensamiento crítico y creativo por encima de la memoria.' },
                   { title: 'Aprendizaje Cooperativo', desc: 'Gestión de metas comunes para fortalecer habilidades sociales.' },
                   { title: 'Competencias Siglo XXI', desc: 'Preparación para un mundo laboral y social altamente tecnológico.' }
                 ].map((item, idx) => (
