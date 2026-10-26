@@ -29,7 +29,7 @@ import { admissionConfig } from '../config/admissionConfig';
 const propuestaEducativaItems = [
   { label: 'Áreas de Desarrollo Específicas', href: '/propuesta-educativa/areas-de-desarrollo' },
   { label: 'Certificaciones', href: '/propuesta-educativa/areas-de-desarrollo#certificaciones' },
-  { label: 'Ensamblaje de Cuerdas', href: '/propuesta-educativa/areas-de-desarrollo#ensamblaje-de-cuerdas' },
+  { label: 'Ensamblaje Hosanna', href: '/propuesta-educativa/areas-de-desarrollo#ensamblaje-de-cuerdas' },
 ];
 
 const navLinks = [
