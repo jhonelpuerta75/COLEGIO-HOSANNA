@@ -342,7 +342,7 @@ export default function EducationalProposalPage() {
       badge: 'Edición Multimedia',
       description: 'Plataforma líder en edición multimedia en versión PRO para todos nuestros estudiantes.',
       link: 'https://www.canva.com/education/',
-      logoPng: '/platforms/canva.png',
+      logoPng: '/platforms/canva.jpg',
       logoSvg: '/platforms/canva.svg',
     },
     {
@@ -547,7 +547,7 @@ export default function EducationalProposalPage() {
               { label: 'Deportiva', href: '#deportiva' },
               { label: 'Talleres Curriculares', href: '#talleres-curriculares' },
               { label: 'Certificaciones', href: '#certificaciones' },
-              { label: 'Ensamblaje de Cuerdas', href: '#ensamblaje-de-cuerdas' },
+              { label: 'Ensamblaje Hosanna', href: '#ensamblaje-hosanna' },
             ].map((section) => (
               <Chip
                 key={section.label}
@@ -2792,7 +2792,7 @@ export default function EducationalProposalPage() {
               Ensamble Hosanna
             </Typography>
             <Typography variant="body1" sx={{ opacity: 0.9, maxWidth: 820, mx: 'auto', fontSize: '1.08rem', lineHeight: 1.8 }}>
-              Consideramos que la música es un pilar fundamental dentro de la formación de nuestros alumnos, por ello contamos con nuestro <strong>Ensamble de Cuerdas</strong>, conformado por alumnos de <strong>Primaria y Secundaria</strong>.
+              Consideramos que la música es un pilar fundamental dentro de la formación de nuestros alumnos, por ello contamos con nuestro <strong>Ensamble Hosanna</strong>, conformado por alumnos de <strong>Primaria y Secundaria</strong>.
             </Typography>
           </Box>
 
@@ -2832,11 +2832,11 @@ export default function EducationalProposalPage() {
                 </Stack>
 
                 <Typography variant="h3" sx={{ fontWeight: 800, color: 'white', mb: 1.5, fontSize: { xs: '1.6rem', sm: '2rem', md: '2.3rem' } }}>
-                  8.° Concierto de nuestro Ensamble de Cuerdas
+                  8.° Concierto de nuestro Ensamble Hosanna
                 </Typography>
 
                 <Typography variant="body1" sx={{ opacity: 0.92, lineHeight: 1.8, fontSize: { xs: '1rem', sm: '1.08rem' }, mb: 2 }}>
-                  Culminando el ciclo anual en el mes de <strong>Noviembre</strong>, nuestros alumnos presentan su recital magno de cierre de año. <strong>Este año 2026 será el 8vo. Concierto de nuestro ENSAMBLE de Cuerdas</strong>, una celebración inolvidable donde comparten con las familias y la comunidad el fruto de su perseverancia, entrega y pasión musical.
+                  Culminando el ciclo anual en el mes de <strong>Noviembre</strong>, nuestros alumnos presentan su recital magno de cierre de año. <strong>Este año 2026 será el 8vo. Concierto de nuestro ENSAMBLE Hosanna</strong>, una celebración inolvidable donde comparten con las familias y la comunidad el fruto de su perseverancia, entrega y pasión musical.
                 </Typography>
 
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 1 }}>
@@ -3014,7 +3014,7 @@ export default function EducationalProposalPage() {
                 </Stack>
 
                 <Typography variant="body1" sx={{ opacity: 0.88, lineHeight: 1.8, mb: 3, flexGrow: 1 }}>
-                  Los alumnos que desean integrar el Ensamble de Cuerdas deberán participar en una <strong>audición</strong>. Se admiten alumnos desde el <strong>4to grado de primaria hasta el 5to año de secundaria</strong>, promoviendo la disciplina artística, el oído musical y el trabajo en equipo.
+                  Los alumnos que desean integrar el Ensamble Hosanna deberán participar en una <strong>audición</strong>. Se admiten alumnos desde el <strong>4to grado de primaria hasta el 5to año de secundaria</strong>, promoviendo la disciplina artística, el oído musical y el trabajo en equipo.
                 </Typography>
 
                 <Box sx={{ p: 2, borderRadius: 2.5, bgcolor: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.08)', mb: 2.5 }}>
@@ -3111,7 +3111,7 @@ export default function EducationalProposalPage() {
                 </Stack>
 
                 <Typography variant="body1" sx={{ opacity: 0.88, lineHeight: 1.8, mb: 3, flexGrow: 1 }}>
-                  El Ensamble de Cuerdas participa dentro de las <strong>actividades de celebración</strong> y en el <strong>Aniversario de nuestro colegio Hosanna</strong>, engalanando cada ceremonia con su repertorio instrumental y brindando un testimonio vivo de excelencia y alabanza.
+                  El Ensamble Hosanna participa dentro de las <strong>actividades de celebración</strong> y en el <strong>Aniversario de nuestro colegio Hosanna</strong>, engalanando cada ceremonia con su repertorio instrumental y brindando un testimonio vivo de excelencia y alabanza.
                 </Typography>
 
                 <Box sx={{ p: 2, borderRadius: 2.5, bgcolor: 'rgba(0,0,0,0.2)', border: '1px solid rgba(255,255,255,0.08)', mb: 2.5 }}>

@@ -637,7 +637,7 @@ export default function AboutPage() {
                 >
                   <Box
                     component="img"
-                    src="/hs-photos/fondo2-nivelado.jpeg"
+                    src="/FondoHs.jpeg"
                     alt="Estudiantes en el campo - Colegio Hosanna"
                     sx={{
                       width: '100%',

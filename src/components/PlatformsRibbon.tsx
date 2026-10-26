@@ -80,7 +80,7 @@ const platforms: PlatformItem[] = [
     name: 'Canva PRO Education',
     description: 'Herramientas de diseño gráfico, presentaciones y multimedia para estudiantes.',
     link: 'https://www.canva.com/education/',
-    logo: '/platforms/canva.svg',
+    logo: '/platforms/canva.jpg',
     logoFallback: '/platforms/canva.svg',
   },
   {

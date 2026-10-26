@@ -57,9 +57,9 @@
   --radius-lg: 2rem;
   --radius-xl: 3rem;
 
-  --font-headline: "Plus Jakarta Sans";
-  --font-body: "Plus Jakarta Sans";
-  --font-label: "Plus Jakarta Sans";
+  --font-headline: "Roboto", sans-serif;
+  --font-body: "Roboto", sans-serif;
+  --font-label: "Roboto", sans-serif;
 }
 
 @layer utilities {
