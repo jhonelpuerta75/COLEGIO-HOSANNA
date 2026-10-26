@@ -133,20 +133,7 @@ const HosannaCardPill = () => (
   </Box>
 );
 
-// Comillas // bicolores como en el flyer original
-const QuoteSlashesTop = () => (
-  <Box component="span" sx={{ display: 'inline-flex', mr: 0.8, verticalAlign: 'middle', userSelect: 'none' }}>
-    <Box component="span" sx={{ color: '#f43f5e', fontWeight: 900, fontSize: '1.35rem', lineHeight: 1 }}>/</Box>
-    <Box component="span" sx={{ color: '#84cc16', fontWeight: 900, fontSize: '1.35rem', lineHeight: 1 }}>/</Box>
-  </Box>
-);
 
-const QuoteSlashesBottom = () => (
-  <Box component="span" sx={{ display: 'inline-flex', ml: 0.8, verticalAlign: 'middle', userSelect: 'none' }}>
-    <Box component="span" sx={{ color: '#0ea5e9', fontWeight: 900, fontSize: '1.35rem', lineHeight: 1 }}>/</Box>
-    <Box component="span" sx={{ color: '#eab308', fontWeight: 900, fontSize: '1.35rem', lineHeight: 1 }}>/</Box>
-  </Box>
-);
 
 export default function AboutPage() {
   return (
@@ -402,21 +389,31 @@ export default function AboutPage() {
       >
         <Container maxWidth="lg">
           {/* Título superior: NUESTROS VALORES PRINCIPALES */}
-          <Typography
-            variant="h3"
-            sx={{
-              textAlign: 'center',
-              fontWeight: 900,
-              color: '#0284c7',
-              fontSize: { xs: '1.25rem', sm: '1.45rem', md: '1.6rem' },
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              mb: { xs: 5, md: 7 },
-            }}
-            data-aos="fade-down"
-          >
-            NUESTROS VALORES PRINCIPALES
-          </Typography>
+          <Box sx={{ textAlign: 'center', mb: { xs: 5, md: 7 } }} data-aos="fade-down">
+            <Typography
+              variant="overline"
+              sx={{
+                color: 'primary.main',
+                fontWeight: 700,
+                letterSpacing: '0.12em',
+                display: 'block',
+              }}
+            >
+              Nuestra Identidad Institucional
+            </Typography>
+            <Typography
+              variant="h2"
+              sx={{
+                mt: 1,
+                fontWeight: 800,
+                color: 'secondary.main',
+                letterSpacing: '-0.02em',
+              }}
+            >
+              Nuestros Valores Principales
+            </Typography>
+          </Box>
+
 
           {/* Fila superior: 3 Insignias de Valores a la izquierda y Foto grupal a la derecha */}
           <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
@@ -694,12 +691,12 @@ export default function AboutPage() {
 
                 {/* Título inferior */}
                 <Typography
+                  variant="h6"
                   sx={{
                     mt: 2.8,
                     mb: 1.5,
-                    fontWeight: 900,
-                    fontSize: '1.05rem',
-                    color: '#0f172a',
+                    fontWeight: 800,
+                    color: 'secondary.main',
                     letterSpacing: '0.04em',
                     textTransform: 'uppercase',
                   }}
@@ -707,16 +704,31 @@ export default function AboutPage() {
                   FORMACIÓN ESPIRITUAL
                 </Typography>
 
-                {/* Texto exacto */}
-                <Box sx={{ color: '#1e293b', fontSize: '0.98rem', lineHeight: 1.6, maxWidth: 280, mx: 'auto' }}>
-                  <QuoteSlashesTop />
-                  El <strong>Entendimiento Bíblico</strong>
-                  <br />
-                  hacia el éxito en la vida.
-                  <br />
-                  (2 Timoteo 3:16-17).
-                  <QuoteSlashesBottom />
-                </Box>
+                {/* Texto */}
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: 'text.secondary',
+                    fontSize: '0.95rem',
+                    lineHeight: 1.7,
+                    maxWidth: 280,
+                    mx: 'auto',
+                  }}
+                >
+                  El <strong>Entendimiento Bíblico</strong> hacia el éxito en la vida.
+                  <Box
+                    component="span"
+                    sx={{
+                      display: 'block',
+                      mt: 1,
+                      fontWeight: 700,
+                      color: 'primary.main',
+                      fontSize: '0.9rem',
+                    }}
+                  >
+                    (2 Timoteo 3:16-17)
+                  </Box>
+                </Typography>
               </Box>
             </Grid>
 
@@ -755,39 +767,43 @@ export default function AboutPage() {
 
                 {/* Título inferior */}
                 <Typography
+                  variant="h6"
                   sx={{
                     mt: 2.8,
                     mb: 1.5,
-                    fontWeight: 900,
-                    fontSize: '1.05rem',
-                    color: '#0f172a',
-                    letterSpacing: '0.02em',
-                    textTransform: 'none',
+                    fontWeight: 800,
+                    color: 'secondary.main',
+                    letterSpacing: '0.04em',
+                    textTransform: 'uppercase',
                   }}
                 >
-                  excelencia académica
+                  EXCELENCIA ACADÉMICA
                 </Typography>
 
-                {/* Texto exacto */}
-                <Box sx={{ color: '#1e293b', fontSize: '0.98rem', lineHeight: 1.6, maxWidth: 280, mx: 'auto' }}>
-                  <QuoteSlashesTop />
-                  <Box component="span" sx={{ fontSize: '1.05rem', fontWeight: 600 }}>
+                {/* Texto */}
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: 'text.secondary',
+                    fontSize: '0.95rem',
+                    lineHeight: 1.7,
+                    maxWidth: 280,
+                    mx: 'auto',
+                  }}
+                >
+                  <Box
+                    component="span"
+                    sx={{
+                      display: 'block',
+                      fontWeight: 700,
+                      color: 'secondary.main',
+                      mb: 0.5,
+                    }}
+                  >
                     Liderazgo Creativo:
                   </Box>
-                  <br />
-                  Líder en liderar
-                  <br />
-                  la próxima generación.
-                  <br />
-                  Con <em>innovación constante</em>
-                  <br />
-                  y <em>participación</em>
-                  <br />
-                  <em>activa</em> de nuestros
-                  <br />
-                  estudiantes.
-                  <QuoteSlashesBottom />
-                </Box>
+                  Líder en liderar la próxima generación con innovación constante y participación activa de nuestros estudiantes.
+                </Typography>
               </Box>
             </Grid>
 
@@ -826,28 +842,37 @@ export default function AboutPage() {
 
                 {/* Título inferior */}
                 <Typography
+                  variant="h6"
                   sx={{
                     mt: 2.8,
                     mb: 1.5,
-                    fontWeight: 900,
-                    fontSize: '1.05rem',
-                    color: '#0f172a',
-                    letterSpacing: '0.03em',
+                    fontWeight: 800,
+                    color: 'secondary.main',
+                    letterSpacing: '0.04em',
+                    textTransform: 'uppercase',
                   }}
                 >
-                  FORMACIÓN integral
+                  FORMACIÓN INTEGRAL
                 </Typography>
 
-                {/* Texto exacto */}
-                <Box sx={{ color: '#1e293b', fontSize: '0.98rem', lineHeight: 1.7, maxWidth: 280, mx: 'auto' }}>
-                  <QuoteSlashesTop />
+                {/* Texto */}
+                <Typography
+                  variant="body1"
+                  sx={{
+                    color: 'text.secondary',
+                    fontSize: '0.95rem',
+                    lineHeight: 1.8,
+                    maxWidth: 280,
+                    mx: 'auto',
+                    fontWeight: 600,
+                  }}
+                >
                   Ser Honrado
                   <br />
                   Ser Solidario
                   <br />
                   Ser Noble
-                  <QuoteSlashesBottom />
-                </Box>
+                </Typography>
               </Box>
             </Grid>
           </Grid>

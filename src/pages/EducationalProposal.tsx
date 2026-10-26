@@ -53,7 +53,8 @@ export default function EducationalProposalPage() {
       badge: 'Bilingüismo & Estándares MCER',
       icon: <LanguageIcon sx={{ fontSize: 26 }} />,
       color: '#0288d1',
-      description: 'Enseñanza del idioma inglés orientada al desarrollo fluido de las cuatro destrezas: comprensión auditiva, expresión oral, lectura comprensiva y producción escrita. Apoyados en Richmond Learning Platform y una preparación progresiva alineada al Marco Común Europeo (MCER).',
+      bannerImage: '/alumnos-horizontal.jpg',
+      description: 'Enseñanza del idioma inglés orientada al desarrollo fluido de las cuatro destrezas: comprensión auditiva, expresión oral, lectura comprensiva y producción escrita. Apoyados en Richmond Learning Platform y una preparación progresiva a la certificación TOEFL Primary – TOEFL ITP.',
       sections: [
         {
           heading: 'Enfoque Comunicativo y Destrezas Lingüísticas:',
@@ -85,6 +86,7 @@ export default function EducationalProposalPage() {
       badge: 'Indagación Científica & Experimentación',
       icon: <ScienceIcon sx={{ fontSize: 26 }} />,
       color: '#00897b',
+      bannerImage: '/banner-ciencias.jpg',
       description: 'Promovemos el método científico, la experimentación vivencial en laboratorio y la formulación de hipótesis. Desarrollamos mentalidad investigadora y conciencia de mayordomía ambiental de la creación.',
       sections: [
         {
@@ -118,6 +120,7 @@ export default function EducationalProposalPage() {
       badge: 'Lógica & Resolución de Problemas',
       icon: <CalculateIcon sx={{ fontSize: 26 }} />,
       color: '#d81b60',
+      bannerImage: '/banner-matematicas.jpg',
       description: 'Desarrollo del razonamiento lógico-matemático, análisis cuantitativo y modelación geométrica. Con el soporte de Khan Academy y el enfoque Singapur, transitamos desde el material concreto hacia la abstracción para resolver problemas reales con agilidad.',
       sections: [
         {
@@ -151,6 +154,7 @@ export default function EducationalProposalPage() {
       badge: 'Ciudadanía & Historia',
       icon: <PublicIcon sx={{ fontSize: 26 }} />,
       color: '#f57c00',
+      bannerImage: '/banner-sociales.jpg',
       description: 'Comprensión del devenir histórico peruano y mundial, la geografía y la educación cívico-económica. Formamos ciudadanos con identidad nacional, pensamiento crítico, valores democráticos y compromiso ético con el bienestar social.',
       sections: [
         {
@@ -183,6 +187,7 @@ export default function EducationalProposalPage() {
       badge: 'Comprensión Lectora & Oratoria',
       icon: <MenuBookIcon sx={{ fontSize: 26 }} />,
       color: '#7b1fa2',
+      bannerImage: '/banner-comunicacion.jpg',
       description: 'Fortalecimiento de la comprensión lectora analítica y crítica, redacción de textos argumentativos y oratoria persuasiva. Mediante plataformas como BeeVerso y Pleno Santillana, cultivamos el hábito lector, la ortografía impecable y la comunicación asertiva.',
       sections: [
         {
@@ -225,6 +230,26 @@ export default function EducationalProposalPage() {
     }
   };
 
+  const peCarouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollPeCarousel = (direction: 'left' | 'right') => {
+    if (peCarouselRef.current) {
+      const scrollAmount = 230;
+      peCarouselRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const peAreaPhotos = [
+    { src: '/area-deportiva/01.jpg', label: 'Cancha de Loza y Futsal' },
+    { src: '/area-deportiva/02.jpg', label: 'Grass Natural' },
+    { src: '/area-deportiva/03.jpg', label: 'Instalaciones Deportivas' },
+    { src: '/area-deportiva/04.jpg', label: 'Actividad Física y Salud' },
+    { src: '/area-deportiva/05.jpg', label: 'Deporte Formativo' },
+  ];
+
   const sportsPhotos = [
     {
       id: 1,
@@ -265,22 +290,6 @@ export default function EducationalProposalPage() {
 
   const platforms = [
     {
-      name: 'Google Workspace for Education',
-      badge: '@hosanna.edu.pe',
-      description: 'Todos nuestros alumnos cuentan con correo institucional con el dominio @hosanna.edu.pe para acceder a herramientas de colaboración en la nube.',
-      link: 'https://workspace.google.com',
-      logoPng: '/platforms/google-workspace.png',
-      logoSvg: '/platforms/google-workspace.svg',
-    },
-    {
-      name: 'Classroom',
-      badge: 'Aula Virtual',
-      description: 'Mantenemos la plataforma en caso de pasar a modo virtual de inmediato, en caso de ser necesario.',
-      link: 'https://classroom.google.com/',
-      logoPng: '/platforms/classroom.png',
-      logoSvg: '/platforms/classroom.svg',
-    },
-    {
       name: 'Edi Santillana',
       badge: 'Compartir Aprendizajes',
       description: 'Compartir Aprendizajes: Plataforma integral de gestión del aprendizaje y contenidos didácticos de vanguardia.',
@@ -293,7 +302,7 @@ export default function EducationalProposalPage() {
       badge: 'Evaluación de Progreso',
       description: 'Evaluación de tu progreso con Edi Santillana, permitiendo monitoreo continuo y formativo del avance escolar.',
       link: 'https://edi.santillana.com.pe/',
-      logoPng: '/platforms/pleno.png',
+      logoPng: '/platforms/logo_pleno_top.png',
       logoSvg: '/platforms/pleno.svg',
     },
     {
@@ -352,28 +361,32 @@ export default function EducationalProposalPage() {
       icon: <MusicNoteIcon sx={{ fontSize: 28 }} />,
       color: '#e91e63',
       description: 'Expresión espiritual y técnica a través de diversos instrumentos.',
-      items: ['Piano', 'Batería', 'Coro']
+      items: ['Piano', 'Batería', 'Coro'],
+      image: '/Development%20Learning/musica.jpg'
     },
     {
       name: 'Artes y Cultura',
       icon: <PaletteIcon sx={{ fontSize: 28 }} />,
       color: '#f57c00',
       description: 'Potenciamos la creatividad y la sensibilidad artística de cada alumno.',
-      items: ['Danza', 'Dibujo y Pintura', 'Gastronomía']
+      items: ['Danza', 'Dibujo y Pintura', 'Gastronomía'],
+      image: '/Development%20Learning/gastronomia.jpg'
     },
     {
       name: 'Deportes y Salud',
       icon: <SportsBasketballIcon sx={{ fontSize: 28 }} />,
       color: '#8bc34a',
       description: 'Fomentamos la disciplina y el trabajo en equipo mediante la actividad física.',
-      items: ['Natación', 'Basquetbol', 'Futsal']
+      items: ['Natación', 'Basquetbol', 'Futsal'],
+      image: '/Development%20Learning/basketball.jpg'
     },
     {
       name: 'Pensamiento y Ciencia',
       icon: <PrecisionManufacturingIcon sx={{ fontSize: 28 }} />,
       color: '#00bcd4',
       description: 'Desarrollo de habilidades lógicas, tecnológicas y comunicativas.',
-      items: ['Ajedrez']
+      items: ['Ajedrez'],
+      image: '/Development%20Learning/ajedrez.jpg'
     }
   ];
 
@@ -721,6 +734,21 @@ export default function EducationalProposalPage() {
                 borderRadius: 4,
                 overflow: 'hidden',
                 position: 'relative',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                transition: 'all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1)',
+                '&:hover': {
+                  transform: 'translateY(-6px)',
+                  boxShadow: `0 20px 40px ${cat.color}22, 0 6px 16px rgba(0,0,0,0.04)`,
+                  '& .cdl-card-img': {
+                    transform: 'scale(1.08)',
+                  },
+                  '& .cdl-icon-box': {
+                    transform: 'scale(1.08) rotate(4deg)',
+                    boxShadow: `0 6px 18px ${cat.color}30`,
+                  }
+                },
                 '&::before': {
                   content: '""',
                   position: 'absolute',
@@ -728,45 +756,67 @@ export default function EducationalProposalPage() {
                   left: 0,
                   width: '100%',
                   height: '4px',
-                  bgcolor: cat.color
+                  bgcolor: cat.color,
+                  zIndex: 3
                 }
               }}>
-                <CardContent sx={{ p: 4 }}>
-                  <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 2.5 }}>
-                    <Box sx={{
-                      p: 1.5,
-                      borderRadius: '12px',
-                      bgcolor: `${cat.color}15`,
-                      color: cat.color,
-                      display: 'flex'
-                    }}>
-                      {cat.icon}
-                    </Box>
-                    <Box>
-                      <Typography variant="h5" sx={{ fontWeight: 800 }}>{cat.name}</Typography>
-                      <Typography variant="caption" sx={{ color: 'text.disabled', fontWeight: 600 }}>{cat.description}</Typography>
-                    </Box>
-                  </Stack>
-                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                <CardContent sx={{
+                  p: { xs: 2.5, sm: 3.5, md: 4 },
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  minWidth: 0,
+                  zIndex: 2
+                }}>
+                  <Box>
+                    <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 2 }}>
+                      <Box
+                        className="cdl-icon-box"
+                        sx={{
+                          p: 1.5,
+                          borderRadius: '14px',
+                          bgcolor: `${cat.color}15`,
+                          color: cat.color,
+                          display: 'flex',
+                          flexShrink: 0,
+                          transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)'
+                        }}
+                      >
+                        {cat.icon}
+                      </Box>
+                      <Box sx={{ minWidth: 0 }}>
+                        <Typography variant="h5" sx={{ fontWeight: 800, fontSize: { xs: '1.2rem', sm: '1.35rem' }, color: 'text.primary' }}>
+                          {cat.name}
+                        </Typography>
+                        <Typography variant="caption" sx={{ color: 'text.secondary', fontWeight: 600, display: 'block', lineHeight: 1.4 }}>
+                          {cat.description}
+                        </Typography>
+                      </Box>
+                    </Stack>
+                  </Box>
+
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, pt: 1 }}>
                     {cat.items.map(item => (
                       <Box
                         key={item}
                         sx={{
                           px: 2,
-                          py: 0.75,
+                          py: 0.65,
                           borderRadius: '50px',
                           bgcolor: 'white',
                           border: '1px solid',
                           borderColor: 'divider',
-                          fontSize: '0.85rem',
-                          fontWeight: 500,
+                          fontSize: '0.82rem',
+                          fontWeight: 600,
                           color: 'text.secondary',
-                          transition: 'all 0.2s',
+                          transition: 'all 0.25s ease',
                           '&:hover': {
                             borderColor: cat.color,
                             color: cat.color,
-                            bgcolor: `${cat.color}05`,
-                            boxShadow: `0 4px 12px ${cat.color}15`
+                            bgcolor: `${cat.color}08`,
+                            transform: 'translateY(-2px)',
+                            boxShadow: `0 4px 12px ${cat.color}18`
                           }
                         }}
                       >
@@ -775,6 +825,44 @@ export default function EducationalProposalPage() {
                     ))}
                   </Box>
                 </CardContent>
+
+                {/* Vertical rectangular photo flush to right edge */}
+                <Box
+                  sx={{
+                    width: { xs: 110, sm: 150, md: 170 },
+                    position: 'relative',
+                    overflow: 'hidden',
+                    flexShrink: 0,
+                    bgcolor: 'grey.100'
+                  }}
+                >
+                  <Box
+                    component="img"
+                    className="cdl-card-img"
+                    src={cat.image}
+                    alt={cat.name}
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                      display: 'block',
+                      transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                    }}
+                  />
+                  {/* Subtle blend overlay */}
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      bottom: 0,
+                      width: '30%',
+                      background: 'linear-gradient(to right, rgba(255,255,255,0.3), transparent)',
+                      pointerEvents: 'none'
+                    }}
+                  />
+                </Box>
               </Card>
             </Grid>
           ))}
@@ -1134,6 +1222,39 @@ export default function EducationalProposalPage() {
                       </Typography>
                     </Box>
                   </Stack>
+
+                  {academicAreas[selectedAcademicIndex].bannerImage && (
+                    <Box
+                      sx={{
+                        mt: 2.5,
+                        borderRadius: 3.5,
+                        overflow: 'hidden',
+                        boxShadow: '0 8px 25px rgba(0,0,0,0.06)',
+                        border: '1px solid',
+                        borderColor: `${academicAreas[selectedAcademicIndex].color}25`,
+                        position: 'relative',
+                        maxHeight: { xs: 190, sm: 240, md: 280 },
+                        '&:hover img': {
+                          transform: 'scale(1.025)'
+                        }
+                      }}
+                    >
+                      <Box
+                        component="img"
+                        src={academicAreas[selectedAcademicIndex].bannerImage}
+                        alt={`Banner ${academicAreas[selectedAcademicIndex].title}`}
+                        sx={{
+                          width: '100%',
+                          height: { xs: 180, sm: 230, md: 260 },
+                          objectFit: 'cover',
+                          objectPosition: 'center 35%',
+                          display: 'block',
+                          transition: 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                        }}
+                      />
+                    </Box>
+                  )}
+
                   <Typography
                     variant="body1"
                     sx={{
@@ -1469,11 +1590,136 @@ export default function EducationalProposalPage() {
                     color: 'text.secondary',
                     fontSize: { xs: '1rem', md: '1.08rem' },
                     lineHeight: 1.85,
-                    mb: 2.5
+                    mb: 2
                   }}
                 >
                   Promovemos el bienestar físico, la disciplina y el trabajo en equipo a través del deporte competitivo y recreativo. Contamos con canchas de loza y Grass natural, Piscinas para la práctica de Natación
                 </Typography>
+
+                {/* Carrusel pequeño horizontal de Fotos Área Deportiva */}
+                <Box sx={{ my: 2.5, position: 'relative' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
+
+                    <Stack direction="row" spacing={0.8}>
+                      <IconButton
+                        onClick={() => scrollPeCarousel('left')}
+                        size="small"
+                        aria-label="Foto anterior"
+                        sx={{
+                          width: 30,
+                          height: 30,
+                          bgcolor: 'background.paper',
+                          border: '1px solid',
+                          borderColor: 'divider',
+                          color: '#ea580c',
+                          boxShadow: '0 2px 5px rgba(0,0,0,0.05)',
+                          '&:hover': {
+                            bgcolor: '#ea580c',
+                            color: 'white',
+                            borderColor: '#ea580c'
+                          }
+                        }}
+                      >
+                        <ChevronLeftIcon sx={{ fontSize: 18 }} />
+                      </IconButton>
+                      <IconButton
+                        onClick={() => scrollPeCarousel('right')}
+                        size="small"
+                        aria-label="Siguiente foto"
+                        sx={{
+                          width: 30,
+                          height: 30,
+                          bgcolor: 'background.paper',
+                          border: '1px solid',
+                          borderColor: 'divider',
+                          color: '#ea580c',
+                          boxShadow: '0 2px 5px rgba(0,0,0,0.05)',
+                          '&:hover': {
+                            bgcolor: '#ea580c',
+                            color: 'white',
+                            borderColor: '#ea580c'
+                          }
+                        }}
+                      >
+                        <ChevronRightIcon sx={{ fontSize: 18 }} />
+                      </IconButton>
+                    </Stack>
+                  </Box>
+
+                  <Box
+                    ref={peCarouselRef}
+                    sx={{
+                      display: 'flex',
+                      gap: 1.5,
+                      overflowX: 'auto',
+                      scrollSnapType: 'x mandatory',
+                      py: 0.5,
+                      px: 0.5,
+                      borderRadius: 3,
+                      '&::-webkit-scrollbar': { display: 'none' },
+                      scrollbarWidth: 'none',
+                      msOverflowStyle: 'none'
+                    }}
+                  >
+                    {peAreaPhotos.map((photo, pIdx) => (
+                      <Box
+                        key={pIdx}
+                        sx={{
+                          flex: '0 0 auto',
+                          width: { xs: 170, sm: 210, md: 230 },
+                          height: { xs: 120, sm: 145 },
+                          borderRadius: 2.5,
+                          overflow: 'hidden',
+                          scrollSnapAlign: 'start',
+                          boxShadow: '0 4px 14px rgba(0,0,0,0.06)',
+                          border: '1px solid',
+                          borderColor: 'rgba(234, 88, 12, 0.15)',
+                          position: 'relative',
+                          cursor: 'pointer',
+                          transition: 'all 0.3s ease',
+                          '&:hover': {
+                            transform: 'translateY(-3px)',
+                            boxShadow: '0 8px 20px rgba(234, 88, 12, 0.22)',
+                            borderColor: '#ea580c',
+                            '& img': {
+                              transform: 'scale(1.08)'
+                            }
+                          }
+                        }}
+                      >
+                        <Box
+                          component="img"
+                          src={photo.src}
+                          alt={photo.label}
+                          sx={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            display: 'block',
+                            transition: 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                          }}
+                        />
+                        <Box
+                          sx={{
+                            position: 'absolute',
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            p: 0.8,
+                            background: 'linear-gradient(to top, rgba(0,0,0,0.65), transparent)',
+                            color: 'white',
+                            fontSize: '0.72rem',
+                            fontWeight: 700,
+                            textAlign: 'center',
+                            letterSpacing: '0.02em'
+                          }}
+                        >
+                          {photo.label}
+                        </Box>
+                      </Box>
+                    ))}
+                  </Box>
+                </Box>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                   {[
                     'Canchas de Loza',
@@ -1778,7 +2024,7 @@ export default function EducationalProposalPage() {
         </Container>
       </Box>
 
-      {/* 3. Talleres Curriculares */}
+      {/* 3. Talleres Extracurriculares */}
       <Box id="talleres-curriculares" sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.default', scrollMarginTop: { xs: '120px', md: '140px' } }}>
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center', mb: 8 }} data-aos="fade-up">
@@ -1788,21 +2034,21 @@ export default function EducationalProposalPage() {
                 Área de Desarrollo Específica
               </Typography>
             </Box>
-            <Typography variant="h2" sx={{ mb: 2 }}>Talleres Curriculares</Typography>
+            <Typography variant="h2" sx={{ mb: 2 }}>Talleres Extracurriculares</Typography>
             <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 780, mx: 'auto', fontSize: '1.05rem', lineHeight: 1.8 }}>
-              Talleres pedagógicos integrados en nuestra malla curricular para potenciar la creatividad, el razonamiento analítico, la expresión artística y las habilidades prácticas.
+              Estas actividades están diseñadas para explorar talentos, fomentar la disciplina, promover el trabajo en equipo y ofrecer nuevas formas de expresión y aprendizaje.
             </Typography>
           </Box>
 
           <Grid container spacing={2.5} justifyContent="center">
             {[
-              { number: '01', title: 'Taekwondo', icon: <SportsMartialArtsIcon sx={{ fontSize: 26 }} />, color: '#d81b60' },
-              { number: '02', title: 'Violín', icon: <MusicNoteIcon sx={{ fontSize: 26 }} />, color: '#046bd2' },
-              { number: '03', title: 'Batería', icon: <MusicNoteIcon sx={{ fontSize: 26 }} />, color: '#e65100' },
-              { number: '04', title: 'Gastronomía', icon: <RestaurantIcon sx={{ fontSize: 26 }} />, color: '#00897b' },
-              { number: '05', title: 'Ajedrez', icon: <PsychologyIcon sx={{ fontSize: 26 }} />, color: '#5e35b1' },
-              { number: '06', title: 'Manualidades', icon: <PaletteIcon sx={{ fontSize: 26 }} />, color: '#f57c00' },
-              { number: '07', title: 'Danza (Marinera)', icon: <CelebrationIcon sx={{ fontSize: 26 }} />, color: '#c2185b' }
+              { number: '01', title: 'Taekwondo', icon: <SportsMartialArtsIcon sx={{ fontSize: 24 }} />, color: '#d81b60', image: '/talleres-extra/taekwondo.jpg' },
+              { number: '02', title: 'Violín', icon: <MusicNoteIcon sx={{ fontSize: 24 }} />, color: '#046bd2', image: '/talleres-extra/violin.jpg' },
+              { number: '03', title: 'Batería', icon: <MusicNoteIcon sx={{ fontSize: 24 }} />, color: '#e65100', image: '/talleres-extra/bateria.jpg' },
+              { number: '04', title: 'Gastronomía', icon: <RestaurantIcon sx={{ fontSize: 24 }} />, color: '#00897b', image: '/talleres-extra/gastronomia.jpg' },
+              { number: '05', title: 'Ajedrez', icon: <PsychologyIcon sx={{ fontSize: 24 }} />, color: '#5e35b1', image: '/talleres-extra/ajedrez.jpg' },
+              { number: '06', title: 'Manualidades', icon: <PaletteIcon sx={{ fontSize: 24 }} />, color: '#f57c00', image: '/talleres-extra/manualidades.jpg' },
+              { number: '07', title: 'Danza (Marinera)', icon: <CelebrationIcon sx={{ fontSize: 24 }} />, color: '#c2185b', image: '/talleres-extra/marinera.jpg' }
             ].map((taller, idx) => (
               <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={taller.title} data-aos="fade-up" data-aos-delay={idx * 60}>
                 <Card
@@ -1812,71 +2058,112 @@ export default function EducationalProposalPage() {
                     border: '1px solid',
                     borderColor: 'divider',
                     bgcolor: 'background.paper',
-                    p: 2.5,
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 2,
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    boxShadow: '0 2px 12px rgba(0,0,0,0.03)',
-                    position: 'relative',
                     overflow: 'hidden',
-                    '&::before': {
-                      content: '""',
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      bottom: 0,
-                      width: '4px',
-                      bgcolor: taller.color
-                    },
+                    display: 'flex',
+                    flexDirection: 'column',
+                    transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
+                    position: 'relative',
                     '&:hover': {
-                      transform: 'translateY(-4px)',
-                      boxShadow: `0 12px 28px ${taller.color}20`,
-                      borderColor: taller.color
+                      transform: 'translateY(-6px)',
+                      boxShadow: `0 16px 32px ${taller.color}22`,
+                      borderColor: taller.color,
+                      '& .taller-img': {
+                        transform: 'scale(1.08)'
+                      }
                     }
                   }}
                 >
-                  <Box
-                    sx={{
-                      width: 50,
-                      height: 50,
-                      borderRadius: 2.5,
-                      bgcolor: `${taller.color}15`,
-                      color: taller.color,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0
-                    }}
-                  >
-                    {taller.icon}
-                  </Box>
-                  <Box sx={{ flexGrow: 1, minWidth: 0 }}>
-                    <Typography
-                      variant="caption"
+                  {/* Imagen referencial */}
+                  <Box sx={{ position: 'relative', height: 150, overflow: 'hidden', bgcolor: 'grey.100' }}>
+                    <Box
+                      component="img"
+                      className="taller-img"
+                      src={taller.image}
+                      alt={taller.title}
                       sx={{
-                        fontWeight: 800,
-                        color: taller.color,
-                        fontSize: '0.74rem',
-                        letterSpacing: '0.1em',
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
                         display: 'block',
-                        lineHeight: 1
+                        transition: 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                      }}
+                    />
+                    {/* Overlay degradado suave */}
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 60%)',
+                        pointerEvents: 'none'
+                      }}
+                    />
+                    {/* Badge con número */}
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: 10,
+                        left: 10,
+                        px: 1.2,
+                        py: 0.35,
+                        borderRadius: 2,
+                        bgcolor: 'rgba(255,255,255,0.92)',
+                        backdropFilter: 'blur(6px)',
+                        fontWeight: 800,
+                        fontSize: '0.72rem',
+                        color: taller.color,
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.12)'
                       }}
                     >
                       • {taller.number}
-                    </Typography>
-                    <Typography
-                      variant="h6"
+                    </Box>
+                  </Box>
+
+                  {/* Cuerpo con icono y título */}
+                  <Box sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 1.5, flexGrow: 1 }}>
+                    <Box
                       sx={{
-                        fontWeight: 800,
-                        fontSize: { xs: '1.05rem', sm: '1.12rem' },
-                        color: 'secondary.main',
-                        lineHeight: 1.25,
-                        mt: 0.5
+                        width: 44,
+                        height: 44,
+                        borderRadius: 2.5,
+                        bgcolor: `${taller.color}15`,
+                        color: taller.color,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                        transition: 'all 0.3s ease'
                       }}
                     >
-                      {taller.title}
-                    </Typography>
+                      {taller.icon}
+                    </Box>
+                    <Box sx={{ minWidth: 0, flexGrow: 1 }}>
+                      <Typography
+                        variant="caption"
+                        sx={{
+                          fontWeight: 800,
+                          color: taller.color,
+                          fontSize: '0.72rem',
+                          letterSpacing: '0.08em',
+                          display: 'block',
+                          lineHeight: 1
+                        }}
+                      >
+                        TALLER EXTRACURRICULAR
+                      </Typography>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontWeight: 800,
+                          fontSize: { xs: '1.02rem', sm: '1.08rem' },
+                          color: 'secondary.main',
+                          lineHeight: 1.25,
+                          mt: 0.4
+                        }}
+                      >
+                        {taller.title}
+                      </Typography>
+                    </Box>
                   </Box>
                 </Card>
               </Grid>
@@ -2026,167 +2313,6 @@ export default function EducationalProposalPage() {
               </Grid>
             </Grid>
           </Card>
-
-          {/* Didactic Section 2: Ruta de Ubicación por Niveles */}
-          <Box sx={{ mb: { xs: 6, md: 8 } }} data-aos="fade-up">
-            <Box sx={{ textAlign: 'center', mb: 4 }}>
-              <Chip
-                label="METODOLOGÍA DIDÁCTICA Y PREPARACIÓN"
-                size="small"
-                sx={{
-                  fontWeight: 800,
-                  fontSize: '0.72rem',
-                  letterSpacing: '0.1em',
-                  bgcolor: 'rgba(4, 107, 210, 0.1)',
-                  color: 'primary.main',
-                  mb: 1
-                }}
-              />
-              <Typography variant="h3" sx={{ fontWeight: 800, fontSize: { xs: '1.45rem', sm: '1.85rem' }, color: 'secondary.main', mb: 1.5 }}>
-                Ubicación por Niveles: Del 5.° Grado de Primaria al 5.° Año de Secundaria
-              </Typography>
-              <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 760, mx: 'auto', fontSize: '1rem', lineHeight: 1.7 }}>
-                Para garantizar que cada estudiante alcance su máxima certificación, a partir del 5to grado de primaria hasta el 5to año de secundaria los organizamos en <strong>tres niveles de dominio</strong> según su progreso y habilidades:
-              </Typography>
-            </Box>
-
-            <Grid container spacing={3}>
-              {[
-                {
-                  step: '01',
-                  level: 'Nivel Básico',
-                  badge: 'Etapa Inicial & Bases',
-                  color: '#0288d1',
-                  lightColor: 'rgba(2, 136, 209, 0.08)',
-                  borderColor: 'rgba(2, 136, 209, 0.25)',
-                  description: 'Consolidación de las estructuras lingüísticas fundamentales, vocabulario activo y desarrollo de la confianza comunicativa en situaciones cotidianas.',
-                  highlights: [
-                    'Afianzamiento de vocabulario y pronunciación básica',
-                    'Comprensión auditiva (Listening) en oraciones y órdenes sencillas',
-                    'Inmersión progresiva y motivación constante'
-                  ]
-                },
-                {
-                  step: '02',
-                  level: 'Nivel Intermedio',
-                  badge: 'Desarrollo & Fluidez',
-                  color: '#0d47a1',
-                  lightColor: 'rgba(13, 71, 161, 0.08)',
-                  borderColor: 'rgba(13, 71, 161, 0.25)',
-                  description: 'Ampliación de destrezas comunicativas con mayor vocabulario, comprensión lectora guiada y expresión oral con espontaneidad en el aula.',
-                  highlights: [
-                    'Fluidez en interacción oral y dinámicas participativas',
-                    'Comprensión de lectura (Reading) de textos estructurados',
-                    'Redacción inicial de párrafos y expresiones formales'
-                  ]
-                },
-                {
-                  step: '03',
-                  level: 'Nivel Avanzado',
-                  badge: 'Dominio & Preparación TOEFL',
-                  color: '#e65100',
-                  lightColor: 'rgba(230, 81, 0, 0.08)',
-                  borderColor: 'rgba(230, 81, 0, 0.25)',
-                  description: 'Entrenamiento intensivo en destrezas complejas, análisis textual académico y simulación continua bajo los estándares internacionales exigidos por ETS.',
-                  highlights: [
-                    'Comprensión crítica y argumentación oral avanzada',
-                    'Estructuras sintácticas y gramaticales formales',
-                    'Práctica con modelos reales de exámenes TOEFL'
-                  ]
-                }
-              ].map((tier, idx) => (
-                <Grid size={{ xs: 12, md: 4 }} key={tier.level} data-aos="fade-up" data-aos-delay={idx * 100}>
-                  <Card
-                    sx={{
-                      height: '100%',
-                      p: 3.5,
-                      borderRadius: 4,
-                      border: '1.5px solid',
-                      borderColor: tier.borderColor,
-                      bgcolor: 'white',
-                      boxShadow: '0 8px 24px rgba(0,0,0,0.04)',
-                      transition: 'all 0.3s ease',
-                      position: 'relative',
-                      overflow: 'hidden',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      '&:hover': {
-                        transform: 'translateY(-6px)',
-                        boxShadow: `0 16px 36px ${tier.color}25`,
-                        borderColor: tier.color
-                      }
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        height: 5,
-                        bgcolor: tier.color
-                      }}
-                    />
-
-                    <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
-                      <Box
-                        sx={{
-                          width: 44,
-                          height: 44,
-                          borderRadius: '50%',
-                          bgcolor: tier.lightColor,
-                          color: tier.color,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          fontWeight: 900,
-                          fontSize: '1.1rem',
-                          border: `1.5px solid ${tier.color}35`
-                        }}
-                      >
-                        {tier.step}
-                      </Box>
-                      <Chip
-                        label={tier.badge}
-                        size="small"
-                        sx={{
-                          fontWeight: 700,
-                          fontSize: '0.72rem',
-                          bgcolor: tier.lightColor,
-                          color: tier.color,
-                          border: `1px solid ${tier.color}30`
-                        }}
-                      />
-                    </Stack>
-
-                    <Typography variant="h4" sx={{ fontWeight: 800, color: 'secondary.main', mb: 1, fontSize: '1.35rem' }}>
-                      {tier.level}
-                    </Typography>
-
-                    <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7, mb: 3 }}>
-                      {tier.description}
-                    </Typography>
-
-                    <Box sx={{ mt: 'auto', pt: 2, borderTop: '1px solid #f0f0f0' }}>
-                      <Typography variant="caption" sx={{ fontWeight: 700, color: 'text.secondary', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', mb: 1.2 }}>
-                        Ejes de Aprendizaje:
-                      </Typography>
-                      <Stack spacing={1}>
-                        {tier.highlights.map((item, i) => (
-                          <Box key={i} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
-                            <CheckCircleIcon sx={{ fontSize: '1rem', color: tier.color, mt: 0.2, flexShrink: 0 }} />
-                            <Typography variant="body2" sx={{ color: 'text.primary', fontSize: '0.85rem', lineHeight: 1.5 }}>
-                              {item}
-                            </Typography>
-                          </Box>
-                        ))}
-                      </Stack>
-                    </Box>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          </Box>
 
           {/* Section 3: Exámenes Internacionales por Nivel Escolar (Primaria vs Secundaria) */}
           <Box data-aos="fade-up">
@@ -2475,6 +2601,169 @@ export default function EducationalProposalPage() {
               </Grid>
             </Grid>
           </Box>
+
+          {/* Didactic Section 2: Ruta de Ubicación por Niveles */}
+          <Box sx={{ mt: { xs: 8, md: 12 }, mb: { xs: 6, md: 8 } }} data-aos="fade-up">
+            <Box sx={{ textAlign: 'center', mb: 4 }}>
+              <Chip
+                label="METODOLOGÍA DIDÁCTICA Y PREPARACIÓN"
+                size="small"
+                sx={{
+                  fontWeight: 800,
+                  fontSize: '0.72rem',
+                  letterSpacing: '0.1em',
+                  bgcolor: 'rgba(4, 107, 210, 0.1)',
+                  color: 'primary.main',
+                  mb: 1
+                }}
+              />
+              <Typography variant="h3" sx={{ fontWeight: 800, fontSize: { xs: '1.45rem', sm: '1.85rem' }, color: 'secondary.main', mb: 1.5 }}>
+                Ubicación por Niveles: Del 5.° Grado de Primaria al 5.° Año de Secundaria
+              </Typography>
+              <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 760, mx: 'auto', fontSize: '1rem', lineHeight: 1.7 }}>
+                Para garantizar que cada estudiante alcance su máxima certificación, a partir del 5to grado de primaria hasta el 5to año de secundaria los organizamos en <strong>tres niveles de dominio</strong> según su progreso y habilidades:
+              </Typography>
+            </Box>
+
+            <Grid container spacing={3}>
+              {[
+                {
+                  step: '01',
+                  level: 'Nivel Básico',
+                  badge: 'Etapa Inicial & Bases',
+                  color: '#0288d1',
+                  lightColor: 'rgba(2, 136, 209, 0.08)',
+                  borderColor: 'rgba(2, 136, 209, 0.25)',
+                  description: 'Consolidación de las estructuras lingüísticas fundamentales, vocabulario activo y desarrollo de la confianza comunicativa en situaciones cotidianas.',
+                  highlights: [
+                    'Afianzamiento de vocabulario y pronunciación básica',
+                    'Comprensión auditiva (Listening) en oraciones y órdenes sencillas',
+                    'Inmersión progresiva y motivación constante'
+                  ]
+                },
+                {
+                  step: '02',
+                  level: 'Nivel Intermedio',
+                  badge: 'Desarrollo & Fluidez',
+                  color: '#0d47a1',
+                  lightColor: 'rgba(13, 71, 161, 0.08)',
+                  borderColor: 'rgba(13, 71, 161, 0.25)',
+                  description: 'Ampliación de destrezas comunicativas con mayor vocabulario, comprensión lectora guiada y expresión oral con espontaneidad en el aula.',
+                  highlights: [
+                    'Fluidez en interacción oral y dinámicas participativas',
+                    'Comprensión de lectura (Reading) de textos estructurados',
+                    'Redacción inicial de párrafos y expresiones formales'
+                  ]
+                },
+                {
+                  step: '03',
+                  level: 'Nivel Avanzado',
+                  badge: 'Dominio & Preparación TOEFL',
+                  color: '#e65100',
+                  lightColor: 'rgba(230, 81, 0, 0.08)',
+                  borderColor: 'rgba(230, 81, 0, 0.25)',
+                  description: 'Entrenamiento intensivo en destrezas complejas, análisis textual académico y simulación continua bajo los estándares internacionales exigidos por ETS.',
+                  highlights: [
+                    'Comprensión crítica y argumentación oral avanzada',
+                    'Estructuras sintácticas y gramaticales formales',
+                    'Práctica con modelos reales de exámenes TOEFL'
+                  ]
+                }
+              ].map((tier, idx) => (
+                <Grid size={{ xs: 12, md: 4 }} key={tier.level} data-aos="fade-up" data-aos-delay={idx * 100}>
+                  <Card
+                    sx={{
+                      height: '100%',
+                      p: 3.5,
+                      borderRadius: 4,
+                      border: '1.5px solid',
+                      borderColor: tier.borderColor,
+                      bgcolor: 'white',
+                      boxShadow: '0 8px 24px rgba(0,0,0,0.04)',
+                      transition: 'all 0.3s ease',
+                      position: 'relative',
+                      overflow: 'hidden',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      '&:hover': {
+                        transform: 'translateY(-6px)',
+                        boxShadow: `0 16px 36px ${tier.color}25`,
+                        borderColor: tier.color
+                      }
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        height: 5,
+                        bgcolor: tier.color
+                      }}
+                    />
+
+                    <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
+                      <Box
+                        sx={{
+                          width: 44,
+                          height: 44,
+                          borderRadius: '50%',
+                          bgcolor: tier.lightColor,
+                          color: tier.color,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontWeight: 900,
+                          fontSize: '1.1rem',
+                          border: `1.5px solid ${tier.color}35`
+                        }}
+                      >
+                        {tier.step}
+                      </Box>
+                      <Chip
+                        label={tier.badge}
+                        size="small"
+                        sx={{
+                          fontWeight: 700,
+                          fontSize: '0.72rem',
+                          bgcolor: tier.lightColor,
+                          color: tier.color,
+                          border: `1px solid ${tier.color}30`
+                        }}
+                      />
+                    </Stack>
+
+                    <Typography variant="h4" sx={{ fontWeight: 800, color: 'secondary.main', mb: 1, fontSize: '1.35rem' }}>
+                      {tier.level}
+                    </Typography>
+
+                    <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.7, mb: 3 }}>
+                      {tier.description}
+                    </Typography>
+
+                    <Box sx={{ mt: 'auto', pt: 2, borderTop: '1px solid #f0f0f0' }}>
+                      <Typography variant="caption" sx={{ fontWeight: 700, color: 'text.secondary', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', mb: 1.2 }}>
+                        Ejes de Aprendizaje:
+                      </Typography>
+                      <Stack spacing={1}>
+                        {tier.highlights.map((item, i) => (
+                          <Box key={i} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
+                            <CheckCircleIcon sx={{ fontSize: '1rem', color: tier.color, mt: 0.2, flexShrink: 0 }} />
+                            <Typography variant="body2" sx={{ color: 'text.primary', fontSize: '0.85rem', lineHeight: 1.5 }}>
+                              {item}
+                            </Typography>
+                          </Box>
+                        ))}
+                      </Stack>
+                    </Box>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+
+
         </Container>
       </Box>
 
@@ -2500,11 +2789,170 @@ export default function EducationalProposalPage() {
               </Typography>
             </Box>
             <Typography variant="h2" sx={{ mb: 2, color: 'white', fontWeight: 800 }}>
-              Ensamble de Cuerdas
+              Ensamble Hosanna
             </Typography>
             <Typography variant="body1" sx={{ opacity: 0.9, maxWidth: 820, mx: 'auto', fontSize: '1.08rem', lineHeight: 1.8 }}>
               Consideramos que la música es un pilar fundamental dentro de la formación de nuestros alumnos, por ello contamos con nuestro <strong>Ensamble de Cuerdas</strong>, conformado por alumnos de <strong>Primaria y Secundaria</strong>.
             </Typography>
+          </Box>
+
+          {/* Tarjeta Destacada: 8vo Concierto del Ensamble de Cuerdas (Noviembre 2026) */}
+          <Card
+            data-aos="zoom-in"
+            sx={{
+              p: { xs: 3.5, sm: 4.5, md: 5 },
+              mb: 5,
+              borderRadius: 4,
+              border: '2px solid',
+              borderColor: 'rgba(255, 179, 0, 0.4)',
+              background: 'linear-gradient(135deg, rgba(255, 179, 0, 0.12) 0%, rgba(13, 71, 161, 0.3) 50%, rgba(10, 31, 68, 0.6) 100%)',
+              backdropFilter: 'blur(16px)',
+              color: 'white',
+              boxShadow: '0 20px 45px rgba(0, 0, 0, 0.35)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+          >
+            <Grid container spacing={3} alignItems="center">
+              <Grid size={{ xs: 12, md: 8 }}>
+                <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1.5 }}>
+                  <EmojiEventsIcon sx={{ color: '#ffb300', fontSize: 26 }} />
+                  <Chip
+                    label="HITO ARTÍSTICO ANUAL • NOVIEMBRE 2026"
+                    size="small"
+                    sx={{
+                      fontWeight: 800,
+                      fontSize: '0.75rem',
+                      letterSpacing: '0.1em',
+                      bgcolor: 'rgba(255, 179, 0, 0.2)',
+                      color: '#ffc107',
+                      border: '1px solid rgba(255, 179, 0, 0.4)'
+                    }}
+                  />
+                </Stack>
+
+                <Typography variant="h3" sx={{ fontWeight: 800, color: 'white', mb: 1.5, fontSize: { xs: '1.6rem', sm: '2rem', md: '2.3rem' } }}>
+                  8.° Concierto de nuestro Ensamble de Cuerdas
+                </Typography>
+
+                <Typography variant="body1" sx={{ opacity: 0.92, lineHeight: 1.8, fontSize: { xs: '1rem', sm: '1.08rem' }, mb: 2 }}>
+                  Culminando el ciclo anual en el mes de <strong>Noviembre</strong>, nuestros alumnos presentan su recital magno de cierre de año. <strong>Este año 2026 será el 8vo. Concierto de nuestro ENSAMBLE de Cuerdas</strong>, una celebración inolvidable donde comparten con las familias y la comunidad el fruto de su perseverancia, entrega y pasión musical.
+                </Typography>
+
+                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 1 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <AutoAwesomeIcon sx={{ color: '#ffb300', fontSize: 20 }} />
+                    <Typography variant="body2" sx={{ fontWeight: 700, color: '#ffe082' }}>
+                      8 Años de Tradición Musical
+                    </Typography>
+                  </Box>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <MusicNoteIcon sx={{ color: '#ffb300', fontSize: 20 }} />
+                    <Typography variant="body2" sx={{ fontWeight: 700, color: '#ffe082' }}>
+                      Mes de Gala: Noviembre 2026
+                    </Typography>
+                  </Box>
+                </Stack>
+              </Grid>
+
+              <Grid size={{ xs: 12, md: 4 }} sx={{ display: 'flex', justifyContent: 'center' }}>
+                <Box
+                  sx={{
+                    p: 3,
+                    borderRadius: 4,
+                    textAlign: 'center',
+                    bgcolor: 'rgba(255, 255, 255, 0.08)',
+                    border: '1.5px solid rgba(255, 179, 0, 0.35)',
+                    boxShadow: '0 12px 30px rgba(0,0,0,0.25)',
+                    width: '100%',
+                    maxWidth: 280
+                  }}
+                >
+                  <Typography variant="overline" sx={{ fontWeight: 800, color: '#ffb300', letterSpacing: '0.15em', display: 'block' }}>
+                    EDICIÓN 2026
+                  </Typography>
+                  <Typography variant="h1" sx={{ fontWeight: 900, color: 'white', fontSize: { xs: '3.5rem', sm: '4.2rem' }, lineHeight: 1, my: 1 }}>
+                    8<span style={{ fontSize: '2rem', color: '#ffb300' }}>vo.</span>
+                  </Typography>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 700, color: 'white', lineHeight: 1.3 }}>
+                    Concierto de Gala
+                  </Typography>
+                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)', display: 'block', mt: 0.5 }}>
+                    Mes de Noviembre
+                  </Typography>
+                </Box>
+              </Grid>
+            </Grid>
+          </Card>
+
+          {/* Fotografía del Concierto de Gala del Ensamble */}
+          <Box
+            data-aos="fade-up"
+            sx={{
+              mb: 5,
+              position: 'relative',
+              borderRadius: 4,
+              overflow: 'hidden',
+              boxShadow: '0 25px 60px rgba(0, 0, 0, 0.45)',
+              border: '1.5px solid rgba(255, 179, 0, 0.3)',
+              maxHeight: { xs: 360, sm: 480, md: 540 },
+              bgcolor: 'rgba(10, 31, 68, 0.6)',
+              '&:hover img': {
+                transform: 'scale(1.02)'
+              }
+            }}
+          >
+            <Box
+              component="img"
+              src="/hs-photos/ensamblaje2.jpeg"
+              alt="Concierto de Gala del Ensamble de Cuerdas - Colegio Hosanna"
+              sx={{
+                width: '100%',
+                height: '100%',
+                maxHeight: { xs: 360, sm: 480, md: 540 },
+                objectFit: 'cover',
+                display: 'block',
+                transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+              }}
+            />
+            <Box
+              sx={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                p: { xs: 2.5, sm: 3.5 },
+                pt: { xs: 6, sm: 8 },
+                background: 'linear-gradient(to top, rgba(10, 31, 68, 0.95) 0%, rgba(10, 31, 68, 0.65) 60%, transparent 100%)',
+                display: 'flex',
+                flexDirection: { xs: 'column', sm: 'row' },
+                justifyContent: 'space-between',
+                alignItems: { xs: 'flex-start', sm: 'flex-end' },
+                gap: 1.5
+              }}
+            >
+              <Box>
+                <Chip
+                  icon={<MusicNoteIcon style={{ color: '#ffb300' }} />}
+                  label="Presentación en Vivo"
+                  size="small"
+                  sx={{
+                    bgcolor: 'rgba(255, 179, 0, 0.2)',
+                    color: '#ffc107',
+                    fontWeight: 700,
+                    fontSize: '0.75rem',
+                    mb: 1,
+                    border: '1px solid rgba(255, 179, 0, 0.35)'
+                  }}
+                />
+                <Typography variant="h5" sx={{ fontWeight: 800, color: 'white', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
+                  Ensamble Hosanna en Concierto
+                </Typography>
+                <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.85)', maxWidth: 680, mt: 0.5 }}>
+                  Nuestros estudiantes compartiendo con las familias y la comunidad el fruto de su dedicación, disciplina y adoración musical.
+                </Typography>
+              </Box>
+            </Box>
           </Box>
 
           <Grid container spacing={3.5} sx={{ mb: 4 }}>
@@ -2702,165 +3150,6 @@ export default function EducationalProposalPage() {
               </Card>
             </Grid>
           </Grid>
-
-          {/* Tarjeta Destacada: 8vo Concierto del Ensamble de Cuerdas (Noviembre 2026) */}
-          <Card
-            data-aos="zoom-in"
-            sx={{
-              p: { xs: 3.5, sm: 4.5, md: 5 },
-              mb: 5,
-              borderRadius: 4,
-              border: '2px solid',
-              borderColor: 'rgba(255, 179, 0, 0.4)',
-              background: 'linear-gradient(135deg, rgba(255, 179, 0, 0.12) 0%, rgba(13, 71, 161, 0.3) 50%, rgba(10, 31, 68, 0.6) 100%)',
-              backdropFilter: 'blur(16px)',
-              color: 'white',
-              boxShadow: '0 20px 45px rgba(0, 0, 0, 0.35)',
-              position: 'relative',
-              overflow: 'hidden'
-            }}
-          >
-            <Grid container spacing={3} alignItems="center">
-              <Grid size={{ xs: 12, md: 8 }}>
-                <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1.5 }}>
-                  <EmojiEventsIcon sx={{ color: '#ffb300', fontSize: 26 }} />
-                  <Chip
-                    label="HITO ARTÍSTICO ANUAL • NOVIEMBRE 2026"
-                    size="small"
-                    sx={{
-                      fontWeight: 800,
-                      fontSize: '0.75rem',
-                      letterSpacing: '0.1em',
-                      bgcolor: 'rgba(255, 179, 0, 0.2)',
-                      color: '#ffc107',
-                      border: '1px solid rgba(255, 179, 0, 0.4)'
-                    }}
-                  />
-                </Stack>
-
-                <Typography variant="h3" sx={{ fontWeight: 800, color: 'white', mb: 1.5, fontSize: { xs: '1.6rem', sm: '2rem', md: '2.3rem' } }}>
-                  8.° Concierto de nuestro Ensamble de Cuerdas
-                </Typography>
-
-                <Typography variant="body1" sx={{ opacity: 0.92, lineHeight: 1.8, fontSize: { xs: '1rem', sm: '1.08rem' }, mb: 2 }}>
-                  Culminando el ciclo anual en el mes de <strong>Noviembre</strong>, nuestros alumnos presentan su recital magno de cierre de año. <strong>Este año 2026 será el 8vo. Concierto de nuestro ENSAMBLE de Cuerdas</strong>, una celebración inolvidable donde comparten con las familias y la comunidad el fruto de su perseverancia, entrega y pasión musical.
-                </Typography>
-
-                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ pt: 1 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <AutoAwesomeIcon sx={{ color: '#ffb300', fontSize: 20 }} />
-                    <Typography variant="body2" sx={{ fontWeight: 700, color: '#ffe082' }}>
-                      8 Años de Tradición Musical
-                    </Typography>
-                  </Box>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <MusicNoteIcon sx={{ color: '#ffb300', fontSize: 20 }} />
-                    <Typography variant="body2" sx={{ fontWeight: 700, color: '#ffe082' }}>
-                      Mes de Gala: Noviembre 2026
-                    </Typography>
-                  </Box>
-                </Stack>
-              </Grid>
-
-              <Grid size={{ xs: 12, md: 4 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Box
-                  sx={{
-                    p: 3,
-                    borderRadius: 4,
-                    textAlign: 'center',
-                    bgcolor: 'rgba(255, 255, 255, 0.08)',
-                    border: '1.5px solid rgba(255, 179, 0, 0.35)',
-                    boxShadow: '0 12px 30px rgba(0,0,0,0.25)',
-                    width: '100%',
-                    maxWidth: 280
-                  }}
-                >
-                  <Typography variant="overline" sx={{ fontWeight: 800, color: '#ffb300', letterSpacing: '0.15em', display: 'block' }}>
-                    EDICIÓN 2026
-                  </Typography>
-                  <Typography variant="h1" sx={{ fontWeight: 900, color: 'white', fontSize: { xs: '3.5rem', sm: '4.2rem' }, lineHeight: 1, my: 1 }}>
-                    8<span style={{ fontSize: '2rem', color: '#ffb300' }}>vo.</span>
-                  </Typography>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 700, color: 'white', lineHeight: 1.3 }}>
-                    Concierto de Gala
-                  </Typography>
-                  <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.7)', display: 'block', mt: 0.5 }}>
-                    Mes de Noviembre
-                  </Typography>
-                </Box>
-              </Grid>
-            </Grid>
-          </Card>
-
-          {/* Fotografía del Concierto de Gala del Ensamble */}
-          <Box
-            data-aos="fade-up"
-            sx={{
-              mb: 5,
-              position: 'relative',
-              borderRadius: 4,
-              overflow: 'hidden',
-              boxShadow: '0 25px 60px rgba(0, 0, 0, 0.45)',
-              border: '1.5px solid rgba(255, 179, 0, 0.3)',
-              maxHeight: { xs: 360, sm: 480, md: 540 },
-              bgcolor: 'rgba(10, 31, 68, 0.6)',
-              '&:hover img': {
-                transform: 'scale(1.02)'
-              }
-            }}
-          >
-            <Box
-              component="img"
-              src="/hs-photos/ensamblaje2.jpeg"
-              alt="Concierto de Gala del Ensamble de Cuerdas - Colegio Hosanna"
-              sx={{
-                width: '100%',
-                height: '100%',
-                maxHeight: { xs: 360, sm: 480, md: 540 },
-                objectFit: 'cover',
-                display: 'block',
-                transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
-              }}
-            />
-            <Box
-              sx={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                p: { xs: 2.5, sm: 3.5 },
-                pt: { xs: 6, sm: 8 },
-                background: 'linear-gradient(to top, rgba(10, 31, 68, 0.95) 0%, rgba(10, 31, 68, 0.65) 60%, transparent 100%)',
-                display: 'flex',
-                flexDirection: { xs: 'column', sm: 'row' },
-                justifyContent: 'space-between',
-                alignItems: { xs: 'flex-start', sm: 'flex-end' },
-                gap: 1.5
-              }}
-            >
-              <Box>
-                <Chip
-                  icon={<MusicNoteIcon style={{ color: '#ffb300' }} />}
-                  label="Presentación en Vivo"
-                  size="small"
-                  sx={{
-                    bgcolor: 'rgba(255, 179, 0, 0.2)',
-                    color: '#ffc107',
-                    fontWeight: 700,
-                    fontSize: '0.75rem',
-                    mb: 1,
-                    border: '1px solid rgba(255, 179, 0, 0.35)'
-                  }}
-                />
-                <Typography variant="h5" sx={{ fontWeight: 800, color: 'white', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
-                  Ensamble de Cuerdas Hosanna en Concierto
-                </Typography>
-                <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.85)', maxWidth: 680, mt: 0.5 }}>
-                  Nuestros estudiantes compartiendo con las familias y la comunidad el fruto de su dedicación, disciplina y adoración musical.
-                </Typography>
-              </Box>
-            </Box>
-          </Box>
 
           {/* Cita artística y bíblica */}
           <Box

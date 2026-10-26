@@ -118,7 +118,7 @@ const LevelSecundaria: React.FC = () => {
               <Box sx={{ position: 'relative' }}>
                 <Box
                   component="img"
-                  src="/hs-photos/Secundaria.jpeg"
+                  src="/SECUNDARIA.png"
                   sx={{ width: '100%', borderRadius: 8, boxShadow: '0 40px 80px rgba(0,0,0,0.15)', position: 'relative', zIndex: 2 }}
                 />
                 <Box sx={{ position: 'absolute', bottom: -30, right: -30, width: 250, height: 250, bgcolor: 'primary.light', opacity: 0.1, borderRadius: 4, zIndex: 1 }} />
